@@ -1,0 +1,2366 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Griffon</title>
+    <link>http://griffon-framework.org</link>
+    <atom:link href="http://griffon-framework.org/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Griffon</description>
+    <language>en-gb</language>
+    <pubDate>Fri, 2 Dec 2016 18:14:38 +0100</pubDate>
+    <lastBuildDate>Fri, 2 Dec 2016 18:14:38 +0100</lastBuildDate>
+
+    
+    <item>
+      <title>Griffon 2.9.1 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.9.1.html</link>
+      <pubDate>Fri, 2 Dec 2016 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">news/griffon_2.9.1.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_9_1_released&quot;&gt;Griffon 2.9.1 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;All artifacts from Griffon 2.9.0 shipped without debug information, this makes it virtually impossible to debug
+applications inside IDEs. This release corrects this oversight.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;There are no new features in this release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;http://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;http://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.9.0 Release Notes</title>
+      <link>http://griffon-framework.org/releasenotes/griffon_2.9.1.html</link>
+      <pubDate>Fri, 2 Dec 2016 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">releasenotes/griffon_2.9.1.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_9_1_release_notes&quot;&gt;Griffon 2.9.1 Release Notes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;All artifacts from Griffon 2.9.0 shipped without debug information, this makes it virtually impossible to debug
+applications inside IDEs. This release corrects this oversight.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;There are no new features in this release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Full binary compatibility report between Griffon 2.9.0 and 2.8.0 can be found
+&lt;a href=&quot;../reports/2.9.0/compatibility-report.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A list of fixed issues can be found at the
+&lt;a href=&quot;https://github.com/griffon/griffon/issues?q=milestone%3A2.9.0+is%3Aclosed&quot;&gt;2.9.0 milestone&lt;/a&gt; page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.9.0 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.9.0.html</link>
+      <pubDate>Thu, 1 Dec 2016 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">news/griffon_2.9.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_9_0_released&quot;&gt;Griffon 2.9.0 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.9.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Action properties can react to application &lt;code&gt;Locale&lt;/code&gt; changes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Labeled&lt;/code&gt;, &lt;code&gt;Tab&lt;/code&gt; and &lt;code&gt;MenuItem&lt;/code&gt; nodes can react to application &lt;code&gt;Locale&lt;/code&gt; changes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;JavaFXAction&lt;/code&gt; has the following updates:&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;style&lt;/code&gt;: used to set style on the bound widget.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;graphic&lt;/code&gt;: used to set the graphic node on the bound widget.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;graphicStyle&lt;/code&gt;: used to set style on the graphic node of the bound widget.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;graphicStyleClass&lt;/code&gt;: used to set style classes on the graphic node of the bound widget.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Added an UI Thread proxy &lt;code&gt;ObservableSet&lt;/code&gt;; all of its updates will be triggered inside the UI thread.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Added an UI Thread proxy &lt;code&gt;ObservableMap&lt;/code&gt;; all of its updates will be triggered inside the UI thread.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;New &lt;code&gt;CollectionBindings&lt;/code&gt; class provides binding factories on &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Join source observable collection to &lt;code&gt;StringBinding&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Calculate &lt;code&gt;min&lt;/code&gt;, &lt;code&gt;max&lt;/code&gt;, &lt;code&gt;average&lt;/code&gt;, and &lt;code&gt;sum&lt;/code&gt; on source observable collection.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;New &lt;code&gt;FilteringBindings&lt;/code&gt; class provides filtering capabilities on &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Filter &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt; and find first match, creating a &lt;code&gt;ObjectBinding&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Filter &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt; then map and find first match to X; where X may be a wrapper type, String or a type &lt;code&gt;R&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Map elements of &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt; to X then filter and find first match; where X may be a wrapper type, String or a type &lt;code&gt;R&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;New &lt;code&gt;ReducingBindings&lt;/code&gt; class provides reduce capabilities on &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Reduce &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt; to &lt;code&gt;ObjectBinding&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reduce &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt; then map to X; where X may be a wrapper type, String or a type &lt;code&gt;R&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Map elements of &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt; to X then reduce; where X may be a wrapper type, String or a type &lt;code&gt;R&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;New &lt;code&gt;MappingBindings&lt;/code&gt; class provides lots of useful binding and property factories&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Convert &lt;code&gt;ObservableValue&amp;lt;X&amp;gt;&lt;/code&gt; to is corresponding &lt;code&gt;XBinding&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Convert &lt;code&gt;ObservableXValue&lt;/code&gt; to &lt;code&gt;ObjectBinding&amp;lt;X&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create bindings that update their value and notify listeners inside the UI thread.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A more detailed description of the changes and compatibility issues can be found at the &lt;a href=&quot;/releasenotes/griffon_2.9.0.html&quot; target=&quot;_blank&quot;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;http://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;http://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.9.0 Release Notes</title>
+      <link>http://griffon-framework.org/releasenotes/griffon_2.9.0.html</link>
+      <pubDate>Thu, 1 Dec 2016 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">releasenotes/griffon_2.9.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_9_0_release_notes&quot;&gt;Griffon 2.9.0 Release Notes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following dependencies have been upgraded&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;org.jetbrains.kotlin:kotlin-stdlib:1.0.5-2&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;runtime&quot;&gt;Runtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;automatic_i18n_of_action_properties&quot;&gt;Automatic I18N of Action Properties&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Action properties can now react to changes made to the application&amp;#8217;s &lt;code&gt;Locale&lt;/code&gt;.
+Any properties configured via &lt;code&gt;messages.properties&lt;/code&gt; will be refreshed when the application&amp;#8217;s
+&lt;code&gt;Locale&lt;/code&gt; changes value.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;javafx_support&quot;&gt;JavaFX Support&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;Labeled&lt;/code&gt;, &lt;code&gt;Tab&lt;/code&gt; and &lt;code&gt;MenuItem&lt;/code&gt; nodes can react to changes made to the application&amp;#8217;s &lt;code&gt;Locale&lt;/code&gt; provided you supply enough
+information to resolve the target message. &lt;code&gt;JavaFXUtils&lt;/code&gt; exposes 3 new properties and 1 connect method to make this feature
+work. You may use these properties with FXML, for example&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&amp;lt;Label JavaFXUtils.i18nKey=&quot;key.label&quot;
+       JavaFXUtils.i18nArgs=&quot;one, two&quot;
+       JavaFXUtils.i18nDefaultValue=&quot;No value supplied&quot;/&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You must use the connect method on the &lt;code&gt;View&lt;/code&gt; class too, like so&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;Node node = loadFromFXML();
+if (node instanceof Parent) {
+    scene.setRoot((Parent) node);
+} else {
+    ((Group) scene.getRoot()).getChildren().addAll(node);
+}
+connectActions(node, controller);
+connectMessageSource(node);&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;JavaFXAction&lt;/code&gt; supports four new properties:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;style&lt;/code&gt;: used to set style on the bound widget.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;graphic&lt;/code&gt;: used to set the graphic node on the bound widget.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;graphicStyle&lt;/code&gt;: used to set style on the graphic node of the bound widget.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;graphicStyleClass&lt;/code&gt;: used to set style classes on the graphic node of the bound widget.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You may define a &lt;code&gt;&amp;amp;&lt;/code&gt; at the beginning of the value of either &lt;code&gt;style&lt;/code&gt; or &lt;code&gt;graphicStyle&lt;/code&gt; properties,
+this instructs the runtime to append the style definition instead of overwriting it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;New &lt;code&gt;CollectionBindings&lt;/code&gt; class provides binding factories on &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Join source observable collection to &lt;code&gt;StringBinding&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Calculate &lt;code&gt;min&lt;/code&gt;, &lt;code&gt;max&lt;/code&gt;, &lt;code&gt;average&lt;/code&gt;, and &lt;code&gt;sum&lt;/code&gt; on source observable collection.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;New &lt;code&gt;FilteringBindings&lt;/code&gt; class provides filtering capabilities on &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Filter &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt; and find first match, creating a &lt;code&gt;ObjectBinding&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Filter &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt; then map and find first match to X; where X may be a wrapper type, String or a type &lt;code&gt;R&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Map elements of &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt; to X then filter and find first match; where X may be a wrapper type, String or a type &lt;code&gt;R&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;New &lt;code&gt;ReducingBindings&lt;/code&gt; class provides reduce capabilities on &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Reduce &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt; to &lt;code&gt;ObjectBinding&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reduce &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt; then map to X; where X may be a wrapper type, String or a type &lt;code&gt;R&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Map elements of &lt;code&gt;ObservableList&lt;/code&gt;/&lt;code&gt;ObservableSet&lt;/code&gt;/&lt;code&gt;ObservableMap&lt;/code&gt; to X then reduce; where X may be a wrapper type, String or a type &lt;code&gt;R&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;New &lt;code&gt;MappingBindings&lt;/code&gt; class provides lots of useful binding and property factories&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Convert &lt;code&gt;ObservableValue&amp;lt;X&amp;gt;&lt;/code&gt; to is corresponding &lt;code&gt;XBinding&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Convert &lt;code&gt;ObservableXValue&lt;/code&gt; to &lt;code&gt;ObjectBinding&amp;lt;X&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create bindings that update their value and notify listeners inside the UI thread.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;buildtime&quot;&gt;Buildtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;gradle_wrapper&quot;&gt;Gradle Wrapper&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Gradle wrapper version on all Lazybones templates has been bumped to &lt;code&gt;3.2&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Full binary compatibility report between Griffon 2.9.0 and 2.8.0 can be found
+&lt;a href=&quot;../reports/2.9.0/compatibility-report.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A list of fixed issues can be found at the
+&lt;a href=&quot;https://github.com/griffon/griffon/issues?q=milestone%3A2.9.0+is%3Aclosed&quot;&gt;2.9.0 milestone&lt;/a&gt; page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.8.0 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.8.0.html</link>
+      <pubDate>Thu, 29 Sep 2016 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">news/griffon_2.8.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_8_0_released&quot;&gt;Griffon 2.8.0 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.8.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;[MVC] Identify MVC members and arguments with &lt;code&gt;@griffon.inject.MVCMember&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[JavaFX] Ability to tie multiple nodes to a single action using FXML.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[JavaFX] Find multiple elements in the Node graph using a &lt;code&gt;predicate&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A more detailed description of the changes and compatibility issues can be found at the &lt;a href=&quot;/releasenotes/griffon_2.8.0.html&quot; target=&quot;_blank&quot;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;http://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;http://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.8.0 Release Notes</title>
+      <link>http://griffon-framework.org/releasenotes/griffon_2.8.0.html</link>
+      <pubDate>Thu, 29 Sep 2016 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">releasenotes/griffon_2.8.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_8_0_release_notes&quot;&gt;Griffon 2.8.0 Release Notes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following dependencies have been upgraded&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;org.awaitility:awaitility:2.0.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.awaitility:awaitility-groovy:2.0.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.jetbrains.kotlin:kotlin-stdlib:1.0.4&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;runtime&quot;&gt;Runtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;identify_mvc_members_and_arguments&quot;&gt;Identify MVC Members and Arguments&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Starting with this release you may annotate MVC members and arguments with &lt;code&gt;@griffon.inject.MVCMember&lt;/code&gt;. This annotation
+servers as a hint to the Griffon runtime when paired with &lt;code&gt;@javax.annotation.Nonnull&lt;/code&gt;. In this way the runtime can validate
+if all MVC members and MVC arguments have been supplied. You may annotate the field or the property setter, like so&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;import griffon.core.artifact.GriffonController;
+import griffon.inject.MVCMember;
+import griffon.metadata.ArtifactProviderFor;
+import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonController;
+import javax.annotation.Nonnull;
+
+@ArtifactProviderFor(GriffonController.class)
+public class SampleController extends AbstractGriffonController {
+    private SampleModel model;
+
+    @MVCMember @Nonnull
+    private String anMvcArgument;
+
+    @MVCMember
+    public void setModel(@Nonnull SampleModel model) {
+        this.model = model;
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;finding_multiple_elements_in_the_node_graph&quot;&gt;Finding Multiple Elements in the Node Graph&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You can now search for multiple elements inside the Node Graph (including those that are not subtypes of &lt;code&gt;javafx.scene.Node&lt;/code&gt;
+such as &lt;code&gt;Tab&lt;/code&gt; and &lt;code&gt;MenutItem&lt;/code&gt;) using a &lt;code&gt;predicate&lt;/code&gt;, for example, finding all nodes that have a custom property named &lt;code&gt;tag&lt;/code&gt; with
+value &lt;code&gt;tag1&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-groovy&quot; data-lang=&quot;groovy&quot;&gt;JavaFXUtils.findElements(container) { e -&amp;gt;
+    e.properties.tag == &apos;tag1&apos;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;multiple_action_targets_in_fxml&quot;&gt;Multiple Action Targets in FXML&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It&amp;#8217;s now possible to target multiple elements for a particular aciton using FXML. Instead of using an &lt;code&gt;fx:id&lt;/code&gt; entry that follows
+the naming convetion &lt;code&gt;&amp;lt;action&amp;gt;ActionTarget&lt;/code&gt; simply use a static synthetic property: &lt;code&gt;JavaFXUtils.griffonActionId&lt;/code&gt;. For example&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&amp;lt;?import griffon.javafx.support.JavaFXUtils?&amp;gt;
+...
+&amp;lt;VBox&amp;gt;
+    &amp;lt;MenuBar&amp;gt;
+        &amp;lt;Menu text=&quot;File&quot;&amp;gt;
+            &amp;lt;MenuItem JavaFXUtils.griffonActionId=&quot;cut&quot;/&amp;gt;
+            &amp;lt;MenuItem JavaFXUtils.griffonActionId=&quot;copy&quot;/&amp;gt;
+            &amp;lt;MenuItem JavaFXUtils.griffonActionId=&quot;paste&quot;/&amp;gt;
+        &amp;lt;/Menu&amp;gt;
+    &amp;lt;/MenuBar&amp;gt;
+    &amp;lt;ToolBar&amp;gt;
+        &amp;lt;Button JavaFXUtils.griffonActionId=&quot;cut&quot;/&amp;gt;
+        &amp;lt;Button JavaFXUtils.griffonActionId=&quot;copy&quot;/&amp;gt;
+        &amp;lt;Button JavaFXUtils.griffonActionId=&quot;paste&quot;/&amp;gt;
+    &amp;lt;/ToolBar&amp;gt;
+&amp;lt;/VBox&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The previous code assumes the corresponding controller has defined the following actions: &lt;code&gt;cut&lt;/code&gt;, &lt;code&gt;copy&lt;/code&gt;, and &lt;code&gt;paste&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;buildtime&quot;&gt;Buildtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;gradle_version&quot;&gt;Gradle Version&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;All project templates have been upgraded to use Gradle 3.1 but usage of Gradle 3.0 is still possible.
+Be advised that usage of Gradle 2.x may bring some incompatibilities, as some tasks have been renamed or removed,
+such as the &lt;code&gt;installApp&lt;/code&gt; that was renamed to &lt;code&gt;installDist&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Full binary compatibility report between Griffon 2.8.0 and 2.7.0 can be found
+&lt;a href=&quot;../reports/2.8.0/compatibility-report.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A list of fixed issues can be found at the
+&lt;a href=&quot;https://github.com/griffon/griffon/issues?q=milestone%3A2.8.0+is%3Aclosed&quot;&gt;2.8.0 milestone&lt;/a&gt; page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.7.0 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.7.0.html</link>
+      <pubDate>Mon, 20 Jun 2016 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">news/griffon_2.7.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_7_0_released&quot;&gt;Griffon 2.7.0 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.7.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;[Build] Griffon Gradle plugin works with Gradle 2.12 and newer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Runtime] &lt;code&gt;metaComponent&lt;/code&gt; builder factory works as expected.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Templates] New project template: &lt;code&gt;griffon-javafx-kotlin&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A more detailed description of the changes and compatibility issues can be found at the &lt;a href=&quot;/releasenotes/griffon_2.7.0.html&quot; target=&quot;_blank&quot;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;http://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;http://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.7.0 Release Notes</title>
+      <link>http://griffon-framework.org/releasenotes/griffon_2.7.0.html</link>
+      <pubDate>Mon, 20 Jun 2016 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">releasenotes/griffon_2.7.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_7_0_release_notes&quot;&gt;Griffon 2.7.0 Release Notes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following dependencies have been upgraded&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;org.codehaus.groovy:groovy-all:2.4.7&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;com.google.inject:guice:4.1.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.slf4j:slf4j-simple:1.7.21&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.slf4j:slf4j-log4j:1.7.21&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.groovyfx:groovyfx:8.0.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.testfx:testfx-core:4.0.4-alpha&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;runtime&quot;&gt;Runtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;metacomponent_factories&quot;&gt;MetaComponent Factories&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In the last major version of Griffon (1.x) it&amp;#8217;s was possible to create and inject an &lt;code&gt;MVCGroup&lt;/code&gt; instance inside a Groovy
+View as if it were just another builder node. This feature is known as &lt;code&gt;metaComponent&lt;/code&gt;. Sadly this support was not working
+properly until Griffon 2.7.0 fixed the problem. Now you can use &lt;code&gt;metaComponent&lt;/code&gt; as expected.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;buildtime&quot;&gt;Buildtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;gradle_2_12_support&quot;&gt;Gradle 2.12+ Support&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Previous versions of the &lt;code&gt;griffon-gradle&lt;/code&gt; plugin did not work with Gradle 2.12 or newer due to some changes introduced in
+that particular version of Gradle on how dependencies can be managed. Griffon 2.7.0 fixes this problem, now the plugin can
+be used with the latest Gradle versions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;kotlin_project_template&quot;&gt;Kotlin Project Template&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;There&amp;#8217;s a new lazybones project template that targets JavaFX and &lt;a href=&quot;http://kotlinlang.org/&quot;&gt;Kotlin&lt;/a&gt; as main language. The
+name of this template is &lt;code&gt;griffon-javafx-kotlin&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Full binary compatibility report between Griffon 2.7.0 and 2.6.0 can be found
+&lt;a href=&quot;../reports/2.7.0/compatibility-report.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A list of fixed issues can be found at the
+&lt;a href=&quot;https://github.com/griffon/griffon/issues?q=milestone%3A2.7.0+is%3Aclosed&quot;&gt;2.7.0 milestone&lt;/a&gt; page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.6.0 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.6.0.html</link>
+      <pubDate>Fri, 4 Mar 2016 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">news/griffon_2.6.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_6_0_released&quot;&gt;Griffon 2.6.0 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.6.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;[Build] Additional key/values may be set in &lt;code&gt;application.properties&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Runtime] &lt;code&gt;@PostConstruct&lt;/code&gt; and &lt;code&gt;@PreDestroy&lt;/code&gt; are guaranteed to be invoked when an artifact is created/destroyed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Runtime] &lt;code&gt;EventRouter&lt;/code&gt; can now be queried for its listeners.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Runtime] Provide &lt;code&gt;ThreadFactory&lt;/code&gt; for all internal Thread producers, such as &lt;code&gt;EventRouter&lt;/code&gt; and &lt;code&gt;ExecutorServiceProvider&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Runtime] Fields annotated with &lt;code&gt;@Contextual&lt;/code&gt; will use field name first for key resolution; then &lt;code&gt;@Named&lt;/code&gt;, followed by field type.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Testing] TestModule providers can now be identified with &lt;code&gt;@TestModules&lt;/code&gt; and &lt;code&gt;@TestModuleOverrides&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Testing] Functional TestFX testcases can participate in members injection.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Testing] Added a &lt;code&gt;Window&lt;/code&gt; matcher for TestFX testcases.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Testing] Enforce test execution order in functional TestFX testcases.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[Testing] Carry over state between test methods in functional TestFX testcases.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[JavaFX] Added an UI Thread proxy &lt;code&gt;ObservableList&lt;/code&gt;; all of its updates will be triggered inside the UI thread.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[JavaFX] Action properties will trigger their updates inside the UI Thread.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A more detailed description of the changes and compatibility issues can be found at the &lt;a href=&quot;/releasenotes/griffon_2.6.0.html&quot; target=&quot;_blank&quot;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;http://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;http://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.6.0 Release Notes</title>
+      <link>http://griffon-framework.org/releasenotes/griffon_2.6.0.html</link>
+      <pubDate>Fri, 4 Mar 2016 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">releasenotes/griffon_2.6.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_6_0_release_notes&quot;&gt;Griffon 2.6.0 Release Notes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following dependencies have been upgraded&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;org.codehaus.groovy:groovy-all:2.4.6&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.slf4j:slf4j-simple:1.7.18&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.slf4j:slf4j-log4j:1.7.18&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.testfx:testfx-core:4.0.2-alpha&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;runtime&quot;&gt;Runtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;lifecycle_updates&quot;&gt;Lifecycle Updates&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;@PostConstruct&lt;/code&gt; and &lt;code&gt;@PreDestroy&lt;/code&gt; are guaranteed to be invoked when an artifact is created/destroyed. Previously the runtime
+would invoke &lt;code&gt;@PostConstruct&lt;/code&gt; on a service during shutdown if the service was never used at all. Destroying an MVC group
+guarantees that methods annotated with &lt;code&gt;@PreDestroy&lt;/code&gt; are invoked.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;eventrouter&quot;&gt;EventRouter&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It&amp;#8217;s now possible to query an &lt;code&gt;EventRouter&lt;/code&gt; for its set of listeners. &lt;code&gt;EventRouter&lt;/code&gt; instances also use a well defined pattern
+to name the threads they may use internally.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;contextual&quot;&gt;@Contextual&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Fields annotated with &lt;code&gt;@Contextual&lt;/code&gt; now benefit from the following statregy to locate a matching key in the context:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;Use the field&amp;#8217;s name.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If not found then use the value of &lt;code&gt;@Named&lt;/code&gt; if the file is annotated with it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If not found then use the fully qualified field type.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;javafx_ui_thread_ready_observablelist&quot;&gt;JavaFX UI Thread Ready ObservableList&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;JavaFXUtils&lt;/code&gt; can be used to create an &lt;code&gt;ObservableList&lt;/code&gt; wrapper that guarantees all updates will be pushed inside the
+JavaFX UI thread. This allows models and controllers more freedom to change values without concerning themselves too much
+with the needs of the view. You will typically define an &lt;code&gt;ObservableList&lt;/code&gt; property on the model, update its values inside
+a controller action (by default running outisde the UI thread). The view only needs to wrap the model property and pass it
+to the widget that will consume it, for example&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;ObservableList threadReadyList = JavaFXUtils.createJavaFXThreadProxyList(model.getItems());
+listView.setItems(threadReadyList);&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;javafx_action_properties&quot;&gt;JavaFX Action Properties&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;All properties beloging to &lt;code&gt;JavaFXAction&lt;/code&gt; will pushe their updates inside the UI thread. This makes it for an easier
+development experience when programmatically updating those properties inside a controller action, as there&amp;#8217;s no longer
+a need to wrap update calls with Thread specific blocks (such as &lt;code&gt;runInsideUIAsync&lt;/code&gt; for example).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;testing&quot;&gt;Testing&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;testmodule_providers&quot;&gt;TestModule Providers&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Test cases may annotated any method with either &lt;code&gt;@TestModules&lt;/code&gt; or &lt;code&gt;@TestModuleOverrides&lt;/code&gt; to supply a list of &lt;code&gt;Module&lt;/code&gt;
+instances used as the set of all available modules (the first annotation) or to override a subset of all modules (the latter).
+These annotations superceed the need to follow a naming convention, such as&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;public class SomeTest {
+    @Rule
+    public final GriffonUnitRule griffon = new GriffonUnitRule();
+
+    @TestModuleOverrides
+    public List&amp;lt;Module&amp;gt; modulesToOverride() {
+        return asList(new TestModule() { ... });
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;functional_javafx_tests&quot;&gt;Functional JavaFX Tests&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;There are a handful of updates in this area. First, all methods may be executed in alphaetical order, carrying over their
+state from method to method. If one of them fails then all other methods will be marked as skipped. This is the same behavior
+found in Spock using the &lt;code&gt;@Stepwise&lt;/code&gt; annotation. You must apply the &lt;code&gt;FunctionalJavaFXRunner&lt;/code&gt; runner to the test case to enable
+this feature.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;GriffonTestFXClassRule&lt;/code&gt; can inject members on the running testcase. You will typically invoke this feature in a method
+annotated with &lt;code&gt;@Before&lt;/code&gt; (JUnit) or in the &lt;code&gt;setup()&lt;/code&gt; method (Spock).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;testfx_updates&quot;&gt;TestFX Updates&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Both &lt;code&gt;GriffonTestFXClassRule&lt;/code&gt; and &lt;code&gt;GriffonTestFXRule&lt;/code&gt; now have the capability to locate a &lt;code&gt;Window&lt;/code&gt; instance. There&amp;#8217;s also
+a brand new &lt;code&gt;WindowMatcher&lt;/code&gt; that can be used to assert the showing and focused state of a &lt;code&gt;Window&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;buildtime&quot;&gt;Buildtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;additional_key_values_in_application_properties&quot;&gt;Additional Key/Values in application.properties&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The &lt;code&gt;griffon&lt;/code&gt; configuration block has a new property that can be used to define additional key/value pairs that may be
+replaced in &lt;code&gt;application.properties&lt;/code&gt;; for example&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-groovy&quot; data-lang=&quot;groovy&quot;&gt;griffon {
+    disableDependencyResolution = false
+    includeGroovyDependencies = false
+    version = &apos;2.6.0&apos;
+    toolkit = &apos;javafx&apos;
+    applicationProperties = [
+        &apos;build.date&apos;     : buildDate,
+        &apos;build.time&apos;     : buildTime,
+        &apos;build.revision&apos; : versioning.info.commit,
+        &apos;my.property.key&apos;: &apos;my-value&apos;
+    ]
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The &lt;code&gt;application.properties&lt;/code&gt; must define matching replacement tokens, such as&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;application.name=@application.name@
+application.version=@application.version@
+build.date=@build.date@
+build.time=@build.time@
+build.revision=@build.revision@
+my.property.key=@my.property.key@&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Full binary compatibility report between Griffon 2.6.0 and 2.5.0 can be found
+&lt;a href=&quot;../reports/2.6.0/compatibility-report.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A list of fixed issues can be found at the
+&lt;a href=&quot;https://github.com/griffon/griffon/issues?q=milestone%3A2.6.0+is%3Aclosed&quot;&gt;2.6.0 milestone&lt;/a&gt; page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.5.0 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.5.0.html</link>
+      <pubDate>Tue, 1 Dec 2015 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">news/griffon_2.5.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_5_0_released&quot;&gt;Griffon 2.5.0 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.5.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Upgraded to Groovy 2.4.5&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A new interface, &lt;code&gt;ObservableContext&lt;/code&gt;, allows publication of events when a property is added, removed, or updated.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Context&lt;/code&gt; now sports typed getters.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Context&lt;/code&gt; can inject any members annotated with &lt;code&gt;@Contextual&lt;/code&gt; at any given time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Contextual injections on MVC members are automatically cleanup up during the destroy lifecycle phase of each MVC member.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;JavaFXAction&lt;/code&gt; has the following updates:&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;a &lt;code&gt;visible&lt;/code&gt; property that controls the visibility of the bound widget.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a &lt;code&gt;styleClass&lt;/code&gt; property that controls the stylable classes of the bound widget.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A more detailed description of the changes and compatibility issues can be found at the &lt;a href=&quot;/releasenotes/griffon_2.5.0.html&quot; target=&quot;_blank&quot;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;http://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;http://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.5.0 Release Notes</title>
+      <link>http://griffon-framework.org/releasenotes/griffon_2.5.0.html</link>
+      <pubDate>Tue, 1 Dec 2015 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">releasenotes/griffon_2.5.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_5_0_release_notes&quot;&gt;Griffon 2.5.0 Release Notes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following dependencies have been upgraded&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;com.google.code.findbugs:jsr305:3.0.1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.codehaus.groovy:groovy-all:2.4.5&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;com.jayway.awaitility:awaitility:1.7.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;com.jayway.awaitility:awaitility-groovy:1.7.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.slf4j:slf4j-simple:1.7.13&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.slf4j:slf4j-log4j:1.7.13&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;runtime&quot;&gt;Runtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;observable_contexts&quot;&gt;Observable Contexts&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A new interface, &lt;code&gt;griffon.core.ObservableContext&lt;/code&gt;, enables publication of events whenever a context property is added,
+removed, or updated; taking into account the origin (the current context or its parent context). This allows a much
+more dynamic interaciton between components that share a context.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;contextual_member_injection&quot;&gt;Contextual Member Injection&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Just like &lt;code&gt;griffon.core.injection.Injector&lt;/code&gt; can perform member injeciton on unmanaged entities, now &lt;code&gt;griffon.core.Context&lt;/code&gt;
+can perform member injection on any instance that has members annotated with &lt;code&gt;@Contextual&lt;/code&gt;. This is useful when a contextual
+value is not know ahead of time when MVC members are instantiated.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;automatic_cleanup_of_contextual_injections&quot;&gt;Automatic Cleanup of Contextual Injections&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Any MVC member that makes use of &lt;code&gt;@Contextual&lt;/code&gt; members will have those values nullified as part of their destroy lifecycle,
+freeing developers form manually clearing them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;javafx_support&quot;&gt;JavaFX Support&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;JavaFXAction&lt;/code&gt; supports two new properties:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;visible&lt;/code&gt;: used to control the visibility of the widget that&amp;#8217;s bound to this action.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;styleClass&lt;/code&gt;: used to set style classes on the bound widget.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;buildtime&quot;&gt;Buildtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;running_applications_in_debug_mode&quot;&gt;Running Applications in Debug Mode&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Project templates now include settings for running an application in debug mode (suspended) allowing an IDE to connect
+remotely to it. Simply invoke the following command&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code&gt;$ gradle -PdebugRun=true run&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Full binary compatibility report between Griffon 2.5.0 and 2.4.0 can be found
+&lt;a href=&quot;../reports/2.5.0/compatibility-report.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A list of fixed issues can be found at the
+&lt;a href=&quot;https://github.com/griffon/griffon/issues?q=milestone%3A2.5.0+is%3Aclosed&quot;&gt;2.5.0 milestone&lt;/a&gt; page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.4.0 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.4.0.html</link>
+      <pubDate>Tue, 1 Sep 2015 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">news/griffon_2.4.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_4_0_released&quot;&gt;Griffon 2.4.0 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.4.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Upgraded to Groovy 2.4.4 and Guice 4.0.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;New GDSL for SwingBuilder nodes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Guice modules may be annotated with &lt;code&gt;griffon.inject.DependsOn&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Query for a key&amp;#8217;s existence on a specific &lt;code&gt;griffon.core.Context&lt;/code&gt; or its hierarchy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Updates to MVCGroup relationship behavior.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Support contextual injections via &lt;code&gt;@Contextual&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Java8 specific property editors added:&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;java.time.LocalDate&lt;/code&gt;, &lt;code&gt;java.time.LocalDateTime&lt;/code&gt;, &lt;code&gt;java.time.LocalTime&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;extensions for &lt;code&gt;java.util.Calendar&lt;/code&gt; and &lt;code&gt;java.util.Date&lt;/code&gt; that can handle &lt;code&gt;java.time&lt;/code&gt; types.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;JavaFX support received lots up updates:&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;new AST transformations: &lt;code&gt;@ListChangeListener&lt;/code&gt; and &lt;code&gt;@MapChangeListener&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Automatically wrap listeners generated by &lt;code&gt;@ChangeListener&lt;/code&gt;, &lt;code&gt;@InvalidationListener&lt;/code&gt;, &lt;code&gt;@ListChangeListener&lt;/code&gt; and &lt;code&gt;@MapChangeListener&lt;/code&gt; with their Weak reference counterparts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;JavaFXUtils&lt;/code&gt; can bind &lt;code&gt;ToolBar&lt;/code&gt; buttons to actions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;JavaFXUtils.findElement&lt;/code&gt; works with more containers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;GraphicPropertyEditor&lt;/code&gt; can handle plain resources.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;New property editors:&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;LinearGradientPropertyEditor&lt;/code&gt;, &lt;code&gt;RadialGradientPropertyEditor&lt;/code&gt; and &lt;code&gt;PaintPropertyEditor&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A more detailed description of the changes and compatibility issues can be found at the &lt;a href=&quot;/releasenotes/griffon_2.4.0.html&quot; target=&quot;_blank&quot;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;http://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;http://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.4.0 Release Notes</title>
+      <link>http://griffon-framework.org/releasenotes/griffon_2.4.0.html</link>
+      <pubDate>Tue, 1 Sep 2015 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">releasenotes/griffon_2.4.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_4_0_release_notes&quot;&gt;Griffon 2.4.0 Release Notes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following dependencies have been upgraded&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;org.codehaus.groovy:groovy-all:2.4.4&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;runtime&quot;&gt;Runtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;java8_support&quot;&gt;Java8 Support&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;There is a new &lt;code&gt;griffon-core-java8&lt;/code&gt; module that delivers Java8 specific support. The first iteration of this module provides
+specialized &lt;code&gt;PropertyEditor&lt;/code&gt;s for &lt;code&gt;java.time.LocalDate&lt;/code&gt;, &lt;code&gt;java.time.LocalDateTime&lt;/code&gt; and &lt;code&gt;java.time.LocalTime&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;chained_propertyeditors&quot;&gt;Chained PropertyEditors&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It&amp;#8217;s now possible to chain several &lt;code&gt;PropertyEditor&lt;/code&gt;s that target the same source class. You must make use of
+&lt;code&gt;PropertyEditorResolver.registerEditor&lt;/code&gt; and &lt;code&gt;PropertyEditorResolver.findEditor&lt;/code&gt; instead of the JDK&amp;#8217;s &lt;code&gt;PropertyEditorManager&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;mvcgroup_relationships&quot;&gt;MVCGroup Relationships&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;An &lt;code&gt;MVCGroup&lt;/code&gt; can now supply the names of its children groups. When a parent &lt;code&gt;MVCGroup&lt;/code&gt; is destroyed so will its children,
+automatically. All references to &lt;code&gt;parent*&lt;/code&gt; members on a child artifact will be set to &lt;code&gt;null&lt;/code&gt; upon the group&amp;#8217;s destruction.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;context&quot;&gt;Context&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;MVC members may have their properties injected from the group&amp;#8217;s context. You just need to annotate the field or the property
+setter with &lt;code&gt;@Contextual&lt;/code&gt;, for example&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-groovy&quot; data-lang=&quot;groovy&quot;&gt;package org.example
+
+import javafx.inject.Inject
+import griffon.inject.Contextual
+
+class LoginController {
+    LoginModel model                  // injected by MVC group
+
+    @Inject
+    private LoginService loginService // injected by DI container
+
+    @Contextual
+    private Credentials credentials   // injected from context
+                                      // found under key = org.example.Credentials
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You may use &lt;code&gt;@Named&lt;/code&gt; to change the default key and &lt;code&gt;@Nonnull&lt;/code&gt; to specify a required injection.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;resources_messages_and_configuration&quot;&gt;Resources, Messages and Configuration&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It&amp;#8217;s now possible to decorate instances of &lt;code&gt;ResourceResolver&lt;/code&gt;, &lt;code&gt;MessageSource&lt;/code&gt; and &lt;code&gt;Configuration&lt;/code&gt; using a decorator for
+the respective type. The &lt;code&gt;griffon-groovy&lt;/code&gt; package for example, adds the capability to resolve simple messages and resources
+using Groovy&amp;#8217;s property syntax. Thus the following lines are equivalent&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-groovy&quot; data-lang=&quot;groovy&quot;&gt;application.messageSource.getMessage(&apos;some.key&apos;) == application.messageSource[&apos;some.key&apos;]
+application.resourceResolver.resolveResource(&apos;some.key&apos;) == application.resourceResolver[&apos;some.key&apos;]&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;javafx_support&quot;&gt;JavaFX Support&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;There are a couple of improvements in &lt;code&gt;JavaFXUtils&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The methods &lt;code&gt;findElement&lt;/code&gt; and &lt;code&gt;findNode&lt;/code&gt; work with more containers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Actions can be bound to &lt;code&gt;ToolBar&lt;/code&gt; buttons.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Also, the &lt;code&gt;GraphicPropertyEditor&lt;/code&gt; can handle plain resources, such as &lt;code&gt;images/icon.png&lt;/code&gt;, instead of an icon class argument
+as before. Additional property editors include &lt;code&gt;LinearGradientPropertyEditor&lt;/code&gt;, &lt;code&gt;RadialGradientPropertyEditor&lt;/code&gt; and &lt;code&gt;PaintPropertyEditor&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;buildtime&quot;&gt;Buildtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;ast_transformations&quot;&gt;AST Transformations&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;JavaFX support adds two new AST transformations: &lt;code&gt;@ListChangeListener&lt;/code&gt; and &lt;code&gt;@MapChangeListener&lt;/code&gt;. They enable the registration
+of &lt;code&gt;ListChangeListener&lt;/code&gt; and &lt;code&gt;MapChangeListener&lt;/code&gt; on JavaFX properties, much in the same way as &lt;code&gt;@PropertyListener&lt;/code&gt; works
+with &lt;code&gt;PropertyChangeListener&lt;/code&gt; and &lt;code&gt;PropertyChangeEvent&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;All listeners generated by &lt;code&gt;@ChangeListener&lt;/code&gt;, &lt;code&gt;@InvalidationListener&lt;/code&gt;, &lt;code&gt;@ListChangeListener&lt;/code&gt; and &lt;code&gt;@MapChangeListener&lt;/code&gt; can be
+ automatically wrapped with their Weak reference counterparts if the value of the &lt;code&gt;weak&lt;/code&gt; annotation member is set to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;swing_gdsl&quot;&gt;Swing GDSL&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For those developers that rely on IntelliJ IDEA, there&amp;#8217;s a new GDSL file that can autocomplete all nodes delivered by
+SwingBuilder.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h3&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The method &lt;code&gt;containsKey&lt;/code&gt; in &lt;code&gt;griffon.core.Context&lt;/code&gt; returns &lt;code&gt;true&lt;/code&gt; if the key exists in the current context or its hierarchy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The method &lt;code&gt;hasKey&lt;/code&gt; in &lt;code&gt;griffon.core.Context&lt;/code&gt; returns &lt;code&gt;true&lt;/code&gt; if the key exists in the current context only.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Full binary compatibility report between Griffon 2.4.0 and 2.3.0 can be found
+&lt;a href=&quot;../reports/2.4.0/compatibility-report.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A list of fixed issues can be found at the
+&lt;a href=&quot;https://github.com/griffon/griffon/issues?q=milestone%3A2.4.0+is%3Aclosed&quot;&gt;2.4.0 milestone&lt;/a&gt; page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.3.0 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.3.0.html</link>
+      <pubDate>Wed, 3 Jun 2015 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">news/griffon_2.3.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_3_0_released&quot;&gt;Griffon 2.3.0 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.3.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Upgraded to Groovy 2.4.3 and Guice 4.0.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;JavaFX support received lots up updates:&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;@FXObservable&lt;/code&gt; AST transformation can handle List/Map/Set properties correctly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;new AST transformations: &lt;code&gt;@ChangeListener&lt;/code&gt; and &lt;code&gt;@InvalidationListener&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Integration test support via &lt;code&gt;GriffonTestFXRule&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Functional test support via &lt;code&gt;GriffonTestFXClassRule&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Builder actions can be applied to comboBox nodes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Threading methods are now available on builder nodes, like in the old days.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Allow blank messages/resources to be formatted/resolved.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A more detailed description of the changes and compatibility issues can be found at the &lt;a href=&quot;/releasenotes/griffon_2.3.0.html&quot; target=&quot;_blank&quot;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;http://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;http://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.3.0 Release Notes</title>
+      <link>http://griffon-framework.org/releasenotes/griffon_2.3.0.html</link>
+      <pubDate>Wed, 3 Jun 2015 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">releasenotes/griffon_2.3.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_3_0_release_notes&quot;&gt;Griffon 2.3.0 Release Notes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following dependencies have been upgraded&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;org.codehaus.groovy:groovy-all:2.4.3&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.slf4j:slf4j-api:1.7.12&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;com.google.inject:guice:4.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;runtime&quot;&gt;Runtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;testing&quot;&gt;Testing&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/testfx/testfx&quot; target=&quot;_blank&quot;&gt;TestFX&lt;/a&gt; is the chosen library for testing JavaFX UIs. There are two modes
+of operation: integration and functional. The difference strives in that integration allows mocking and bindings to be overridden
+(like in unit mode) and the application instances is created for every single test; in functional mode no mocking should be used
+and no bindings can be overridden, also the application instance is created once per testcase.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;resources_and_messages&quot;&gt;Resources and Messages&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It&amp;#8217;s now possible to define an empty value for a resource or a message key. This is important to configure buttons and menus
+that should have icons but no text.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;builder_updates&quot;&gt;Builder Updates&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Threading methods, such as &lt;code&gt;runInsideUISync&lt;/code&gt; are now available as explicit methods on builder instances. This enables easier migration
+from Griffon 1.x where these methods were also available to View scripts. The JavaFX builder supports the construction of comboBox
+nodes using an action as an argument, same way as buttons and menus.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;buildtime&quot;&gt;Buildtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;ast_transformations&quot;&gt;AST Transformations&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;JavaFX support adds two new AST transformations: &lt;code&gt;@ChangeListener&lt;/code&gt; and &lt;code&gt;@InvalidationListener&lt;/code&gt;. They enable the registration
+of &lt;code&gt;ChangeListener&lt;/code&gt; and &lt;code&gt;InvalidationListener&lt;/code&gt; on JavaFX properties, much in the same way as &lt;code&gt;@PropertyListener&lt;/code&gt; works
+with &lt;code&gt;PropertyChangeListener&lt;/code&gt; and &lt;code&gt;PropertyChangeEvent&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;fxml_templates&quot;&gt;FXML Templates&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The &lt;code&gt;griffon-javafx-java&lt;/code&gt; template can now generate FXML files when a &lt;code&gt;view&lt;/code&gt; artifact is selected.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h3&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Usage of &lt;code&gt;CallableWithArgs&lt;/code&gt; in events has been deprecated in favor of &lt;code&gt;RunnableWithArgs&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;WindowShown&lt;/code&gt; and &lt;code&gt;WindowHidden&lt;/code&gt; events will send 2 arguments now: the name of the window and the window reference.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The injector API no longer requires a nested injector.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Full binary compatibility report between Griffon 2.3.0 and 2.2.0 can be found
+&lt;a href=&quot;../reports/2.3.0/compatibility-report.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A list of fixed issues can be found at the
+&lt;a href=&quot;https://github.com/griffon/griffon/issues?q=milestone%3A2.3.0+is%3Aclosed&quot;&gt;2.3.0 milestone&lt;/a&gt; page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.2.0 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.2.0.html</link>
+      <pubDate>Sun, 1 Mar 2015 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">news/griffon_2.2.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_2_0_released&quot;&gt;Griffon 2.2.0 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.2.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;An application wide &lt;a href=&quot;/guide/latest/api/griffon/core/Context.html&quot; target=&quot;_blank&quot;&gt;context&lt;/a&gt; that can be used to
+store key/value pairs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MVCGroups can have their own contexts too.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MVCGroups now expose their parent group (if not null).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Configuration&lt;/code&gt; instances can be made writable by wrapping them with &lt;code&gt;MutableConfiguration&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;breaking change!&lt;/strong&gt; Metadata, Environment and RunMode are no longer magic singletons.
+Instances of these classes can now be injected using &lt;code&gt;javax.inject.Inject&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A more detailed description of the changes and compatibility issues can be found at the &lt;a href=&quot;/releasenotes/griffon_2.2.0.html&quot; target=&quot;_blank&quot;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;http://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;http://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.2.0 Release Notes</title>
+      <link>http://griffon-framework.org/releasenotes/griffon_2.2.0.html</link>
+      <pubDate>Sun, 1 Mar 2015 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">releasenotes/griffon_2.2.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_2_0_release_notes&quot;&gt;Griffon 2.2.0 Release Notes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following dependencies have been upgraded&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;org.codehaus.groovy:groovy-all:2.4.1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.slf4j:slf4j-api:1.7.10&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;runtime&quot;&gt;Runtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;application&quot;&gt;Application&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Applications now have the capability to store key/value pairs inside a &lt;a href=&quot;/guide/latest/api/griffon/core/Context.html&quot; target=&quot;_blank&quot;&gt;Context&lt;/a&gt;.
+Contexts are hierarchical, meaning a child context may shadow keys available in a parent context. Values of shadowed keys
+are not modified; you can grab the original value by asking the owning context for it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;mvc&quot;&gt;MVC&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;MVCGroups now have a &lt;a href=&quot;/guide/latest/api/griffon/core/Context.html&quot; target=&quot;_blank&quot;&gt;Context&lt;/a&gt; of their own.
+This is useful for storing group only data that can be shared between MVC members of just controller actions.
+It&amp;#8217;s also possible to automatically inject context values as action arguments as long as said arguments are annotated
+with &lt;a href=&quot;/guide/latest/api/griffon/inject/Contextual.html&quot; target=&quot;_blank&quot;&gt;@griffon.inject.Contextual&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;configuration&quot;&gt;Configuration&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Configuration objects are made &lt;strong&gt;read-only&lt;/strong&gt; by default. Now you can make them writable if wrapped with
+&lt;a href=&quot;/guide/latest/api/griffon/core/MutableConfiguration.html&quot; target=&quot;_blank&quot;&gt;MutableConfiguration&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;swing&quot;&gt;Swing&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Icon resources support a new format (processed by &lt;a href=&quot;/guide/latest/api/griffon/swing/editors/IconPropertyEditor.html&quot; target=&quot;_blank&quot;&gt;IconPropertyEditor&lt;/a&gt;).
+The format is as follows&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code&gt;iconClassName|constructorArg&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Where &lt;code&gt;constructorArg&lt;/code&gt; is assumed to be a &lt;code&gt;String&lt;/code&gt;. Here&amp;#8217;s an example using the &lt;a href=&quot;https://github.com/griffon-plugins/griffon-fontawesome-plugin&quot; target=&quot;_blank&quot;&gt;griffon-fontawesome-plugin&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;org.example.AppController.action.Preferences.icon=griffon.swing.support.fontawesome.FontAwesomeIcon|fa-gear&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;javafx&quot;&gt;JavaFX&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Icon resources support a new format (processed by &lt;a href=&quot;/guide/latest/api/griffon/javafx/support/JavaFXUtils.html&quot; target=&quot;_blank&quot;&gt;JavaFXUtils&lt;/a&gt;).
+The format is as follows&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code&gt;iconClassName|constructorArg&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Where &lt;code&gt;constructorArg&lt;/code&gt; is assumed to be a &lt;code&gt;String&lt;/code&gt;. Here&amp;#8217;s an example using the &lt;a href=&quot;https://github.com/griffon-plugins/griffon-fontawesome-plugin&quot; target=&quot;_blank&quot;&gt;griffon-fontawesome-plugin&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;org.example.AppController.action.Preferences.icon=griffon.javafx.support.fontawesome.FontAwesomeIcon|fa-gear&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Additionally &lt;a href=&quot;/guide/latest/api/griffon/javafx/support/JavaFXUtils.html&quot; target=&quot;_blank&quot;&gt;JavaFXUtils&lt;/a&gt; has the following functionality&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;configure a &lt;a href=&quot;http://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/MenuItem.html&quot; target=&quot;_blank&quot;&gt;MenuItem&lt;/a&gt; using a &lt;code&gt;&lt;a href=&quot;/guide/latest/api/griffon/javafx/support/JavaFXAction.html&quot; target=&quot;_blank&quot;&gt;JavaFXAction&lt;/a&gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;set an icon on a &lt;a href=&quot;http://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/MenuItem.html&quot; target=&quot;_blank&quot;&gt;MenuItem&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Full binary compatibility report between Griffon 2.2.0 and 2.1.0 can be found
+&lt;a href=&quot;../reports/2.2.0/compatibility-report.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A list of fixed issues can be found at the
+&lt;a href=&quot;https://github.com/griffon/griffon/issues?q=milestone%3A2.2.0+is%3Aclosed&quot;&gt;2.2.0 milestone&lt;/a&gt; page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.1.0 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.1.0.html</link>
+      <pubDate>Mon, 8 Dec 2014 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">news/griffon_2.1.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_1_0_released&quot;&gt;Griffon 2.1.0 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.1.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;MVC group management has been overhauled. It should be much easier and intuitive to work with MVC groups now.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Actions can have their properties updated at any time using &lt;code&gt;ActionHandlers&lt;/code&gt;. Think for example updating an action&amp;#8217;s
+enabled state if its security constraints are not met.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Addons can supply startup groups.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lazybones project templates have been updated.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Buildtime and runtime dependencies have been updated.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Be warned that changes made to &lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/mvc/MVCGroup.html&quot; target=&quot;_blank&quot;&gt;MVCGroup&lt;/a&gt;&lt;/code&gt; and
+&lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/mvc/MVCGroupManager.html&quot; target=&quot;_blank&quot;&gt;MVCGroupManager&lt;/a&gt;&lt;/code&gt; break binary compatibility. Migration
+should be straight forward, developers that make explicit use of the &lt;code&gt;buildMVCGroup&lt;/code&gt;, &lt;code&gt;createMVCGroup&lt;/code&gt;
+and &lt;code&gt;withMVCGroup&lt;/code&gt; methods should be the only ones concerned.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A more detailed description of the changes and compatibility issues can be found at the &lt;a href=&quot;/releasenotes/griffon_2.1.0.html&quot; target=&quot;_blank&quot;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;http://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;http://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.1.0 Release Notes</title>
+      <link>http://griffon-framework.org/releasenotes/griffon_2.1.0.html</link>
+      <pubDate>Mon, 8 Dec 2014 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">releasenotes/griffon_2.1.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_1_0_release_notes&quot;&gt;Griffon 2.1.0 Release Notes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following dependencies have been upgraded&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;junit:junit:4.12&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;org.codehaus.groovy:groovy-all:2.3.8&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;com.jayway.awaitility:awaitility:1.6.3&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;com.jayway.awaitility:awaitility-groovy:1.6.3&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;runtime&quot;&gt;Runtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;mvc&quot;&gt;MVC&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In previous versions instances of &lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/mvc/MVCGroup.html&quot; target=&quot;_blank&quot;&gt;MVCGroup&lt;/a&gt;&lt;/code&gt; would let you
+create other &lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/mvc/MVCGroup.html&quot; target=&quot;_blank&quot;&gt;MVCGroup&lt;/a&gt;&lt;/code&gt; instances, with no direct relationship
+between the two unless explicitly stated (via an additional argument Map). This is no longer the case.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Child groups may now have a direct relationship with the parent group that created them. The &lt;code&gt;parentGroup&lt;/code&gt; property will be
+set to the correct &lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/mvc/MVCGroup.html&quot; target=&quot;_blank&quot;&gt;MVCGroup&lt;/a&gt;&lt;/code&gt; instance in every group member
+that defines it. Fine grained parent properties matching each member (such as &lt;code&gt;parentController&lt;/code&gt;, &lt;code&gt;parentModel&lt;/code&gt; and
+&lt;code&gt;parentView&lt;/code&gt;) will also be set automatically. There are 2 sample applications that demonstrate this new feature in action&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/griffon/griffon/tree/master/samples/editor-swing-groovy&quot; target=&quot;_blank&quot;&gt;editor-swing-groovy&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/griffon/griffon/tree/master/samples/editor-swing-java&quot; target=&quot;_blank&quot;&gt;editor-swing-java&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/mvc/MVCGroupManager.html&quot; target=&quot;_blank&quot;&gt;MVCGroupManager&lt;/a&gt;&lt;/code&gt; added getter/finder methods for
+Controllers, Models and Views. Finder methods may return a null value if the matching artifact was not found. Getter
+methods on the other hand will throw a &lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/exceptions/ArtifactNotFoundException.html&quot; target=&quot;_blank&quot;&gt;ArtifactNotFoundException&lt;/a&gt;&lt;/code&gt;
+if the artifact could not be found.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The &lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/mvc/MVCHandler.html&quot; target=&quot;_blank&quot;&gt;MVCHandler&lt;/a&gt;&lt;/code&gt; interface has been altered to better handle MVCGroups.
+Methods that sport &lt;code&gt;MVCGroup&lt;/code&gt; in their name work with instances (&lt;code&gt;createMVCGroup&lt;/code&gt; and &lt;code&gt;withMCGroup&lt;/code&gt;) of
+&lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/mvc/MVCGroup.html&quot; target=&quot;_blank&quot;&gt;MVCGroup&lt;/a&gt;&lt;/code&gt;, either they take such type as argument or return
+instances of it. In contrast, methods that only have &lt;code&gt;MVC&lt;/code&gt; on their names (&lt;code&gt;createMVC&lt;/code&gt; and &lt;code&gt;withMC&lt;/code&gt;) work with individual
+MVC members, such as Controller, Model and View. The following table summarizes the changes&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all spread&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 25%;&quot;&gt;
+&lt;col style=&quot;width: 25%;&quot;&gt;
+&lt;col style=&quot;width: 25%;&quot;&gt;
+&lt;col style=&quot;width: 25%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;Old Name&lt;/th&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;New Name&lt;/th&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;Return Type&lt;/th&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;Args&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;buildMVCGroup&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;createMVCGroup&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;MVCGroup&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;createMVCGroup&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;createMVC&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;List&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;withMVCGroup&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;withMVCGroup&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;void&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;&lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/mvc/MVCGroupFunction.html&quot; target=&quot;_blank&quot;&gt;MVCGroupFunction&lt;/a&gt;&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;withMVCGroup&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;withMVC&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;void&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;&lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/mvc/MVCFunction.html&quot; target=&quot;_blank&quot;&gt;MVCFunction&lt;/a&gt;&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Finally, base artifacts such as Services can no longer create new MVCGroups by themselves, as this capability has been removed
+from the base &lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/artifact/GriffonArtifact.html&quot; target=&quot;_blank&quot;&gt;GriffonArtifact&lt;/a&gt;&lt;/code&gt; interface.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;actions&quot;&gt;Actions&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The &lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/controller/ActionHandler.html&quot; target=&quot;_blank&quot;&gt;ActionHandler&lt;/a&gt;&lt;/code&gt; interface supersedes
+&lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/controller/ActionInterceptor.html&quot; target=&quot;_blank&quot;&gt;ActionInterceptor&lt;/a&gt;&lt;/code&gt; interface, as it delivers
+a much better abstraction for configuring, handling and updating actions an their properties.
+&lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/controller/ActionManager.html&quot; target=&quot;_blank&quot;&gt;ActionManager&lt;/a&gt;&lt;/code&gt; also gained the capability to
+update an action or a set of actions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;addons&quot;&gt;Addons&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/core/addon/GriffonAddon.html&quot; target=&quot;_blank&quot;&gt;GriffonAddon&lt;/a&gt;&lt;/code&gt;s now have the capability of supplying
+startup groups. These groups are initialized during the &lt;code&gt;STARTUP&lt;/code&gt; phase, right after the startup groups defined by the application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;buildtime&quot;&gt;Buildtime&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;types_metadata&quot;&gt;Types Metadata&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The &lt;code&gt;&lt;a href=&quot;http://docs.oracle.com/javase/7/docs/api/java/util/ServiceLoader.html&quot; target=&quot;_blank&quot;&gt;java.util.ServiceLoader&lt;/a&gt;&lt;/code&gt; class
+allows you to load instances of a particular type as long as it conforms to the following rules&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;the type implements a well known interface.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the type is a concrete class.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the type is a public, non-static class.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the type provides a no-args constructor.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;However sometimes you&amp;#8217;d need to load types in a similar fashion without being forced by the last 3 rules, that is, you may
+want to load a type that is an interface or that provides a constructor with one or more arguments. If you ever encounter
+this scenario then annotate the classes/interfaces with &lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/metadata/TypeProviderFor.html&quot; target=&quot;_blank&quot;&gt;@TypeProviderFor&lt;/a&gt;&lt;/code&gt;
+and load them using &lt;code&gt;&lt;a href=&quot;/guide/2.1.0/api/griffon/util/ServiceLoaderUtils.html&quot; target=&quot;_blank&quot;&gt;ServiceLoaderUtils&lt;/a&gt;&lt;/code&gt;.
+For example the &lt;code&gt;griffon-mybatis-plugin&lt;/code&gt; loads instances of
+&lt;code&gt;&lt;a href=&quot;http://griffon-plugins.github.io/griffon-mybatis-plugin/api/griffon/plugins/mybatis/MybatisMapper.html&quot; target=&quot;_blank&quot;&gt;MybatisMapper&lt;/a&gt;&lt;/code&gt;
+using this mechanism.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Full binary compatibility report between Griffon 2.1.0 and 2.0.0 can be found
+&lt;a href=&quot;../reports/2.1.0/compatibility-report.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A list of fixed issues can be found at the
+&lt;a href=&quot;https://github.com/griffon/griffon/issues?q=milestone%3A2.1.0+is%3Aclosed&quot;&gt;2.1.0 milestone&lt;/a&gt; page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.0.0 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.0.0.html</link>
+      <pubDate>Mon, 29 Sep 2014 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">news/griffon_2.0.0.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_0_0_released&quot;&gt;Griffon 2.0.0 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.0.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This is it, Griffon 2.0.0 is finally out!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Plugin dependencies were upgraded to their latest versions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;http://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;http://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.0.0.RC2 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.0.0.RC2.html</link>
+      <pubDate>Mon, 11 Aug 2014 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">news/griffon_2.0.0.RC2.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_0_0_rc2_released&quot;&gt;Griffon 2.0.0.RC2 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.0.0.RC2!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This is the second release candidate of Griffon 2.0.0. If all goes according to plan the next release
+will be 2.0.0 final in a few weeks time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Groovy support upgraded to Groovy 2.3.6.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pivot support upgraded to Groovy 2.0.4.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lots of updates applied to Lazybones application templates.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Properly sort auto-loaded modules in tests (test modules are placed last).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;More content added to the &lt;a href=&quot;../guide/2.0.0.RC2/index.html&quot;&gt;Griffon Guide&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;http://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;http://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.0.0.RC1 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.0.0.RC1.html</link>
+      <pubDate>Tue, 29 Jul 2014 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">news/griffon_2.0.0.RC1.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_0_0_rc1_released&quot;&gt;Griffon 2.0.0.RC1 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.0.0.RC1!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This is the first release candidate of Griffon 2.0.0. If all goes according to plan the next release
+will be 2.0.0 final in a few weeks time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Groovy support upgraded to Groovy 2.3.5.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Several build plugins updated to their latest versions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Addition of a master pom file for application projects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enable mavenLocal() on gradle-griffon plugins by default.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lots of updates applied to Lazybones application templates.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;More content added to the &lt;a href=&quot;../guide/2.0.0.RC1/index.html&quot;&gt;Griffon Guide&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;https://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;https://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.0.0.BETA3 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.0.0.BETA3.html</link>
+      <pubDate>Thu, 3 Jul 2014 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">news/griffon_2.0.0.BETA3.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_0_0_beta3_released&quot;&gt;Griffon 2.0.0.BETA3 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.0.0.BETA3!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This release marks Griffon 2.0 as feature complete. Remaining efforts will be concentrated
+in getting the Guide up to date and getting base plugins out of the door
+(miglayout, glazedlists, datasource, etc).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Build has been upgraded to Gradle 2.0. This is the new baseline.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lazybones templates allow creation of artifacts (leveraging Lazybones new subtemplate feature).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spock is added as default testCompile dependency on project templates (those configured with Gradle).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;There&amp;#8217;s a second gradle plugin (&lt;code&gt;gradle-griffon-build-plugin&lt;/code&gt;) used in plugin projects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;more content added to the &lt;a href=&quot;http://griffon.github.io/griffon/guide/&quot;&gt;Griffon Guide&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;https://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;https://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.0.0.BETA2 Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.0.0.BETA2.html</link>
+      <pubDate>Fri, 20 Jun 2014 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">news/griffon_2.0.0.BETA2.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_0_0_beta2_released&quot;&gt;Griffon 2.0.0.BETA2 Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.0.0.BETA2!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This release continues the work of the first beta release by strengthening the build
+options available to Griffon application developers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The specialized JavaFXGriffonView failed to locate a suitable FXML file by convention.
+This is now fixed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lazybones templates produce a &lt;code&gt;pom.xml&lt;/code&gt; besides &lt;code&gt;build.gradle&lt;/code&gt;. You can now build
+Griffon projects with either Maven or Gradle.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a Gradle plugin that applies the Griffon project conventions is also available.
+The Lazybones templates are aware of this plugin.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;more content added to the &lt;a href=&quot;http://griffon.github.io/griffon/guide/&quot;&gt;Griffon Guide&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;API javadoc available online at &lt;a href=&quot;http://griffon.github.io/griffon/guide/api/&quot; class=&quot;bare&quot;&gt;http://griffon.github.io/griffon/guide/api/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;beautified API sources available online at &lt;a href=&quot;http://griffon.github.io/griffon/guide/api-src/&quot; class=&quot;bare&quot;&gt;http://griffon.github.io/griffon/guide/api-src/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at &lt;a href=&quot;https://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;https://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&amp;#8201;&amp;#8212;&amp;#8201;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Griffon 2.0.0.BETA Released</title>
+      <link>http://griffon-framework.org/news/griffon_2.0.0.BETA.html</link>
+      <pubDate>Sun, 8 Jun 2014 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">news/griffon_2.0.0.BETA.html</guid>
+      <description>
+      &lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;griffon_2_0_0_beta_released&quot;&gt;Griffon 2.0.0.BETA Released&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon team is happy to announce the release of Griffon 2.0.0.BETA, hot on
+the heels of &lt;a href=&quot;http://gr8conf.eu&quot;&gt;Gr8conf EU&lt;/a&gt;!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This release marks an important milestone in the framework&amp;#8217;s history as it lets go
+of the last remaining legacy bits inherit from the Grails codebase (the build system)
+while embracing the latest tools available in the Groovy Ecosystem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The griffon command line tool is no more. Long live Gradle! From now on, every Griffon
+project is a valid Gradle project. There&amp;#8217;s no longer a need for custom IDE plugins as
+Gradle is well supported by all IDEs. An often brought subject, that of dependency
+resolution, is now rendered moot as Gradle is much better at handling this particular
+topic than the griffon command ever was.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following list summarizes the changes brought by this release&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;the new JDK baseline is JDK7.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the Griffon 2.0 API is JDK8 friendly, which means you may use lambda expressions.
+where a functional interface is expected.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Groovy support has been moved to its own plugin, thus enabling developers to write.
+applications with just Java, drastically reducing the deployment size of an application.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;JSR 330 is used in core, enabling better module reusability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the runtime API is mostly binary compatible though classes have been moved to other packages.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;archetype support is now provided by &lt;a href=&quot;https://github.com/pledbrook/lazybones&quot;&gt;Lazybones&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The latest version of the Griffon Guide is available at &lt;a href=&quot;http://griffon.github.io/griffon/guide/index.html&quot; class=&quot;bare&quot;&gt;http://griffon.github.io/griffon/guide/index.html&lt;/a&gt;
+New binaries are posted at &lt;a href=&quot;https://bintray.com/griffon&quot;&gt;Griffon&amp;#8217;s Bintray repository&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Griffon Guide includes a section about migration&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;literalblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;http://griffon.github.io/griffon/guide/index.html#_appendix_migration&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Please take special note about migrating existing Griffon projects from 1.X to 2.X: all
+plugins from the 1.X series do not work with Griffon 2.X. Update versions of popular plugins
+will begin to appear in the coming days. Keep an eye on&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;literalblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;https://bintray.com/griffon/griffon-plugins&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Despite this, we look forward to your feedback. Please report any problems you find to
+the Griffon User list, or better yet file a bug at &lt;a href=&quot;https://github.com/griffon/griffon/issues&quot; class=&quot;bare&quot;&gt;https://github.com/griffon/griffon/issues&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Remember you can also contact the team on Twitter: &lt;a href=&quot;http://twitter.com/theaviary&quot;&gt;@theaviary&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to all who contributed to this release!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&amp;#8201;&amp;#8212;&amp;#8201;The Griffon Team&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+
+  </channel> 
+</rss>

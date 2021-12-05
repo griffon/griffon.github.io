@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <url>
+        <loc>http://griffon-framework.orgdocumentation.html</loc>
+        <lastmod>2018-11-06</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgtutorials/3_mvcgroups_javafx.html</loc>
+        <lastmod>2018-11-06</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgtutorials/2_mvcgroups_swing.html</loc>
+        <lastmod>2018-11-06</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgtutorials/1_getting_started.html</loc>
+        <lastmod>2018-11-06</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgtutorials/6_minimalistic_build.html</loc>
+        <lastmod>2018-11-06</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgtutorials/5_mvc_patterns.html</loc>
+        <lastmod>2018-11-06</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgplugins.html</loc>
+        <lastmod>2018-06-09</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgtutorials/4_javafx_views.html</loc>
+        <lastmod>2018-06-05</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgdevelopment.html</loc>
+        <lastmod>2018-06-05</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgabout.html</loc>
+        <lastmod>2018-06-05</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgwhygriffon.html</loc>
+        <lastmod>2018-06-05</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgtutorials/index.html</loc>
+        <lastmod>2018-06-05</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.15.1.html</loc>
+        <lastmod>2018-11-06</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.15.1.html</loc>
+        <lastmod>2018-11-06</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.15.0.html</loc>
+        <lastmod>2018-06-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.15.0.html</loc>
+        <lastmod>2018-06-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.14.0.html</loc>
+        <lastmod>2018-03-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.14.0.html</loc>
+        <lastmod>2018-03-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.13.0.html</loc>
+        <lastmod>2017-12-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.13.0.html</loc>
+        <lastmod>2017-12-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.12.0.html</loc>
+        <lastmod>2017-09-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.12.0.html</loc>
+        <lastmod>2017-09-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.11.0.html</loc>
+        <lastmod>2017-06-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.11.0.html</loc>
+        <lastmod>2017-06-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.10.0.html</loc>
+        <lastmod>2017-03-02</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.10.0.html</loc>
+        <lastmod>2017-03-02</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.9.1.html</loc>
+        <lastmod>2016-12-02</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.9.1.html</loc>
+        <lastmod>2016-12-02</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.9.0.html</loc>
+        <lastmod>2016-12-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.9.0.html</loc>
+        <lastmod>2016-12-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.8.0.html</loc>
+        <lastmod>2016-09-29</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.8.0.html</loc>
+        <lastmod>2016-09-29</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.7.0.html</loc>
+        <lastmod>2016-06-20</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.7.0.html</loc>
+        <lastmod>2016-06-20</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.6.0.html</loc>
+        <lastmod>2016-03-04</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.6.0.html</loc>
+        <lastmod>2016-03-04</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.5.0.html</loc>
+        <lastmod>2015-12-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.5.0.html</loc>
+        <lastmod>2015-12-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.4.0.html</loc>
+        <lastmod>2015-09-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.4.0.html</loc>
+        <lastmod>2015-09-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.3.0.html</loc>
+        <lastmod>2015-06-03</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.3.0.html</loc>
+        <lastmod>2015-06-03</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.2.0.html</loc>
+        <lastmod>2015-03-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.2.0.html</loc>
+        <lastmod>2015-03-01</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/griffon_2.1.0.html</loc>
+        <lastmod>2014-12-08</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.1.0.html</loc>
+        <lastmod>2014-12-08</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.0.0.html</loc>
+        <lastmod>2014-09-29</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.0.0.RC2.html</loc>
+        <lastmod>2014-08-11</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.0.0.RC1.html</loc>
+        <lastmod>2014-07-29</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.0.0.BETA3.html</loc>
+        <lastmod>2014-07-03</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.0.0.BETA2.html</loc>
+        <lastmod>2014-06-20</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/griffon_2.0.0.BETA.html</loc>
+        <lastmod>2014-06-08</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgnews/index.html</loc>
+        <lastmod>2018-06-05</lastmod>
+    </url>
+
+    <url>
+        <loc>http://griffon-framework.orgreleasenotes/index.html</loc>
+        <lastmod>2018-06-05</lastmod>
+    </url>
+
+</urlset>

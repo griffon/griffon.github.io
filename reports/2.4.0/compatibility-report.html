@@ -1,0 +1,1934 @@
+<!DOCTYPE html><html>
+  <head>
+    <title>Binary Compatibility Report - griffon-2.4.0</title>
+    <style>
+                        body{margin:0;padding:0;font-family:sans-serif;font-size:12pt;}
+                        body,a,a:visited{color:#303030;}
+                        #content{padding-left:50px;padding-right:50px;padding-top:30px;padding-bottom:30px;}
+                        #content h1{font-size:160%;margin-bottom:10px;}
+                        #footer{margin-top:100px;font-size:80%;white-space:nowrap;}
+                        #footer,#footer a{color:#a0a0a0;}
+                        ul{margin-left:0;}
+                        h1,h2,h3{white-space:nowrap;}
+                        h2{font-size:120%;}
+                        div.selected{display:block;}
+                        div.deselected{display:none;}
+                        #maintable{width:100%;border-collapse:collapse;}
+                        #maintable th,#maintable td{border-bottom:solid #d0d0d0 1px;}
+                        #maintable td{vertical-align:top}
+                        th{text-align:left;white-space:nowrap;padding-left:2em;}
+                        th:first-child{padding-left:0;}
+                        td{padding-left:2em;padding-top:5px;padding-bottom:5px;}
+                        td:first-child{padding-left:0;width:30%}
+                        td.numeric,th.numeric{text-align:right;}
+                        span.code{display:inline-block;margin-top:0em;margin-bottom:1em;}
+                        span.code pre{font-size:11pt;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px;margin:0;background-color:#f7f7f7;border:solid 1px #d0d0d0;min-width:700px;width:auto !important;width:700px;}
+                        ul{margin:0px;padding:0px;}
+                        .warning,.warning a{color:#fbcc45;}
+                        .error,.error a{color:#b60808;}
+                        .info, .info a{color:#3879d9}
+                        #summary {margin-top: 30px;margin-bottom: 40px;border: solid 2px #d0d0d0;width:400px}
+                        #summary table{border:none;}
+                        #summary td{vertical-align:top;width:110px;padding-top:15px;padding-bottom:15px;text-align:center;}
+                        #summary td p{margin:0;}
+                       </style>
+  </head>
+  <body>
+    <div id='content'>
+      <h1>Binary Compatibility Report - griffon-2.4.0</h1>
+      <div id='summary'>
+        <table>
+          <tr>
+            <td>
+              <p class='error'>ERROR</p>
+              <div>12</div>
+            </td>
+            <td>
+              <p class='warning'>WARNING</p>
+              <div>0</div>
+            </td>
+            <td>
+              <p class='info'>INFO</p>
+              <div>381</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <table id='maintable'>
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Results</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>griffon.builder.javafx.factory.FXMLDelegate</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.builder.javafx.factory.FXMLDelegate added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.builder.javafx.factory.FXMLFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.builder.javafx.factory.FXMLFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.Context</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public boolean hasKey(java.lang.String)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.util.Set keySet()' has been added to an interface
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.ContextFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.ContextFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.ExecutorServiceManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.util.Collection getExecutorServices()' has been added to an interface
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.BigDecimalPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.BigIntegerPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.BooleanPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsBoolean(java.lang.Boolean)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.BytePropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.CalendarPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.DatePropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.DoublePropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.EnumPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.ExtendedPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(4000): </span>Added java.beans.PropertyEditor to the set of implemented interfaces
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.FilePropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.FloatPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.IntegerPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.LongPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.PropertyEditorChain</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.editors.PropertyEditorChain added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.PropertyEditorResolver</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void clear()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void registerEditor(java.lang.Class, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void unregisterEditor(java.lang.Class)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.ShortPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.URIPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsFile(java.io.File)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.URLPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsFile(java.io.File)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.env.GriffonEnvironment</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getBuildRevision()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.i18n.GroovyAwareMessageSource</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.i18n.GroovyAwareMessageSource added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.mvc.MVCGroup</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.util.Map getChildrenGroups()' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void notifyMVCGroupDestroyed(java.lang.String)' has been added to an interface
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.mvc.MVCGroupConfigurationFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.mvc.MVCGroupConfigurationFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.mvc.MVCGroupFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.mvc.MVCGroupFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.resources.GroovyAwareResourceResolver</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.resources.GroovyAwareResourceResolver added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.editors.ColorPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double getMapValue(java.util.Map, java.lang.String, double)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.Number)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.editors.Dimension2DPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double getMapValue(java.util.Map, java.lang.String, double)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.editors.GraphicPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(6009): </span>Accessibility of field imagePropertyEditor has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsClassWithArg(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void handleWithImagePropertyEditor(java.lang.Object)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.editors.ImagePropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsClassWithArg(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsFile(java.io.File)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsInputStream(java.io.InputStream)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsURI(java.net.URI)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsURL(java.net.URL)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.editors.InsetsPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double getMapValue(java.util.Map, java.lang.String, double)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.editors.LinearGradientPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.editors.LinearGradientPropertyEditor added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.editors.PaintPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.editors.PaintPropertyEditor added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.editors.Point2DPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double getMapValue(java.util.Map, java.lang.String, double)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.editors.RadialGradientPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.editors.RadialGradientPropertyEditor added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.editors.Rectangle2DPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double getMapValue(java.util.Map, java.lang.String, double)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.JavaFXAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean getVisible()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isEnabled()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isSelected()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isVisible()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setVisible(boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.property.BooleanProperty visibleProperty()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.JavaFXUtils</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7005): </span>Parameter 1 of 'public void connectActions(javafx.scene.Node, griffon.core.artifact.GriffonController)' has changed its type to java.lang.Object
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void configure(javafx.scene.control.ToggleButton, griffon.javafx.support.JavaFXAction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void configure(javafx.scene.control.CheckBox, griffon.javafx.support.JavaFXAction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void configure(javafx.scene.control.RadioButton, griffon.javafx.support.JavaFXAction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void configure(javafx.scene.control.CheckMenuItem, griffon.javafx.support.JavaFXAction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void configure(javafx.scene.control.RadioMenuItem, griffon.javafx.support.JavaFXAction)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.pivot.editors.BoundsPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int getMapValue(java.util.Map, java.lang.String, int)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.pivot.editors.ColorPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int getMapValue(java.util.Map, java.lang.String, int)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.Number)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.pivot.editors.DimensionsPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int getMapValue(java.util.Map, java.lang.String, int)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.pivot.editors.InsetsPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int getMapValue(java.util.Map, java.lang.String, int)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.pivot.editors.PointPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int getMapValue(java.util.Map, java.lang.String, int)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.BufferedImagePropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsFile(java.io.File)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsImageInputStream(javax.imageio.stream.ImageInputStream)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsInputStream(java.io.InputStream)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsURI(java.net.URI)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsURL(java.net.URL)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.ColorPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int getMapValue(java.util.Map, java.lang.String, int)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.Number)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.DimensionPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int getMapValue(java.util.Map, java.lang.String, int)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.FontPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.lang.String formatStyle(java.awt.Font)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.lang.String getMapValue(java.util.Map, java.lang.String, java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parseSize(java.lang.Object, java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int resolveStyle(java.lang.Object, java.lang.String)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.GradientPaintPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.lang.Object getMapValue(java.util.Map, java.lang.String, java.lang.Object)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private boolean parseBoolean(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.IconPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsByteArray(byte[])' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsClassWithArg(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsFile(java.io.File)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsImage(java.awt.Image)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsImageInputStream(javax.imageio.stream.ImageInputStream)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsInputStream(java.io.InputStream)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsURI(java.net.URI)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsURL(java.net.URL)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.ImagePropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsByteArray(byte[])' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsFile(java.io.File)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsImageInputStream(javax.imageio.stream.ImageInputStream)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsInputStream(java.io.InputStream)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsURI(java.net.URI)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsURL(java.net.URL)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.InsetsPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int getMapValue(java.util.Map, java.lang.String, int)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.LinearGradientPaintPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.lang.String formatColors(java.awt.Color[])' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.lang.String formatFractions(float[])' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.lang.Object getMapValue(java.util.Map, java.lang.String, java.lang.Object)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.awt.Color[] parseColors(java.lang.Object, java.lang.Object)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.awt.Color[] parseColors(java.lang.Object, java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.awt.Color[] parseColors(java.lang.Object, java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.awt.MultipleGradientPaint$CycleMethod parseCyclicMethod(java.lang.Object, java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float[] parseFractions(java.lang.Object, java.lang.Object)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float[] parseFractions(java.lang.Object, java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float[] parseFractions(java.lang.Object, java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.Point2DPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double getMapValue(java.util.Map, java.lang.String, int)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.PointPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int getMapValue(java.util.Map, java.lang.String, int)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsNumber(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.PolygonPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.RadialGradientPaintPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.lang.String formatColors(java.awt.Color[])' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.lang.String formatFractions(float[])' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.lang.Object getMapValue(java.util.Map, java.lang.String, java.lang.Object)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.awt.Color[] parseColors(java.lang.Object, java.lang.Object)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.awt.Color[] parseColors(java.lang.Object, java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.awt.Color[] parseColors(java.lang.Object, java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private java.awt.MultipleGradientPaint$CycleMethod parseCyclicMethod(java.lang.Object, java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float[] parseFractions(java.lang.Object, java.lang.Object)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float[] parseFractions(java.lang.Object, java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float[] parseFractions(java.lang.Object, java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private float parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.Rectangle2DPropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double getMapValue(java.util.Map, java.lang.String, double)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private double parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.editors.RectanglePropertyEditor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int getMapValue(java.util.Map, java.lang.String, int)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsList(java.util.List)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsMap(java.util.Map)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private void handleAsString(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parse(java.lang.Number)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private int parseValue(java.lang.Object)' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.transform.ChangeListener</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public boolean weak()' has been added to an interface
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.transform.InvalidationListener</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public boolean weak()' has been added to an interface
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.transform.ListChangeListener</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.transform.ListChangeListener added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.transform.MapChangeListener</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.transform.MapChangeListener added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.util.AnnotationUtils</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public java.lang.String nameFor(java.lang.Object, java.lang.String)' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.annotation.Annotation[] annotationsOfMethodParameter(java.lang.reflect.Method, int)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.annotation.Annotation findAnnotation(java.lang.annotation.Annotation[], java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String nameFor(java.lang.reflect.Field)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String nameFor(java.lang.reflect.Method)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.util.GriffonApplicationUtils</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7007): </span>Method 'public boolean getIsJdk14()' has been deprecated
+                </li>
+                <li>
+                  <span class='info'>INFO(7007): </span>Method 'public boolean getIsJdk15()' has been deprecated
+                </li>
+                <li>
+                  <span class='info'>INFO(7007): </span>Method 'public boolean getIsJdk16()' has been deprecated
+                </li>
+                <li>
+                  <span class='info'>INFO(7007): </span>Method 'public boolean getIsJdk17()' has been deprecated
+                </li>
+                <li>
+                  <span class='info'>INFO(7007): </span>Method 'public boolean getIsJdk18()' has been deprecated
+                </li>
+                <li>
+                  <span class='info'>INFO(7007): </span>Method 'public boolean isJdk14()' has been deprecated
+                </li>
+                <li>
+                  <span class='info'>INFO(7007): </span>Method 'public boolean isJdk15()' has been deprecated
+                </li>
+                <li>
+                  <span class='info'>INFO(7007): </span>Method 'public boolean isJdk16()' has been deprecated
+                </li>
+                <li>
+                  <span class='info'>INFO(7007): </span>Method 'public boolean isJdk17()' has been deprecated
+                </li>
+                <li>
+                  <span class='info'>INFO(7007): </span>Method 'public boolean isJdk18()' has been deprecated
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean getIsJdk4()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean getIsJdk5()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean getIsJdk6()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean getIsJdk7()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean getIsJdk8()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean getIsJdk9()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean getIsWindows10()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isJdk4()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isJdk5()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isJdk6()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isJdk7()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isJdk8()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isJdk9()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isWindows10()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.util.GriffonClassUtils</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.reflect.Field[] getAllDeclaredFields(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isArtifactMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isBasicMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isContributionMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isEventHandler(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isEventPublisherMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isGetterMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isGroovyInjectedMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isInstanceMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isMessageSourceMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isMvcMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isObservableMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isPlainMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isResourceHandlerMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isResourceResolverMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isSetterMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isThreadingMethod(java.lang.reflect.Method, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public byte[] requireNonEmpty(byte[])' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public byte[] requireNonEmpty(byte[], java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public short[] requireNonEmpty(short[])' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public short[] requireNonEmpty(short[], java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public int[] requireNonEmpty(int[])' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public int[] requireNonEmpty(int[], java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public long[] requireNonEmpty(long[])' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public long[] requireNonEmpty(long[], java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public float[] requireNonEmpty(float[])' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public float[] requireNonEmpty(float[], java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public double[] requireNonEmpty(double[])' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public double[] requireNonEmpty(double[], java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public char[] requireNonEmpty(char[])' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public char[] requireNonEmpty(char[], java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean[] requireNonEmpty(boolean[])' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean[] requireNonEmpty(boolean[], java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setFieldValueNoException(java.lang.Object, java.lang.String, java.lang.Object)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setPropertyOrFieldValueNoException(java.lang.Object, java.lang.String, java.lang.Object)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.AbstractContext</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean containsKey(java.lang.String)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.ConfigurationDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(3004): </span>Removed abstract modifier from class
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.Map asFlatMap()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.ResourceBundle asResourceBundle()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean containsKey(java.lang.String)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.ConfigurationDecoratorFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.ConfigurationDecoratorFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.DefaultConfigurationDecoratorFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.DefaultConfigurationDecoratorFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.DefaultContext</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7003): </span>Method 'public boolean containsKey(java.lang.String)' has been removed, but an inherited definition exists.
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean hasKey(java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.Set keySet()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.DefaultContextFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.DefaultContextFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.DefaultContextProvider</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.DefaultContextProvider added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.DefaultExecutorServiceManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.Collection getExecutorServices()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.DelegatingMutableConfiguration</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.Object get(java.lang.String, java.lang.Object)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getAsString(java.lang.String, java.lang.String)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.MutableConfigurationDecoratorFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.MutableConfigurationDecoratorFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.ResourceBundleConfigurationProvider</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.ResourceBundleConfigurationProvider added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.artifact.AbstractGriffonArtifact</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected java.lang.String msg(java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected java.lang.String msg(java.lang.String, java.util.List)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected java.lang.String msg(java.lang.String, java.lang.Object[])' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected java.lang.String msg(java.lang.String, java.util.Map)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.i18n.DefaultMessageSourceDecoratorFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.i18n.DefaultMessageSourceDecoratorFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.i18n.MessageSourceDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.i18n.MessageSourceDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.i18n.MessageSourceDecoratorFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.i18n.MessageSourceDecoratorFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.i18n.MessageSourceProvider</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'public void setResourceBundleBuilder(griffon.util.CompositeResourceBundleBuilder)' has been removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.AbstractMVCGroup</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added protected field children
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.Map getChildrenGroups()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void notifyMVCGroupDestroyed(java.lang.String)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.AbstractMVCGroupManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.Context newContext(griffon.core.mvc.MVCGroup)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.MVCGroup newMVCGroup(griffon.core.mvc.MVCGroupConfiguration, java.lang.String, java.util.Map, griffon.core.mvc.MVCGroup)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.MVCGroupConfiguration newMVCGroupConfiguration(java.lang.String, java.util.Map, java.util.Map)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupConfigurationFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupConfigurationFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7003): </span>Method 'public griffon.core.Context newContext(griffon.core.mvc.MVCGroup)' has been removed, but an inherited definition exists.
+                </li>
+                <li>
+                  <span class='info'>INFO(7003): </span>Method 'public griffon.core.mvc.MVCGroup newMVCGroup(griffon.core.mvc.MVCGroupConfiguration, java.lang.String, java.util.Map, griffon.core.mvc.MVCGroup)' has been removed, but an inherited definition exists.
+                </li>
+                <li>
+                  <span class='info'>INFO(7003): </span>Method 'public griffon.core.mvc.MVCGroupConfiguration newMVCGroupConfiguration(java.lang.String, java.util.Map, java.util.Map)' has been removed, but an inherited definition exists.
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void fillContextualMemberProperties(griffon.core.mvc.MVCGroup, java.lang.String, java.lang.Object)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.resources.DefaultResourceResolverDecoratorFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.resources.DefaultResourceResolverDecoratorFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.resources.ResourceResolverDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.resources.ResourceResolverDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.resources.ResourceResolverDecoratorFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.resources.ResourceResolverDecoratorFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.resources.ResourceResolverProvider</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'public void setResourceBundleBuilder(griffon.util.CompositeResourceBundleBuilder)' has been removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7005): </span>Parameter 1 of 'protected void connectActions(javafx.scene.Node, griffon.core.artifact.GriffonController)' has changed its type to java.lang.Object
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added public field KEY_VISIBLE
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected griffon.javafx.support.JavaFXAction createAction(griffon.core.controller.ActionManager, griffon.core.artifact.GriffonController, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void handlePropertyChange(java.beans.PropertyChangeEvent)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isVisible()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setVisible(boolean)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.lanterna.controller.LanternaGriffonControllerAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected griffon.lanterna.support.LanternaAction createAction(griffon.core.controller.ActionManager, griffon.core.artifact.GriffonController, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void handlePropertyChange(java.beans.PropertyChangeEvent)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.pivot.controller.PivotGriffonControllerAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected griffon.pivot.support.PivotAction createAction(griffon.core.controller.ActionManager, griffon.core.artifact.GriffonController, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void handlePropertyChange(java.beans.PropertyChangeEvent)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.swing.controller.SwingGriffonControllerAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected griffon.swing.support.SwingAction createAction(griffon.core.controller.ActionManager, griffon.core.artifact.GriffonController, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void handlePropertyChange(java.beans.PropertyChangeEvent)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

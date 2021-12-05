@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Griffon 2.11.0 Release Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/devicons.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+   
+
+    
+        <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img style="display: block; float: left; padding: 10px" src="/img/griffon-icon-32x32.png" />
+          <a class="navbar-brand" href="../index.html">Griffon</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../whygriffon.html">Why Griffon</a></li>
+            <li><a href="../news/">News</a></li>
+            <li><a href="../documentation.html">Documentation</a></li>
+            <li><a href="../tutorials/">Tutorials</a></li>
+            <li><a href="../plugins.html">Plugins</a></li>
+            <li><a href="../development.html">Development</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+    
+    <div class="page-header">
+        <h1>Griffon 2.11.0 Release Notes</h1>
+    </div>
+
+    <p><em>01 June 2017</em></p>
+
+    <p><div class="sect2"> 
+ <h3 id="dependencies">Dependencies</h3> 
+ <div class="paragraph"> 
+  <p>The following dependencies have been upgraded</p> 
+ </div> 
+ <div class="ulist"> 
+  <ul> 
+   <li> <p>com.google.code.findbugs:jsr305:3.0.2</p> </li> 
+   <li> <p>org.slf4j:slf4j-simple:1.7.25</p> </li> 
+   <li> <p>org.slf4j:slf4j-log4j:1.7.25</p> </li> 
+   <li> <p>com.google.guava:guava:22.0</p> </li> 
+   <li> <p>org.awaitility:awaitility:3.0.0</p> </li> 
+   <li> <p>org.codehaus.groovy:groovy-all:2.4.11</p> </li> 
+   <li> <p>org.jetbrains.kotlin:kotlin-stdlib:1.1.2-4</p> </li> 
+   <li> <p>com.googlecode.lanterna:lanterna:2.7.9</p> </li> 
+  </ul> 
+ </div> 
+</div> 
+<div class="sect2"> 
+ <h3 id="runtime">Runtime</h3> 
+ <div class="sect3"> 
+  <h4 id="xml_configuration">XML Configuration</h4> 
+  <div class="paragraph"> 
+   <p>XML has been added as part of the supported formats. You may write any configuration file using XML, for example</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/resources/DataSource.xml
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;configuration&gt;
+    &lt;dataSource&gt;
+        &lt;driverClassName&gt;org.h2.Driver&lt;/driverClassName&gt;
+    &lt;/dataSource&gt;
+    &lt;environments&gt;
+        &lt;development&gt;
+            &lt;dataSource&gt;
+                &lt;url&gt;jdbc:h2:mem:@application.name@-dev&lt;/url&gt;
+            &lt;/dataSource&gt;
+        &lt;/development&gt;
+        &lt;test&gt;
+            &lt;dataSource&gt;
+                &lt;url&gt;jdbc:h2:mem:@application.name@-test&lt;/url&gt;
+            &lt;/dataSource&gt;
+        &lt;/test&gt;
+        &lt;production&gt;
+            &lt;dataSource&gt;
+                &lt;url&gt;jdbc:h2:mem:@application.name@-prod&lt;/url&gt;
+            &lt;/dataSource&gt;
+        &lt;/production&gt;
+    &lt;/environments&gt;
+&lt;/configuration&gt;</code></pre> 
+   </div> 
+  </div> 
+ </div> 
+ <div class="sect3"> 
+  <h4 id="configuration_value_injection">Configuration Value Injection</h4> 
+  <div class="paragraph"> 
+   <p>Configuration values may be injected into managed beans. Simply annotate a field or a setter with <code>@Configured</code>. Take for example the following configuration</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/conf/sample/swing/groovy/Config.groovy
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">application {
+    title = 'JavaFX + Groovy'
+    startupGroups = ['sample']
+    autoShutdown = true
+}
+props {
+    string = 'string'
+    number = 42
+    date   = '1970-12-24'
+}
+mvcGroups {
+    'sample' {
+        model      = 'sample.javafx.groovy.SampleModel'
+        view       = 'sample.javafx.groovy.SampleView'
+        controller = 'sample.javafx.groovy.SampleController'
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Any of those configuration values may be set on a managed bean, such as the <code>SampleModel</code> class</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/models/sample/javafx/groovy/SampleModel.groovy
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">package sample.javafx.groovy
+
+import griffon.core.artifact.GriffonModel
+import griffon.metadata.ArtifactProviderFor
+import griffon.transform.FXObservable
+import griffon.core.configuration.Configured
+
+@ArtifactProviderFor(GriffonModel)
+class SampleModel {
+    @FXObservable String input
+    @FXObservable String output
+
+    @Configured('application.title')
+    String title
+
+    @Configured('props.string')
+    String string
+
+    @Configured('props.number')
+    int number
+
+    @Configured(value = 'props.date', format = 'YYYY-MM-dd')
+    Date date
+
+    @Configured(value = 'props.undefined', defaultValue = 'undefined')
+    String undefined
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Values will be injected before <code>@PostConstruct</code> is triggered on the managed bean. Type conversion will be carried out using property editors.</p> 
+  </div> 
+ </div> 
+ <div class="sect3"> 
+  <h4 id="typed_mvcgroup_support">Typed MVCGroup support</h4> 
+  <div class="paragraph"> 
+   <p>It’s now possible to define typed MVC groups. This feature assumes the MVC group has the required <code>Model</code>, <code>View</code>, and <code>Controller</code> members; it won’t work for groups that define less than these 3 members. For example</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    src/main/java/org/example/FooMVCGroup.java
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.example;
+
+import javax.inject.Named;
+import griffon.core.mvc.MVCGroup;
+import org.codehaus.griffon.runtime.core.mvc.AbstractTypedMVCGroup;
+
+@Named("foo")
+public class FooMVCGroup extends AbstractTypedMVCGroup&lt;FooModel, FooView, FooController&gt; {
+    public FooMVCGroup(MVCGroup delegate) {
+        super(delegate);
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Instances of this group can be created as follows</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">FooMVCGroup fooGroup1 = createMVCGroup(FooMVCGroup.class);
+FooMVCGroup fooGroup2 = createMVCGroup(FooMVCGroup.class, "foo2");</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You may refer to the exact types of each MVC member using a typed MVC group, for example</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">FooMVCGroup fooGroup = createMVCGroup(FooMVCGroup.class);
+fooGroup.model().setSomeProperty("value"); // returned model type is FooModel
+
+// the following won't even compile
+MVCGroup mvcGroup = createMVCGroup("foo");
+mvcGroup.getModel().setSomeProperty("value"); // returned model type is GriffonModel !!</code></pre> 
+   </div> 
+  </div> 
+ </div> 
+ <div class="sect3"> 
+  <h4 id="javafx_support">JavaFX Support</h4> 
+  <div class="paragraph"> 
+   <p>Two new widgets are now available: <code>IndexedCardPane</code> and <code>NamedCardPane</code>. They provide similar capabilities as the ones found in <code>java.awt.CardLayout</code>. The first widget stores its children using an indexed <code>List</code> while the second widget uses "keys" instead of indexes.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>New <code>MatchingBindings</code> class provides matching capabilities on <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code></p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Apply <code>allMatch</code>, <code>anyMatch</code>, and <code>noneMatch</code> predicates.</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You can now create <code>TableColumns</code> and fill out a <code>TableView</code> with the brand new <code>TableViewFormat</code> and <code>TableViewModel</code> classes as shown by:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">TableViewFormat&lt;Measurement&gt; tableFormat = new DefaultTableFormat&lt;&gt;(
+    new DefaultTableFormat.Column("name", 0.2d),
+    new DefaultTableFormat.Column("amount", 0.1d),
+    new DefaultTableFormat.Column("timestamp")
+);
+ObservableList&lt;Measurement&gt; measurements = uiThreadAwareObservableList(model.getMeasurements());
+TableViewModel&lt;Measurement&gt; tableModel = new DefaultTableViewModel&lt;&gt;(measurements, tableFormat);
+tableModel.attachTo(measurementsTableView);
+measurementsTableView.setEditable(false);</code></pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect2"> 
+ <h3 id="buildtime">Buildtime</h3> 
+ <div class="sect3"> 
+  <h4 id="gradle_wrapper">Gradle Wrapper</h4> 
+  <div class="paragraph"> 
+   <p>Gradle wrapper version on all Lazybones templates has been bumped to <code>3.5</code>.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect2"> 
+ <h3 id="compatibility">Compatibility</h3> 
+ <div class="paragraph"> 
+  <p>Implementation classes of <code>Configuration</code> were moved to the <code>org.codehaus.griffon.runtime.core.configuration</code> package. Plugins that rely on reading custom configuration files (such as persistence plugins like <code>datasource</code> et al) must be updated to their latest versions.</p> 
+ </div> 
+ <div class="paragraph"> 
+  <p>Full binary compatibility report between Griffon 2.11.0 and 2.10.0 can be found <a href="../reports/2.11.0/compatibility-report.html">here</a>.</p> 
+ </div> 
+ <div class="paragraph"> 
+  <p>A list of fixed issues can be found at the <a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.11.0+is%3Aclosed">2.11.0 milestone</a> page.</p> 
+ </div> 
+</div></p>
+
+    <hr />
+    
+        </div>
+        <div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

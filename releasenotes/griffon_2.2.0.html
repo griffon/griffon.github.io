@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Griffon 2.2.0 Release Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/devicons.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+   
+
+    
+        <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img style="display: block; float: left; padding: 10px" src="/img/griffon-icon-32x32.png" />
+          <a class="navbar-brand" href="../index.html">Griffon</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../whygriffon.html">Why Griffon</a></li>
+            <li><a href="../news/">News</a></li>
+            <li><a href="../documentation.html">Documentation</a></li>
+            <li><a href="../tutorials/">Tutorials</a></li>
+            <li><a href="../plugins.html">Plugins</a></li>
+            <li><a href="../development.html">Development</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+    
+    <div class="page-header">
+        <h1>Griffon 2.2.0 Release Notes</h1>
+    </div>
+
+    <p><em>01 March 2015</em></p>
+
+    <p><div class="sect1"> 
+ <h2 id="griffon_2_2_0_release_notes">Griffon 2.2.0 Release Notes</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="dependencies">Dependencies</h3> 
+   <div class="paragraph"> 
+    <p>The following dependencies have been upgraded</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>org.codehaus.groovy:groovy-all:2.4.1</p> </li> 
+     <li> <p>org.slf4j:slf4j-api:1.7.10</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="runtime">Runtime</h3> 
+   <div class="sect3"> 
+    <h4 id="application">Application</h4> 
+    <div class="paragraph"> 
+     <p>Applications now have the capability to store key/value pairs inside a <a href="/guide/latest/api/griffon/core/Context.html" target="_blank" rel="noopener">Context</a>. Contexts are hierarchical, meaning a child context may shadow keys available in a parent context. Values of shadowed keys are not modified; you can grab the original value by asking the owning context for it.</p> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="mvc">MVC</h4> 
+    <div class="paragraph"> 
+     <p>MVCGroups now have a <a href="/guide/latest/api/griffon/core/Context.html" target="_blank" rel="noopener">Context</a> of their own. This is useful for storing group only data that can be shared between MVC members of just controller actions. It’s also possible to automatically inject context values as action arguments as long as said arguments are annotated with <a href="/guide/latest/api/griffon/inject/Contextual.html" target="_blank" rel="noopener">@griffon.inject.Contextual</a>.</p> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="configuration">Configuration</h4> 
+    <div class="paragraph"> 
+     <p>Configuration objects are made <strong>read-only</strong> by default. Now you can make them writable if wrapped with <a href="/guide/latest/api/griffon/core/MutableConfiguration.html" target="_blank" rel="noopener">MutableConfiguration</a>.</p> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="swing">Swing</h4> 
+    <div class="paragraph"> 
+     <p>Icon resources support a new format (processed by <a href="/guide/latest/api/griffon/swing/editors/IconPropertyEditor.html" target="_blank" rel="noopener">IconPropertyEditor</a>). The format is as follows</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="prettyprint highlight"><code>iconClassName|constructorArg</code></pre> 
+     </div> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Where <code>constructorArg</code> is assumed to be a <code>String</code>. Here’s an example using the <a href="https://github.com/griffon-plugins/griffon-fontawesome-plugin" target="_blank" rel="noopener">griffon-fontawesome-plugin</a></p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="prettyprint highlight"><code class="language-java" data-lang="java">org.example.AppController.action.Preferences.icon=griffon.swing.support.fontawesome.FontAwesomeIcon|fa-gear</code></pre> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="javafx">JavaFX</h4> 
+    <div class="paragraph"> 
+     <p>Icon resources support a new format (processed by <a href="/guide/latest/api/griffon/javafx/support/JavaFXUtils.html" target="_blank" rel="noopener">JavaFXUtils</a>). The format is as follows</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="prettyprint highlight"><code>iconClassName|constructorArg</code></pre> 
+     </div> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Where <code>constructorArg</code> is assumed to be a <code>String</code>. Here’s an example using the <a href="https://github.com/griffon-plugins/griffon-fontawesome-plugin" target="_blank" rel="noopener">griffon-fontawesome-plugin</a></p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="prettyprint highlight"><code class="language-java" data-lang="java">org.example.AppController.action.Preferences.icon=griffon.javafx.support.fontawesome.FontAwesomeIcon|fa-gear</code></pre> 
+     </div> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Additionally <a href="/guide/latest/api/griffon/javafx/support/JavaFXUtils.html" target="_blank" rel="noopener">JavaFXUtils</a> has the following functionality</p> 
+    </div> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>configure a <a href="http://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/MenuItem.html" target="_blank" rel="noopener">MenuItem</a> using a <code><a href="/guide/latest/api/griffon/javafx/support/JavaFXAction.html" target="_blank" rel="noopener">JavaFXAction</a></code>.</p> </li> 
+      <li> <p>set an icon on a <a href="http://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/MenuItem.html" target="_blank" rel="noopener">MenuItem</a>.</p> </li> 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="compatibility">Compatibility</h3> 
+   <div class="paragraph"> 
+    <p>Full binary compatibility report between Griffon 2.2.0 and 2.1.0 can be found <a href="../reports/2.2.0/compatibility-report.html">here</a>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>A list of fixed issues can be found at the <a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.2.0+is%3Aclosed">2.2.0 milestone</a> page.</p> 
+   </div> 
+  </div> 
+ </div> 
+</div></p>
+
+    <hr />
+    
+        </div>
+        <div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

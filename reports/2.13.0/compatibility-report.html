@@ -1,0 +1,634 @@
+<!DOCTYPE html><html>
+  <head>
+    <title>Binary Compatibility Report - griffon-2.13.0</title>
+    <style>
+                        body{margin:0;padding:0;font-family:sans-serif;font-size:12pt;}
+                        body,a,a:visited{color:#303030;}
+                        #content{padding-left:50px;padding-right:50px;padding-top:30px;padding-bottom:30px;}
+                        #content h1{font-size:160%;margin-bottom:10px;}
+                        #footer{margin-top:100px;font-size:80%;white-space:nowrap;}
+                        #footer,#footer a{color:#a0a0a0;}
+                        ul{margin-left:0;}
+                        h1,h2,h3{white-space:nowrap;}
+                        h2{font-size:120%;}
+                        div.selected{display:block;}
+                        div.deselected{display:none;}
+                        #maintable{width:100%;border-collapse:collapse;}
+                        #maintable th,#maintable td{border-bottom:solid #d0d0d0 1px;}
+                        #maintable td{vertical-align:top}
+                        th{text-align:left;white-space:nowrap;padding-left:2em;}
+                        th:first-child{padding-left:0;}
+                        td{padding-left:2em;padding-top:5px;padding-bottom:5px;}
+                        td:first-child{padding-left:0;width:30%}
+                        td.numeric,th.numeric{text-align:right;}
+                        span.code{display:inline-block;margin-top:0em;margin-bottom:1em;}
+                        span.code pre{font-size:11pt;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px;margin:0;background-color:#f7f7f7;border:solid 1px #d0d0d0;min-width:700px;width:auto !important;width:700px;}
+                        ul{margin:0px;padding:0px;}
+                        .warning,.warning a{color:#fbcc45;}
+                        .error,.error a{color:#b60808;}
+                        .info, .info a{color:#3879d9}
+                        #summary {margin-top: 30px;margin-bottom: 40px;border: solid 2px #d0d0d0;width:400px}
+                        #summary table{border:none;}
+                        #summary td{vertical-align:top;width:110px;padding-top:15px;padding-bottom:15px;text-align:center;}
+                        #summary td p{margin:0;}
+                       </style>
+  </head>
+  <body>
+    <div id='content'>
+      <h1>Binary Compatibility Report - griffon-2.13.0</h1>
+      <div id='summary'>
+        <table>
+          <tr>
+            <td>
+              <p class='error'>ERROR</p>
+              <div>19</div>
+            </td>
+            <td>
+              <p class='warning'>WARNING</p>
+              <div>0</div>
+            </td>
+            <td>
+              <p class='info'>INFO</p>
+              <div>62</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <table id='maintable'>
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Results</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>griffon.core.configuration.ConfigurationManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void injectConfiguration(java.lang.Object)' has been added to an interface
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.configuration.Configured</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.lang.Class editor()' has been added to an interface
+                </li>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added public field NO_VALUE
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.editors.PropertyEditorResolver</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added public field NOOP_PROPERTY_EDITOR
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.inject.MVCMember</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.lang.Class editor()' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.lang.String format()' has been added to an interface
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.CollectionBindingsExtension</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.CollectionBindingsExtension added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.FilteringBindingsExtension</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.FilteringBindingsExtension added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.GriffonFXCollectionsExtension</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.GriffonFXCollectionsExtension added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.JavaFXUtilsExtension</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.JavaFXUtilsExtension added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.MappingBindingsExtension</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.MappingBindingsExtension added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.MatchingBindingsExtension</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.MatchingBindingsExtension added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.ReducingBindingsExtension</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.ReducingBindingsExtension added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.UIThreadAwareBindingsExtension</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.UIThreadAwareBindingsExtension added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.artifact.ContentProvider</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.artifact.ContentProvider added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.BindingDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.BindingDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.BooleanBindingDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.BooleanBindingDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.DoubleBindingDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.DoubleBindingDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.FloatBindingDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.FloatBindingDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.IntegerBindingDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.IntegerBindingDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.LongBindingDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.LongBindingDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.MatchingBindings</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(3002): </span>Added final modifier to class, but class was effectively final anyway
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.ObjectBindingDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.ObjectBindingDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.StringBindingDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.StringBindingDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.UIThreadAwareBindings</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.BooleanBinding uiThreadAwareBooleanBinding(javafx.beans.binding.BooleanBinding)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.DoubleBinding uiThreadAwareDoubleBinding(javafx.beans.binding.DoubleBinding)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.FloatBinding uiThreadAwareFloatBinding(javafx.beans.binding.FloatBinding)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.IntegerBinding uiThreadAwareIntegerBinding(javafx.beans.binding.IntegerBinding)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.LongBinding uiThreadAwareLongBinding(javafx.beans.binding.LongBinding)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.ObjectBinding uiThreadAwareObjectBinding(javafx.beans.binding.ObjectBinding)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.StringBinding uiThreadAwareStringBinding(javafx.beans.binding.StringBinding)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.collections.GriffonFXCollections</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.javafx.collections.ObservableStream observableStream(javafx.collections.ObservableList)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.javafx.collections.ObservableStream observableStream(javafx.collections.ObservableSet)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.javafx.collections.ObservableStream observableStream(javafx.collections.ObservableMap)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.collections.ObservableSetBase$BaseAddChange</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.collections.ObservableSetBase$BaseAddChange added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.collections.ObservableSetBase$BaseRemoveChange</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.collections.ObservableSetBase$BaseRemoveChange added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.collections.ObservableStream</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.collections.ObservableStream added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.GriffonBuilderFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(6009): </span>Accessibility of field application has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(6009): </span>Accessibility of field delegate has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(6009): </span>Accessibility of field mvcGroup has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.util.AnnotationUtils</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.Class parameterTypeAt(java.lang.reflect.Method, int)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.util.GriffonNameUtils</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isNotBlank(java.lang.String)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.addon.AbstractGriffonAddon</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.Map mvcgroup(java.lang.Class, java.lang.Class, java.lang.Class, java.lang.Class)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.AbstractConfigurationManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'protected java.lang.Object convertValue(java.lang.Class, java.lang.Object, java.lang.String)' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'protected java.beans.PropertyEditor resolvePropertyEditor(java.lang.Class, java.lang.String)' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'protected void injectConfiguration(java.lang.Object)' has been increased from protected to public
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected boolean isNoopPropertyEditor(java.lang.Class)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.ConfigurationDescriptor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public ConfigurationDescriptor(java.lang.String, java.lang.String, java.lang.String, java.lang.String)' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.Class getEditor()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.FieldConfigurationDescriptor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public FieldConfigurationDescriptor(java.lang.reflect.Field, java.lang.String, java.lang.String, java.lang.String, java.lang.String)' the number of arguments has changed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.FieldInjectionPoint</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public FieldInjectionPoint(java.lang.reflect.Field, java.lang.String, java.lang.String, java.lang.String)' the number of arguments has changed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.InjectionPoint</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public InjectionPoint(java.lang.String, java.lang.String, java.lang.String)' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.Class getEditor()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.MethodConfigurationDescriptor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public MethodConfigurationDescriptor(java.lang.reflect.Method, java.lang.String, java.lang.String, java.lang.String, java.lang.String)' the number of arguments has changed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.MethodInjectionPoint</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public MethodInjectionPoint(java.lang.reflect.Method, java.lang.String, java.lang.String, java.lang.String)' the number of arguments has changed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'protected org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager$InjectionPoint$Type resolveType(java.lang.reflect.AnnotatedElement)' has been removed
+                </li>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added protected field ERROR_VALUE_NULL
+                </li>
+                <li>
+                  <span class='info'>INFO(6009): </span>Accessibility of field CONFIG_KEY_COMPONENT has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(6009): </span>Accessibility of field CONFIG_KEY_EVENTS_DESTRUCTION has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(6009): </span>Accessibility of field CONFIG_KEY_EVENTS_INSTANTIATION has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(6009): </span>Accessibility of field CONFIG_KEY_EVENTS_LIFECYCLE has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(6009): </span>Accessibility of field CONFIG_KEY_EVENTS_LISTENER has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(6009): </span>Accessibility of field KEY_PARENT_GROUP has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected java.lang.Class resolveEditor(java.lang.reflect.AnnotatedElement)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected java.lang.String resolveFormat(java.lang.reflect.AnnotatedElement)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager$InjectionPoint$Kind resolveKind(java.lang.reflect.AnnotatedElement)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager$FieldInjectionPoint</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'protected DefaultMVCGroupManager$FieldInjectionPoint(java.lang.String, boolean, org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager$InjectionPoint$Type, java.lang.reflect.Field)' the number of arguments has changed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager$InjectionPoint</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(6004): </span>Changed type of field type from org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager$InjectionPoint$Type to java.lang.Class
+                </li>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'protected DefaultMVCGroupManager$InjectionPoint(java.lang.String, boolean, org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager$InjectionPoint$Type)' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added protected field editor
+                </li>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added protected field format
+                </li>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added protected field kind
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected java.lang.Object convertValue(java.lang.Class, java.lang.Object, java.lang.String, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected boolean isNoopPropertyEditor(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected java.beans.PropertyEditor resolvePropertyEditor(java.lang.Class, java.lang.String, java.lang.Class)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager$InjectionPoint$Kind</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager$InjectionPoint$Kind added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager$InjectionPoint$Type</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(8001): </span>Class org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager$InjectionPoint$Type removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager$MethodInjectionPoint</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'protected DefaultMVCGroupManager$MethodInjectionPoint(java.lang.String, boolean, org.codehaus.griffon.runtime.core.mvc.DefaultMVCGroupManager$InjectionPoint$Type, java.lang.reflect.Method)' the number of arguments has changed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void configureFxmlLoader(javafx.fxml.FXMLLoader)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected javafx.fxml.FXMLLoader createFxmlLoader(java.net.URL)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.pivot.PivotUIThreadManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public PivotUIThreadManager(griffon.core.ExceptionHandler)' the number of arguments has changed
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

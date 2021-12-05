@@ -1,0 +1,505 @@
+<!DOCTYPE html><html>
+  <head>
+    <title>Binary Compatibility Report - griffon-2.9.0</title>
+    <style>
+                        body{margin:0;padding:0;font-family:sans-serif;font-size:12pt;}
+                        body,a,a:visited{color:#303030;}
+                        #content{padding-left:50px;padding-right:50px;padding-top:30px;padding-bottom:30px;}
+                        #content h1{font-size:160%;margin-bottom:10px;}
+                        #footer{margin-top:100px;font-size:80%;white-space:nowrap;}
+                        #footer,#footer a{color:#a0a0a0;}
+                        ul{margin-left:0;}
+                        h1,h2,h3{white-space:nowrap;}
+                        h2{font-size:120%;}
+                        div.selected{display:block;}
+                        div.deselected{display:none;}
+                        #maintable{width:100%;border-collapse:collapse;}
+                        #maintable th,#maintable td{border-bottom:solid #d0d0d0 1px;}
+                        #maintable td{vertical-align:top}
+                        th{text-align:left;white-space:nowrap;padding-left:2em;}
+                        th:first-child{padding-left:0;}
+                        td{padding-left:2em;padding-top:5px;padding-bottom:5px;}
+                        td:first-child{padding-left:0;width:30%}
+                        td.numeric,th.numeric{text-align:right;}
+                        span.code{display:inline-block;margin-top:0em;margin-bottom:1em;}
+                        span.code pre{font-size:11pt;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px;margin:0;background-color:#f7f7f7;border:solid 1px #d0d0d0;min-width:700px;width:auto !important;width:700px;}
+                        ul{margin:0px;padding:0px;}
+                        .warning,.warning a{color:#fbcc45;}
+                        .error,.error a{color:#b60808;}
+                        .info, .info a{color:#3879d9}
+                        #summary {margin-top: 30px;margin-bottom: 40px;border: solid 2px #d0d0d0;width:400px}
+                        #summary table{border:none;}
+                        #summary td{vertical-align:top;width:110px;padding-top:15px;padding-bottom:15px;text-align:center;}
+                        #summary td p{margin:0;}
+                       </style>
+  </head>
+  <body>
+    <div id='content'>
+      <h1>Binary Compatibility Report - griffon-2.9.0</h1>
+      <div id='summary'>
+        <table>
+          <tr>
+            <td>
+              <p class='error'>ERROR</p>
+              <div>0</div>
+            </td>
+            <td>
+              <p class='warning'>WARNING</p>
+              <div>0</div>
+            </td>
+            <td>
+              <p class='info'>INFO</p>
+              <div>101</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <table id='maintable'>
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Results</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>griffon.javafx.support.CollectionBindings</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.support.CollectionBindings added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.DelegatingObservableList</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7003): </span>Method 'public javafx.collections.transformation.FilteredList filtered(java.util.function.Predicate)' has been removed, but an inherited definition exists.
+                </li>
+                <li>
+                  <span class='info'>INFO(7003): </span>Method 'public java.util.stream.Stream parallelStream()' has been removed, but an inherited definition exists.
+                </li>
+                <li>
+                  <span class='info'>INFO(7003): </span>Method 'public boolean removeIf(java.util.function.Predicate)' has been removed, but an inherited definition exists.
+                </li>
+                <li>
+                  <span class='info'>INFO(7003): </span>Method 'public void replaceAll(java.util.function.UnaryOperator)' has been removed, but an inherited definition exists.
+                </li>
+                <li>
+                  <span class='info'>INFO(7003): </span>Method 'public void sort(java.util.Comparator)' has been removed, but an inherited definition exists.
+                </li>
+                <li>
+                  <span class='info'>INFO(7003): </span>Method 'public javafx.collections.transformation.SortedList sorted()' has been removed, but an inherited definition exists.
+                </li>
+                <li>
+                  <span class='info'>INFO(7003): </span>Method 'public javafx.collections.transformation.SortedList sorted(java.util.Comparator)' has been removed, but an inherited definition exists.
+                </li>
+                <li>
+                  <span class='info'>INFO(7003): </span>Method 'public java.util.Spliterator spliterator()' has been removed, but an inherited definition exists.
+                </li>
+                <li>
+                  <span class='info'>INFO(7003): </span>Method 'public java.util.stream.Stream stream()' has been removed, but an inherited definition exists.
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.DelegatingObservableMap</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.support.DelegatingObservableMap added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.DelegatingObservableSet</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.support.DelegatingObservableSet added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.FilteringBindings</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.support.FilteringBindings added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.JavaFXAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getGraphicStyle()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getGraphicStyleClass()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getStyle()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.property.StringProperty graphicStyleClassProperty()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.property.StringProperty graphicStyleProperty()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setGraphicStyle(java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setGraphicStyleClass(java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setStyle(java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.property.StringProperty styleProperty()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.JavaFXUtils</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void connectMessageSource(java.lang.Object, griffon.core.GriffonApplication)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.collections.ObservableMap createJavaFXThreadProxyMap(javafx.collections.ObservableMap)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.collections.ObservableSet createJavaFXThreadProxySet(javafx.collections.ObservableSet)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nArgs(javafx.scene.control.Labeled)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nArgs(javafx.scene.control.Tab)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nArgs(javafx.scene.control.MenuItem)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nDefaultValue(javafx.scene.control.Labeled)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nDefaultValue(javafx.scene.control.Tab)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nDefaultValue(javafx.scene.control.MenuItem)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nKey(javafx.scene.control.Labeled)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nKey(javafx.scene.control.Tab)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nKey(javafx.scene.control.MenuItem)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String normalizeStyle(java.lang.String, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setGraphicStyle(javafx.scene.control.ButtonBase, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setGraphicStyle(javafx.scene.control.MenuItem, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setGraphicStyleClass(javafx.scene.control.ButtonBase, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setGraphicStyleClass(javafx.scene.control.ButtonBase, java.lang.String, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setGraphicStyleClass(javafx.scene.control.MenuItem, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setGraphicStyleClass(javafx.scene.control.MenuItem, java.lang.String, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nArgs(javafx.scene.control.Labeled, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nArgs(javafx.scene.control.Tab, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nArgs(javafx.scene.control.MenuItem, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nDefaultValue(javafx.scene.control.Labeled, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nDefaultValue(javafx.scene.control.Tab, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nDefaultValue(javafx.scene.control.MenuItem, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nKey(javafx.scene.control.Tab, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nKey(javafx.scene.control.MenuItem, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setStyle(javafx.scene.Node, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setStyle(javafx.scene.control.MenuItem, java.lang.String)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.MappingBindings</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.support.MappingBindings added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.MappingObservableList</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.support.MappingObservableList added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.ObservableMapBase</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.support.ObservableMapBase added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.ObservableSetBase</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.support.ObservableSetBase added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.ReducingBindings</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.support.ReducingBindings added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.UIThreadAwareBindings</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.support.UIThreadAwareBindings added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void connectMessageSource(java.lang.Object)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.javafx.controller.JavaFXActionManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void configureAction(org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveAccelerator(org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveDescription(org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveEnabled(org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveGraphicStyle(org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveGraphicStyleClass(org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveIcon(org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveImage(org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveName(org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveSelected(org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveStyle(org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveStyleClass(org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveVisible(org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void trace(java.lang.String, java.lang.String, java.lang.String)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added public field KEY_GRAPHICSTYLE
+                </li>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added public field KEY_GRAPHICSTYLECLASS
+                </li>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added public field KEY_STYLE
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getGraphicStyle()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getGraphicStyleClass()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getStyle()' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setGraphicStyle(java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setGraphicStyleClass(java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setStyle(java.lang.String)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.lanterna.controller.LanternaActionManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void configureAction(org.codehaus.griffon.runtime.lanterna.controller.LanternaGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveName(org.codehaus.griffon.runtime.lanterna.controller.LanternaGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void trace(java.lang.String, java.lang.String, java.lang.String)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.pivot.controller.PivotActionManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void configureAction(org.codehaus.griffon.runtime.pivot.controller.PivotGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveDescription(org.codehaus.griffon.runtime.pivot.controller.PivotGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveEnabled(org.codehaus.griffon.runtime.pivot.controller.PivotGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveName(org.codehaus.griffon.runtime.pivot.controller.PivotGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void trace(java.lang.String, java.lang.String, java.lang.String)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.swing.controller.SwingActionManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void configureAction(org.codehaus.griffon.runtime.swing.controller.SwingGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveAccelerator(org.codehaus.griffon.runtime.swing.controller.SwingGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveCommand(org.codehaus.griffon.runtime.swing.controller.SwingGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveEnabled(org.codehaus.griffon.runtime.swing.controller.SwingGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveLargeIcon(org.codehaus.griffon.runtime.swing.controller.SwingGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveLongDescription(org.codehaus.griffon.runtime.swing.controller.SwingGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveMnemonic(org.codehaus.griffon.runtime.swing.controller.SwingGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveName(org.codehaus.griffon.runtime.swing.controller.SwingGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveSelected(org.codehaus.griffon.runtime.swing.controller.SwingGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveShortDescription(org.codehaus.griffon.runtime.swing.controller.SwingGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void resolveSmallIcon(org.codehaus.griffon.runtime.swing.controller.SwingGriffonControllerAction, griffon.core.artifact.GriffonController, java.lang.String, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void trace(java.lang.String, java.lang.String, java.lang.String)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

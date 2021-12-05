@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Tutorial 1::Getting Started</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/devicons.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+   
+
+
+        <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img style="display: block; float: left; padding: 10px" src="/img/griffon-icon-32x32.png" />
+          <a class="navbar-brand" href="../index.html">Griffon</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../whygriffon.html">Why Griffon</a></li>
+            <li><a href="../news/">News</a></li>
+            <li><a href="../documentation.html">Documentation</a></li>
+            <li><a href="../tutorials/">Tutorials</a></li>
+            <li><a href="../plugins.html">Plugins</a></li>
+            <li><a href="../development.html">Development</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+    
+    <div class="page-header">
+        <h1>Tutorial 1::Getting Started</h1>
+    </div>
+
+    <p><div class="sect1"> 
+ <h2 id="_tutorial_1_toc">Agenda</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>This tutorial describes how a Griffon 2 application can be created and run. IDE configurations are discussed too.</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p><a href="#_tutorial_1_1">Getting the ToolChain</a></p> </li> 
+    <li> <p><a href="#_tutorial_1_2">Creating an Application</a></p> </li> 
+    <li> <p><a href="#_tutorial_1_3">Running the Application</a></p> </li> 
+    <li> <p><a href="#_tutorial_1_4">Setting up the IDE</a></p> </li> 
+   </ol> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tutorial_1_1">1. Getting the ToolChain</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>The first step is to get the tools needed to create an application. While it’s possible to create a Griffon 2 application from scratch it’s also true that the power of conventions allows you to get faster development cycles. We need the following tools:</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p><a href="http://sdkman.io/" target="_blank" rel="noopener">SDKMAN</a>: tool manager.</p> </li> 
+    <li> <p><a href="https://github.com/pledbrook/lazybones" target="_blank" rel="noopener">Lazybones</a>: template based project generator.</p> </li> 
+    <li> <p><a href="http://maven.apache.org/" target="_blank" rel="noopener">Maven</a> or <a href="http://gradle.org/" target="_blank" rel="noopener">Gradle</a>: build tool.</p> </li> 
+    <li> <p><a href="https://www.jetbrains.com/idea/download/" target="_blank" rel="noopener">IntelliJ IDEA</a> or <a href="https://netbeans.org/downloads/" target="_blank" rel="noopener">NetBeans</a> or <a href="https://www.eclipse.org/downloads/" target="_blank" rel="noopener">Eclipse</a>: IDE.</p> </li> 
+   </ol> 
+  </div> 
+  <div class="paragraph"> 
+   <div class="title">
+    SDKMAN
+   </div> 
+   <p>SDKMAN is a tool for managing parallel Versions of multiple Software Development Kits on most Unix based systems. It provides a convenient command line interface for installing, switching, removing and listing Candidates. The candidates we’re interested in are <em>Lazybones</em> and <em>Gradle</em>.</p> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> You can run SDKMAN on Windows as long as you have a POSIX environment. We recommend you to give <a href="http://babun.github.io/" target="_blank" rel="noopener">Babun Shell</a> a try first. </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Installing SDKMAN is as easy as executing the following command</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ curl -s http://get.sdkman.io | bash</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>This will download the required files and configure your environment. After this the <code>sdk</code> command should be available. You can verify your setup by executing this command</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ sdk help</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <div class="title">
+    Lazybones
+   </div> 
+   <p>Lazybones is a command-line based tool for creating basic software projects from templates. It’s similar in spirit to Maven Archetypes, however Lazybones templates can do much more than that, for example, new files can be created from scratch, even long after the project was created.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Execute the following command to install Lazybones on your system</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ sdk install lazybones</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Verify your setup by invoking the following command</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ lazybones help</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>As mentioned before, Lazybones relies on templates in order to create a project. There are a handful of templates available at the default Lazybones location. The Griffon based templates reside at a different location, so they must be configured in order to be found. Lazybones uses a simple configuration scheme for defining repositories, as up to version <strong>0.8</strong> this configuration is kept in a Groovy script whose standard location is <code>$USER_HOME/.lazybones/config.groovy</code>.</p> 
+  </div> 
+  <div class="admonitionblock tip"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+      <td class="content"> Windows users should use the <code>%USER_HOME%\.lazybones\config.groovy</code> path. </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Griffon project templates are hosted at a <a href="https://bintray.com/griffon/griffon-lazybones-templates" target="_blank" rel="noopener">Bintray</a> repository, similarly as the standard Lazybones templates. Create the <code>config.groovy</code> file at the specified location if it doesn’t exist, place the following content on it</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">bintrayRepositories = [
+    'griffon/griffon-lazybones-templates',
+    'pledbrook/lazybones-templates'
+]</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The Griffon project templates should be available now. You can verify this step by executing the following command</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ lazybones list
+Available templates in griffon/griffon-lazybones-templates
+
+    griffon-javafx-groovy
+    griffon-javafx-java
+    griffon-javafx-kotlin
+    griffon-lanterna-groovy
+    griffon-lanterna-java
+    griffon-pivot-groovy
+    griffon-pivot-java
+    griffon-plugin
+    griffon-swing-groovy
+    griffon-swing-java</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <div class="title">
+    Gradle
+   </div> 
+   <p>Gradle is an open source build automation system. Gradle can automate the building, testing, publishing, deployment and more of software packages or other types of projects such as generated static websites, generated documentation or indeed anything else.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You can download and install Gradle manually, however we recommend using SDKMAN for this task too, as it greatly simplifies handling different versions and keeping binary distributions up to date. You can install Gradle via SDKMAN by executing this command</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ sdk install gradle</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Once installed you can verify that’s working by invoking this command</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ gradle --version
+------------------------------------------------------------
+Gradle 4.0
+------------------------------------------------------------
+
+Build time:   2017-06-14 15:11:08 UTC
+Revision:     316546a5fcb4e2dfe1d6aa0b73a4e09e8cecb5a5
+
+Groovy:       2.4.11
+Ant:          Apache Ant(TM) version 1.9.6 compiled on June 29 2015
+JVM:          1.8.0_131 (Oracle Corporation 25.131-b11)
+OS:           Mac OS X 10.12.5 x86_64</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Gradle 4 is the minimum supported version.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <div class="title">
+    Maven
+   </div> 
+   <p>Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project’s build, reporting and documentation from a central piece of information.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You can download and install Maven manually, however we recommend using SDKMAN for this task too, as it greatly simplifies handling different versions and keeping binary distributions up to date. You can install Maven via SDKMAN by executing this command</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ sdk install maven</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You can verify this tool by executing this command</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ mvn -v
+Apache Maven 3.5.0 (ff8f5e7444045639af65f6095c62210b5713f426; 2017-04-03T21:39:06+02:00)
+Maven home: /usr/local/maven
+Java version: 1.8.0_131, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "mac os x", version: "10.12.5", arch: "x86_64", family: "mac"</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Maven 3 is the minimum supported version.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <div class="title">
+    IDE
+   </div> 
+   <p>All major IDEs can be used to build Griffon applications. Considering that the Griffon tool chain is comprised of tools that can be invoked from the command line you may want to use a text editor (such as <a href="http://www.vim.org/" target="_blank" rel="noopener">VIM</a>) instead.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="icon"><a class="image" href="#_tutorial_1_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_1_toc">Top</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tutorial_1_2">2. Creating an Application</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>With the tool chain ready we can now create an application. The Griffon templates provide a starting point depending on a particular UI toolkit / programming language combination. Currently supported UI toolkits are</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Swing</p> </li> 
+    <li> <p>JavaFX</p> </li> 
+    <li> <p>Pivot</p> </li> 
+    <li> <p>Lanterna</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>While the currently supported programming languages are</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Java</p> </li> 
+    <li> <p>Groovy</p> </li> 
+    <li> <p>Kotlin</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>In this tutorial we’ll go for the most basic combination: Swing and Java. Execute the <code>create</code> Lazybones command using the <code>griffon-swing-java</code> template as the starting point. Note that the template uses sensible defaults for most of its options, however ou can change them to suit your needs. Here’s how a creation session looks</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ lazybones create griffon-swing-java sample
+Creating project from template griffon-swing-java (latest) in 'sample'
+Define value for 'group' [org.example]:
+Define value for 'artifactId' [sample]:
+Define value for 'version' [0.1.0-SNAPSHOT]:
+Define value for 'griffonVersion' [2.15.0]:
+Define value for 'package' [org.example]:
+Define value for 'className' [Sample]:
+
+...
+Project created in sample!</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Change into the <code>sample</code> directory and inspect its contents. You’ll see it contains a <code>build.gradle</code> file that can be used to build the project with Gradle. There’s also a <code>pom.xml</code> if you prefer Maven. The standard structure of a Griffon application looks like this</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>.
+├── build.gradle
+├── griffon-app
+│   ├── conf
+│   ├── controllers
+│   ├── i18n
+│   ├── lifecycle
+│   ├── models
+│   ├── resources
+│   ├── services
+│   └── views
+├── pom.xml
+└── src
+    ├── integration-test
+    │   └── java
+    ├── main
+    │   ├── java
+    │   └── resources
+    └── test
+        ├── java
+        └── resources</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="icon"><a class="image" href="#_tutorial_1_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_1_toc">Top</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tutorial_1_3">3. Running the Application</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>The application is fully functional at this point. You just have to select your build tool of choice and invoke the right command for it. In the case of Gradle this is a simple as executing</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ gradle run</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Project dependencies get downloaded, classes are compiled and a small window pops up after a few seconds. Maven has a similar workflow, the Griffon master application pom has simplified building tasks by providing a lot of plugins and profiles that follow the conventions. Running the application with Maven is as easy as executing</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ mvn -Prun</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The master pom uses a profile to make sure that classes and resources are properly handled before the application’s main class is run inside a JVM process.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="icon"><a class="image" href="#_tutorial_1_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_1_toc">Top</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tutorial_1_4">4. Setting up the IDE</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Configuring IDEs is not that difficult considering that Griffon 2 projects can be imported either as Gradle or Maven projects, in other words, there’s no need for a special IDE plugin to build and run a Griffon 2 application.</p> 
+  </div> 
+  <div class="admonitionblock warning"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
+      <td class="content"> Both IntelliJ IDEA and NetBeans have a Griffon plugin (IDEA has it installed by default). These plugins were designed to work with Griffon 1 and are <strong>incompatible</strong> with Griffon 2. Do <strong>not</strong> use these plugins to work with Griffon 2 projects! </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <div class="paragraph"> 
+   <div class="title">
+    IntelliJ IDEA
+   </div> 
+   <p>You can import a project either using the Gradle or Maven import. Once you do you’ll be able to invoke build goals using the respective build tool view.</p> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> Mac OSX users must run IntelliJ IDEA using JDK7 (the default is JDK6 in Intellij 15) otherwise the Gradle plugin will not be able to import the project and will fail with a cryptic error. </td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You must also have Annotation Processing enabled for compile time annotations such as <code>@ArtifactProviderFor</code> to be picked up automatically. Open up Preferences and navigate to <strong>Build, Execution Deployment</strong> &gt; <strong>Compiler</strong> &gt; <strong>Annotation Processors</strong></p> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="http://griffon-framework.org/img/intellij_apt_processor.png" alt="intellij apt processor"> 
+   </div> 
+   <div class="title">
+    Figure 1. Annotation Processing in IntelliJ
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Finally, check that all <code>*-compile</code> JARs are added in the PROVIDED scope, also <code>jipsy-0.4.1.jar</code> (for Java and Groovy projects) and <code>gipsy-0.4.1.jar</code> (for Groovy projects).</p> 
+  </div> 
+  <div class="paragraph"> 
+   <div class="title">
+    NetBeans
+   </div> 
+   <p>NetBeans can import Maven projects without additional plugins. You must install the Gradle plugin first if you want to build Gradle based projects. The Gradle plugin is directly accessible from the default plugin location as configured in the Plugins preference panel.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>NetBeans is able to pick up Annotation Processors automatically from the classpath, there’s no extra step needed.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <div class="title">
+    Eclipse
+   </div> 
+   <p>Unfortunately Eclipse is the odd member of the three IDEs. You must locate and install the m2e (Maven) and gradle plugins that are compatible with your current Eclipse installation. Once you do, you will be able to import the project directly into your workspace.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You must also install the Gradle Buildship and Groovy plugins from the marketplace</p> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="http://griffon-framework.org/img/eclipse_plugins.png" alt="eclipse plugins"> 
+   </div> 
+   <div class="title">
+    Figure 2. Required Eclipse Plugins
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Finally, Annotation Processing must be manually enabled. You must do this in a per project basis. Search for <strong>Annotation Processing</strong> in the project’s properties and tick the checkbox to activate this option.</p> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="http://griffon-framework.org/img/eclipse_apt_processing.1.png" alt="eclipse apt processing.1"> 
+   </div> 
+   <div class="title">
+    Figure 3. Annotation Processing in Eclipse (1)
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You must also define <strong>every</strong> single JAR file that provides APT processors. The most basic ones ar <code>jipsy</code> and <code>griffon-core-compile</code>. These JARs are found in your build tools' cache and/or local repository.</p> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="http://griffon-framework.org/img/eclipse_apt_processing.2.png" alt="eclipse apt processing.2"> 
+   </div> 
+   <div class="title">
+    Figure 4. Annotation Processing in Eclipse (2)
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>As a rule, all <code>griffon-*-compile</code> JARs provide APT processors and AST transformations.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="icon"><a class="image" href="#_tutorial_1_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_1_toc">Top</a></p> 
+  </div> 
+ </div> 
+</div></p>
+
+    <hr />
+
+        </div>
+        <div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

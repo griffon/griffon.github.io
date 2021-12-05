@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Tutorial 6::Minimalistic Build</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/devicons.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+   
+
+
+        <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img style="display: block; float: left; padding: 10px" src="/img/griffon-icon-32x32.png" />
+          <a class="navbar-brand" href="../index.html">Griffon</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../whygriffon.html">Why Griffon</a></li>
+            <li><a href="../news/">News</a></li>
+            <li><a href="../documentation.html">Documentation</a></li>
+            <li><a href="../tutorials/">Tutorials</a></li>
+            <li><a href="../plugins.html">Plugins</a></li>
+            <li><a href="../development.html">Development</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+    
+    <div class="page-header">
+        <h1>Tutorial 6::Minimalistic Build</h1>
+    </div>
+
+    <p><div class="sect1"> 
+ <h2 id="_tutorial_6_toc">Agenda</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>This tutorial describes how a Griffon application can be build without using the <code>griffon</code> Gradle plugin. It also shows that how all source and resources directories can be condensed into a minimum set of directories.</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p><a href="#_tutorial_6_1">Directory Layout</a></p> </li> 
+    <li> <p><a href="#_tutorial_6_2">Metadata Files</a></p> </li> 
+    <li> <p><a href="#_tutorial_6_3">Build Files</a></p> 
+     <div class="olist loweralpha"> 
+      <ol class="loweralpha" type="a"> 
+       <li> <p><a href="#_tutorial_6_3_1">Main</a></p> </li> 
+       <li> <p><a href="#_tutorial_6_3_2">JavaFX</a></p> </li> 
+       <li> <p><a href="#_tutorial_6_3_3">Integration Tests</a></p> </li> 
+       <li> <p><a href="#_tutorial_6_3_4">Functional Tests</a></p> </li> 
+      </ol> 
+     </div> </li> 
+   </ol> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tutorial_6_1">1. Directory Layout</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Griffon relies on Lazybones templates in order to boostrap a brand new project or create additional artifacts. However this does not mean that Griffon projects must be created using the templates; as a matter of fact is possible to create a project by conventional Gradle means, or even by hand. The project doesn’t even have to comply with the standard Griffon structure, it can use the standard Java/Groovy project layout that Gradle understands. The following listing shows this layout, with all sources for a simple application already inside their respective directories</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>.
+├── build.gradle                                                 <i class="conum" data-value="1"></i><b>(1)</b>
+├── gradle                                                       <i class="conum" data-value="2"></i><b>(2)</b>
+│&nbsp;&nbsp; ├── functional-test.gradle
+│&nbsp;&nbsp; ├── integration-test.gradle
+│&nbsp;&nbsp; ├── javafx-plugin.gradle
+├── gradle.properties
+└── src
+    ├── functional-test                                          <i class="conum" data-value="7"></i><b>(7)</b>
+    │&nbsp;&nbsp; └── java
+    │&nbsp;&nbsp;     └── org
+    │&nbsp;&nbsp;         └── example
+    │&nbsp;&nbsp;             └── SampleFunctionalTest.java
+    ├── integration-test                                         <i class="conum" data-value="6"></i><b>(6)</b>
+    │&nbsp;&nbsp; └── java
+    │&nbsp;&nbsp;     └── org
+    │&nbsp;&nbsp;         └── example
+    │&nbsp;&nbsp;             └── SampleIntegrationTest.java
+    ├── main                                                     <i class="conum" data-value="3"></i><b>(3)</b>
+    │&nbsp;&nbsp; ├── java
+    │&nbsp;&nbsp; │&nbsp;&nbsp; ├── Config.java
+    │&nbsp;&nbsp; │&nbsp;&nbsp; └── org
+    │&nbsp;&nbsp; │&nbsp;&nbsp;     └── example
+    │&nbsp;&nbsp; │&nbsp;&nbsp;         ├── Launcher.java
+    │&nbsp;&nbsp; │&nbsp;&nbsp;         ├── SampleController.java
+    │&nbsp;&nbsp; │&nbsp;&nbsp;         ├── SampleModel.java
+    │&nbsp;&nbsp; │&nbsp;&nbsp;         ├── SampleService.java
+    │&nbsp;&nbsp; │&nbsp;&nbsp;         └── SampleView.java
+    │&nbsp;&nbsp; └── resources                                            <i class="conum" data-value="4"></i><b>(4)</b>
+    │&nbsp;&nbsp;     ├── META-INF
+    │&nbsp;&nbsp;     │&nbsp;&nbsp; └── griffon
+    │&nbsp;&nbsp;     │&nbsp;&nbsp;     ├── griffon.core.artifact.GriffonController
+    │&nbsp;&nbsp;     │&nbsp;&nbsp;     ├── griffon.core.artifact.GriffonModel
+    │&nbsp;&nbsp;     │&nbsp;&nbsp;     ├── griffon.core.artifact.GriffonService
+    │&nbsp;&nbsp;     │&nbsp;&nbsp;     └── griffon.core.artifact.GriffonView
+    │&nbsp;&nbsp;     ├── application.properties
+    │&nbsp;&nbsp;     ├── griffon-icon-128x128.png
+    │&nbsp;&nbsp;     ├── griffon-icon-16x16.png
+    │&nbsp;&nbsp;     ├── griffon-icon-24x24.png
+    │&nbsp;&nbsp;     ├── griffon-icon-256x256.png
+    │&nbsp;&nbsp;     ├── griffon-icon-32x32.png
+    │&nbsp;&nbsp;     ├── griffon-icon-48x48.png
+    │&nbsp;&nbsp;     ├── griffon-icon-64x64.png
+    │&nbsp;&nbsp;     ├── griffon.png
+    │&nbsp;&nbsp;     ├── log4j.properties
+    │&nbsp;&nbsp;     ├── messages.properties
+    │&nbsp;&nbsp;     ├── org
+    │&nbsp;&nbsp;     │&nbsp;&nbsp; └── example
+    │&nbsp;&nbsp;     │&nbsp;&nbsp;     └── sample.fxml
+    │&nbsp;&nbsp;     └── resources.properties
+    └── test                                                     <i class="conum" data-value="5"></i><b>(5)</b>
+        └── java
+            └── org
+                └── example
+                    ├── SampleControllerTest.java
+                    └── SampleServiceTest.java</code></pre> 
+   </div> 
+  </div> 
+  <div class="colist arabic"> 
+   <table> 
+    <tbody>
+     <tr> 
+      <td><i class="conum" data-value="1"></i><b>1</b></td> 
+      <td>build file</td> 
+     </tr> 
+     <tr> 
+      <td><i class="conum" data-value="2"></i><b>2</b></td> 
+      <td>additional build files</td> 
+     </tr> 
+     <tr> 
+      <td><i class="conum" data-value="3"></i><b>3</b></td> 
+      <td>main sources</td> 
+     </tr> 
+     <tr> 
+      <td><i class="conum" data-value="4"></i><b>4</b></td> 
+      <td>main resources</td> 
+     </tr> 
+     <tr> 
+      <td><i class="conum" data-value="5"></i><b>5</b></td> 
+      <td>test sources</td> 
+     </tr> 
+     <tr> 
+      <td><i class="conum" data-value="6"></i><b>6</b></td> 
+      <td>integration test sources</td> 
+     </tr> 
+     <tr> 
+      <td><i class="conum" data-value="7"></i><b>7</b></td> 
+      <td>functional test sources</td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <div class="paragraph"> 
+   <p>We begin by looking at root directory, where we find the main build file <em class="conum">1</em> paired with some additional build scripts <em class="conum">2</em> that take care of configuring this project for JavaFX, as well as setting up integration and functional tests. All application sources are located in the standard location for a Java project, that is <code>src/main/java</code> <em class="conum">3</em>; main resources are found in their conventional location too <em class="conum">4</em>. Notice that special metadata files are located there too. Test sources do follow the same conventions <em class="conum">5</em> so they are located inside <code>src/test/java</code>. Finally we see the sources for integration <em class="conum">6</em> and <em class="conum">7</em> functional tests, which follow the paths configured by the additional build scripts <em class="conum">2</em>.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="icon"><a class="image" href="#_tutorial_6_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_6_toc">Top</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tutorial_6_2">2. Metadata Files</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Usually Griffon projects will automatically generate metadata files associated with Griffon artifacts, thanks to the usage of the <code>@ArtifactProviderFor</code> annotation in combination with {link_jipsy}. But given that we did not define a dependency in <em>provided</em> scope for {link_jipsy} we must have to write these files by hand. The catch is that these files must be updated every time an artifact is added, renamed, or deleted.</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    META-INF/griffon/griffon.core.artifact.GriffonController
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">org.example.SampleController</code></pre> 
+   </div> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    META-INF/griffon/griffon.core.artifact.GriffonModel
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">org.example.SampleModel</code></pre> 
+   </div> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    META-INF/griffon/griffon.core.artifact.GriffonService
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">org.example.SampleService</code></pre> 
+   </div> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    META-INF/griffon/griffon.core.artifact.GriffonView
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">org.example.SampleView</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="icon"><a class="image" href="#_tutorial_6_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_6_toc">Top</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tutorial_6_3">3. Build Files</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>There are a handful of ways to define project properties for a Gradle project. The cleanlest one is to define these properties on a file named <code>gradle.properties</code>, whose contents can be found in the next listing</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    gradle.properties
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">group               = org.example
+version             = 0.1.0-SNAPSHOT
+griffonVersion      = 2.15.0
+sourceCompatibility = 1.8
+targetCompatibility = 1.8</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The next sections describe the manin build file segreggating its blocks by responsibilities, as well as the additional script files that deal with more functionality.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="icon"><a class="image" href="#_tutorial_6_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_6_toc">Top</a></p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_tutorial_6_3_1">3.1. Main</h3> 
+   <div class="paragraph"> 
+    <p>There’s little to be done in terms of plugin configuration. You need the <code>java</code> plugin at the very least. The other ones listed next allow you to keep an eye on dependency versions and tidy up license headers on files</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="title">
+     Plugin configuration
+    </div> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">plugins {
+    id 'java'
+    id 'idea'
+    id 'com.github.ben-manes.versions' version '0.17.0'
+    id 'com.github.hierynomus.license' version '0.14.0'
+}
+
+apply from: 'gradle/javafx-plugin.gradle'
+apply from: 'gradle/integration-test.gradle'
+apply from: 'gradle/functional-test.gradle'</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Let’s have a look at the project dependencies. This being a JavaFx project means we need <code>griffon-javafx-2.15.0.jar</code> as a dependency. We also need an implementation for dependency injection, this is why <code>griffon-guice-2.15.0.jar</code> is added to the list. We round up with a concrete implementation of <code>slf4j-api</code>, such as <code>slf4j-log4j12</code>. Finally, regarding tests, we would need <code>griffon-javafx-test-2.15.0.jar</code> plus a few others to make writing tests easier.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="title">
+     Dependencies configuration
+    </div> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">repositories {
+    jcenter()
+    mavenLocal()
+}
+
+dependencies {
+    compile "org.codehaus.griffon:griffon-javafx:${griffonVersion}"
+    compile "org.codehaus.griffon:griffon-guice:${griffonVersion}"
+    compile 'org.kordamp.ikonli:ikonli-javafx:2.1.1'
+    compile 'org.kordamp.ikonli:ikonli-fontawesome-pack:2.1.1'
+    compile 'org.kordamp.bootstrapfx:bootstrapfx-core:0.2.2'
+
+    runtime 'org.slf4j:slf4j-simple:1.7.25'
+
+    testCompile "org.codehaus.griffon:griffon-javafx-test:${griffonVersion}"
+    testCompile 'pl.pragmatists:JUnitParams:1.1.1'
+    testCompile 'org.mockito:mockito-core:2.15.0'
+}</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Every Griffon application has a set of resource files; <code>application.properties</code> contains useful values such as the name of the application, its version, and the current Griffon version in use. These values can be obtained from the build and passed into resource files. We use Gradle’s standard mechanism for processing resources.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="title">
+     Resources configuration
+    </div> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">processResources {
+    filesMatching(['**/*.properties','**/*.xml']) {
+        expand(
+            'application_name'   : project.name,
+            'application_version': project.version,
+            'griffon_version'    : griffonVersion
+        )
+    }
+}</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Finally, we must configure the entry point of the application so that the JavaFX plugin can find it.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="title">
+     JavaFX configuration
+    </div> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">jfx {
+    mainClass         = 'org.example.Launcher'
+    allPermissions    = true
+    keyStoreAlias     = 'example-user'
+    keyStorePassword  = 'example-password'
+    jfxMainAppJarName = jar.archiveName
+    appName           = project.name
+    vendor            = project.name
+}</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="icon"><a class="image" href="#_tutorial_6_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_6_toc">Top</a></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_tutorial_6_3_2">3.2. JavaFX</h3> 
+   <div class="paragraph"> 
+    <p>This file performs a check on several paths to locate the correct <code>jfxrt.jar</code> which is required by the JavaFX plugin. It also applies the JavaFX plugin.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="title">
+     gradle/javafx-plugin.gradle
+    </div> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">buildscript {
+    File javaHome = new File(System.properties['java.home'])
+    javaHome = javaHome.name == 'jre' ? javaHome.parentFile : javaHome
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath project.files("${javaHome}/lib/ant-javafx.jar")
+        classpath 'de.dynamicfiles.projects.gradle.plugins:javafx-gradle-plugin:8.8.2'
+    }
+}
+
+apply plugin: de.dynamicfiles.projects.gradle.plugins.javafx.JavaFXGradlePlugin</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="icon"><a class="image" href="#_tutorial_6_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_6_toc">Top</a></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_tutorial_6_3_3">3.3. Integration Tests</h3> 
+   <div class="paragraph"> 
+    <p>Integration tests build up on existing configuration from regular tests. Some paths and classpaths need to be adjusted, as well as wiring up tasks dependencies, so that in the end, invoking <code>check</code> will also run <code>integration-test</code>, just like it happens with the standard <code>test</code> task.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="title">
+     gradle/integration-test.gradle
+    </div> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">configurations {
+    integrationTestCompile {
+        extendsFrom testCompile
+    }
+    integrationTestRuntime {
+        extendsFrom integrationTestCompile, testRuntime
+    }
+}
+
+sourceSets {
+    integrationTest {
+        if (file('src/integration-test/java').exists()) {
+            java.srcDirs file('src/integration-test/java')
+        }
+        resources.srcDir file('src/integration-test/resources')
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += compileClasspath
+    }
+}
+
+idea {
+    module {
+        scopes.TEST.plus += [configurations.integrationTestCompile]
+        scopes.TEST.plus += [configurations.integrationTestRuntime]
+        testSourceDirs += sourceSets.integrationTest.allSource.srcDirs
+    }
+}
+
+task integrationTest(type: Test, dependsOn: jar) {
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    reports.html.enabled = false
+}
+
+task integrationTestReport(type: TestReport) {
+    destinationDir = file("${buildDir}/reports/integration-tests")
+    reportOn integrationTest.binResultsDir
+}
+
+integrationTest.mustRunAfter test
+integrationTest.finalizedBy integrationTestReport
+integrationTestReport.dependsOn integrationTest
+check.dependsOn integrationTestReport</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="icon"><a class="image" href="#_tutorial_6_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_6_toc">Top</a></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="_tutorial_6_3_4">3.4. Functional Tests</h3> 
+   <div class="paragraph"> 
+    <p>Functional tests differ from the previous ones by not extending directly from regular tests. This assures that functional tests don’t get polluted with unit or integration concerns. This is the reason why basic test dependencies are defined explicitly here.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="title">
+     gradle/functional-test.gradle
+    </div> 
+    <div class="content"> 
+     <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">configurations {
+    functionalTestCompile {
+        extendsFrom compile
+    }
+    functionalTestRuntime {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+    functionalTestCompile 'junit:junit:4.12'
+    functionalTestCompile 'pl.pragmatists:JUnitParams:1.1.1'
+    functionalTestCompile "org.codehaus.griffon:griffon-javafx-test:${griffonVersion}"
+}
+
+sourceSets {
+    functionalTest {
+        if (file('src/functional-test/java').exists()) {
+            java.srcDirs file('src/functional-test/java')
+        }
+
+        resources.srcDir file('src/functional-test/resources')
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += compileClasspath
+    }
+}
+
+idea {
+    module {
+        scopes.TEST.plus += [configurations.functionalTestCompile]
+        scopes.TEST.plus += [configurations.functionalTestRuntime]
+        testSourceDirs += sourceSets.functionalTest.allSource.srcDirs
+    }
+}
+
+task functionalTest(type: Test, dependsOn: jar) {
+    testClassesDirs = sourceSets.functionalTest.output.classesDirs
+    classpath = sourceSets.functionalTest.runtimeClasspath
+    reports.html.enabled = false
+}
+
+task functionalTestReport(type: TestReport) {
+    destinationDir = file("${buildDir}/reports/functional-tests")
+    reportOn functionalTest.binResultsDir
+}
+
+functionalTest.mustRunAfter integrationTest
+functionalTest.finalizedBy functionalTestReport
+functionalTestReport.dependsOn functionalTest
+check.dependsOn functionalTestReport</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The full code for this application can be found <a href="https://github.com/griffon/griffon/tree/master/tutorials/simplified" target="_blank" rel="noopener">here</a>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="icon"><a class="image" href="#_tutorial_6_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_6_toc">Top</a></p> 
+   </div> 
+  </div> 
+ </div> 
+</div></p>
+
+    <hr />
+
+        </div>
+        <div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Tutorial 3::MVC Groups (JavaFX)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/devicons.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+   
+
+
+        <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img style="display: block; float: left; padding: 10px" src="/img/griffon-icon-32x32.png" />
+          <a class="navbar-brand" href="../index.html">Griffon</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../whygriffon.html">Why Griffon</a></li>
+            <li><a href="../news/">News</a></li>
+            <li><a href="../documentation.html">Documentation</a></li>
+            <li><a href="../tutorials/">Tutorials</a></li>
+            <li><a href="../plugins.html">Plugins</a></li>
+            <li><a href="../development.html">Development</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+    
+    <div class="page-header">
+        <h1>Tutorial 3::MVC Groups (JavaFX)</h1>
+    </div>
+
+    <p><div class="sect1">
+<h2 id="_tutorial_3_toc">Agenda</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This tutorial touches the following subjects:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Creating new MVC group artifacts</p>
+</li>
+<li>
+<p>Instantiating MVC groups</p>
+</li>
+<li>
+<p>MVC Group parent-child relationships</p>
+</li>
+<li>
+<p>MVC Group lifecycle</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The goal of the Editor application shown here is to provide basic editing capabilities for text files. Each
+file will be handled by its own tab; tabs will be located inside a tab container.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#_tutorial_3_1">Creating an Editor application</a></p>
+</li>
+<li>
+<p><a href="#_tutorial_3_2">Setting up the main MVC group</a></p>
+</li>
+<li>
+<p><a href="#_tutorial_3_3">Generating an Editor MVC group</a></p>
+</li>
+<li>
+<p><a href="#_tutorial_3_4">Setting up the Editor MVC group</a></p>
+</li>
+<li>
+<p><a href="#_tutorial_3_5">Instantiating the Editor MVC group</a></p>
+</li>
+<li>
+<p><a href="#_tutorial_3_6">Finishing up the main MVC group</a></p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This tutorial is almost identical to <a href="2_mvcgroups_swing.html" target="_blank">Tutorial 2::MVC Groups (Swing)</a>
+but relies on JavaFX as the UI technology. A <span class="icon"><i class="fa fa-bolt"></i></span> icon preceding a section or paragraph will be used to denote
+JavaFx specific content that differs from the other tutorial.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tutorial_3_1">1. Creating an Editor application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We&#8217;ll follow similar steps as explained in <a href="1_getting_started.html" target="_blank">Tutorial 1::Getting Started</a> to
+create a brand new Griffon 2 application. Assuming you&#8217;ve got SDKMAN, Lazybones and Gradle already installed on your system,
+execute the following command on a console prompt, paying attention to the selections we&#8217;ve made</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-bolt"></i></span> Use the <code>griffon-javafx-java</code> template</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>$ lazybones create griffon-javafx-java editor
+Creating project from template griffon-javafx-java (latest) in 'editor'
+Define value for 'group' [org.example]: editor
+Define value for 'artifactId' [editor]:
+Define value for 'version' [0.1.0-SNAPSHOT]:
+Define value for 'griffonVersion' [{jbake-griffon_version_current}]:
+Define value for 'package' [editor]:
+Define value for 'className' [Editor]: container</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There should be a new directory named <code>editor</code> with the freshly created application inside. At this point you can import
+the project in your favourite IDE. We&#8217;ll continue with Gradle on the command line to keep things simple.
+Verifying that the application is working should be our next step. Execute the following command</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>$ gradle run</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A window should pop up after a few seconds. Quit the application, we&#8217;re ready to begin customizing the application.</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><a class="image" href="#_tutorial_3_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_3_toc">Top</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tutorial_3_2">2. Setting up the main MVC group</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each file we open requires a bit of metadata to be handled by the editor application, for example its title and contents.
+We&#8217;ll create a simple observable POJO that represents a <code>Document</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/java/editor/Document.java</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package editor;
+
+import org.codehaus.griffon.runtime.core.AbstractObservable;
+
+import java.io.File;
+
+public class Document extends AbstractObservable {
+    private String title;
+    private String contents;
+    private boolean dirty;
+    private File file;
+
+    public Document() {
+    }
+
+    public Document(File file, String title) {
+        this.file = file;
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        firePropertyChange("title", this.title, this.title = title);
+    }
+
+    public String getContents() {
+        return contents;
+    }
+
+    public void setContents(String contents) {
+        firePropertyChange("contents", this.contents, this.contents = contents);
+    }
+
+    public boolean isDirty() {
+        return dirty;
+    }
+
+    public void setDirty(boolean dirty) {
+        firePropertyChange("dirty", this.dirty, this.dirty = dirty);
+    }
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        firePropertyChange("file", this.file, this.file = file);
+    }
+
+    public void copyTo(Document doc) {
+        doc.title = title;
+        doc.contents = contents;
+        doc.dirty = dirty;
+        doc.file = file;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <em>title</em> and <em>contents</em> properties should be self explanatory. We&#8217;ll use the <em>dirty</em> property to keep track of
+changes. The final property, <em>file</em>, points to the <code>File</code> object that was used to load the document; we&#8217;ll use this
+value to save back edited changes.</p>
+</div>
+<div class="paragraph">
+<p>Now imagine what happens when you have multiple tabs open in an editor; the <code>save</code> and <code>close</code> actions are context
+sensitive, that is, they operate on the currently selected editor/tab. We need to replicate this behavior, in order
+to do so we&#8217;ll use a presentation model for the <code>Document</code> class, aptly named <code>DocumentModel</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/java/editor/DocumentModel.java</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package editor;
+
+import java.beans.PropertyChangeListener;
+
+import static griffon.util.GriffonClassUtils.setPropertyValue;
+
+public class DocumentModel extends Document {
+    private Document document;
+
+    private final PropertyChangeListener proxyUpdater = (e) -&gt; setPropertyValue(this, e.getPropertyName(), e.getNewValue());
+
+    public DocumentModel() {
+        addPropertyChangeListener("document", (e) -&gt; {
+            if (e.getOldValue() instanceof Document) {
+                ((Document) e.getOldValue()).removePropertyChangeListener(proxyUpdater);
+            }
+            if (e.getNewValue() instanceof Document) {
+                ((Document) e.getNewValue()).addPropertyChangeListener(proxyUpdater);
+                ((Document) e.getNewValue()).copyTo(DocumentModel.this);
+            }
+        });
+    }
+
+    public Document getDocument() {
+        return document;
+    }
+
+    public void setDocument(Document document) {
+        firePropertyChange("document", this.document, this.document = document);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>DocumentModel</code> class extends from <code>Document</code> just as a convenience, it inherits all properties from <code>Document</code> in
+this way. It also defines a new property <em>document</em> which will hold the selected <code>Document</code>.</p>
+</div>
+<div class="paragraph">
+<p>Alright, we can move on to the <code>ContainerModel</code> member of the <code>container</code> MVC group (our main group). Here we&#8217;ll
+see how the previous presentation model is put to good use.</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/models/editor/ContainerModel.java</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package editor;
+
+import griffon.core.artifact.GriffonModel;
+import griffon.metadata.ArtifactProviderFor;
+import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonModel;
+
+@ArtifactProviderFor(GriffonModel.class)
+public class ContainerModel extends AbstractGriffonModel {
+    private static final String MVC_IDENTIFIER = "mvcIdentifier";
+    private final DocumentModel documentModel = new DocumentModel();
+    private String mvcIdentifier;
+
+    public ContainerModel() {
+        addPropertyChangeListener(MVC_IDENTIFIER, (e) -&gt; {
+            Document document = null;
+            if (e.getNewValue() != null) {
+                EditorModel model = getApplication().getMvcGroupManager().getModel(mvcIdentifier, EditorModel.class);
+                document = model.getDocument();
+            } else {
+                document = new Document();
+            }
+            documentModel.setDocument(document);
+        });
+    }
+
+    public String getMvcIdentifier() {
+        return mvcIdentifier;
+    }
+
+    public void setMvcIdentifier(String mvcIdentifier) {
+        firePropertyChange(MVC_IDENTIFIER, this.mvcIdentifier, this.mvcIdentifier = mvcIdentifier);
+    }
+
+    public DocumentModel getDocumentModel() {
+        return documentModel;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This model keeps track of two items:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>the identifier of the selected tab, represented by <em>mvcIdentifier</em>.</p>
+</li>
+<li>
+<p>the document presentation model, represented by <em>documentModel</em>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Notice that the <em>documentModel</em> property is declared as final; this means it will always have the same value, thus we
+can use it to create stable bindings. This is the reason for making <code>DocumentModel</code> a subclass of <code>Document</code>. As you
+can see the former listens to changes on the latter and copying the values over. This happens every time the application
+changes the value of <em>documentModel.document</em> due to the <code>PropertyChangeListener</code>s that were put into place.</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-bolt"></i></span> Let&#8217;s move to the View. Open up <code>ContainerView.java</code> and paste the following into it</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/views/editor/ContainerView.java</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package editor;
+
+import griffon.core.artifact.GriffonView;
+import griffon.core.controller.Action;
+import griffon.inject.MVCMember;
+import griffon.metadata.ArtifactProviderFor;
+import javafx.fxml.FXML;
+import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.TabPane;
+import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.Window;
+import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.io.File;
+import java.util.Collections;
+
+@ArtifactProviderFor(GriffonView.class)
+public class ContainerView extends AbstractJavaFXGriffonView {
+    private ContainerController controller;
+    private ContainerModel model;
+
+    @FXML
+    private TabPane tabGroup;
+
+    private FileChooser fileChooser;
+
+    @MVCMember
+    public void setController(@Nonnull ContainerController controller) {
+        this.controller = controller;
+    }
+
+    @MVCMember
+    public void setModel(@Nonnull ContainerModel model) {
+        this.model = model;
+    }
+
+    @Nonnull
+    public TabPane getTabGroup() {
+        return tabGroup;
+    }
+
+    @Override
+    public void initUI() {
+        Stage stage = (Stage) getApplication()
+            .createApplicationContainer(Collections.&lt;String, Object&gt;emptyMap());
+        stage.setTitle(getApplication().getConfiguration().getAsString("application.title"));
+        stage.setWidth(480);
+        stage.setHeight(320);
+        stage.setScene(init());
+        getApplication().getWindowManager().attach("mainWindow", stage);
+
+        fileChooser = new FileChooser();
+        fileChooser.setTitle(getApplication().getConfiguration().getAsString("application.title", "Open File"));
+    }
+
+    // build the UI
+    private Scene init() {
+        Scene scene = new Scene(new Group());
+        scene.setFill(Color.WHITE);
+
+        Node node = loadFromFXML();
+        ((Group) scene.getRoot()).getChildren().addAll(node);
+        connectActions(node, controller);
+
+        tabGroup.getSelectionModel().selectedItemProperty().addListener((observable, oldTab, newTab) -&gt; {
+            model.setMvcIdentifier(newTab != null ? newTab.getId() : null);
+        });
+
+        Action saveAction = actionFor(controller, "save");
+        model.getDocumentModel().addPropertyChangeListener("dirty", (e) -&gt; saveAction.setEnabled((Boolean) e.getNewValue()));
+
+        return scene;
+    }
+
+    @Nullable
+    public File selectFile() {
+        Window window = (Window) getApplication().getWindowManager().getStartingWindow();
+        return fileChooser.showOpenDialog(window);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here we find a <code>Scene</code> whose contents come from an FXML file. The file name is determined using a naming convention, in
+this case it&#8217;s the fully qualified View class name without the <code>View</code> suffix. These are the contents of said file.</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-bolt"></i></span> Also, the <code>view</code> registers an anonymous <code>javafx.beans.value.ChangeListener</code> to listen to tab selection
+changes and update the <em>documentModel</em> property found in the <code>model</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/resources/editor/container.fxml</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-attributes"" data-lang="attributes"">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!--
+
+    Copyright 2008-2017 the original author or authors.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+--&gt;
+&lt;?import javafx.scene.control.Menu?&gt;
+&lt;?import javafx.scene.control.MenuBar?&gt;
+&lt;?import javafx.scene.control.MenuItem?&gt;
+&lt;?import javafx.scene.control.SeparatorMenuItem?&gt;
+&lt;?import javafx.scene.control.TabPane?&gt;
+&lt;?import javafx.scene.layout.BorderPane?&gt;
+&lt;BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="editor.ContainerController"&gt;
+    &lt;top&gt;
+        &lt;MenuBar BorderPane.alignment="CENTER"&gt;
+            &lt;menus&gt;
+                &lt;Menu mnemonicParsing="false" text="File"&gt;
+                    &lt;items&gt;
+                        &lt;MenuItem mnemonicParsing="false" text="Open" fx:id="openActionTarget"/&gt;
+                        &lt;MenuItem mnemonicParsing="false" text="Close" fx:id="closeActionTarget"/&gt;
+                        &lt;SeparatorMenuItem mnemonicParsing="false"/&gt;
+                        &lt;MenuItem mnemonicParsing="false" text="Save" fx:id="saveActionTarget"/&gt;
+                        &lt;SeparatorMenuItem mnemonicParsing="false"/&gt;
+                        &lt;MenuItem mnemonicParsing="false" text="Quit" fx:id="quitActionTarget"/&gt;
+                    &lt;/items&gt;
+                &lt;/Menu&gt;
+            &lt;/menus&gt;
+        &lt;/MenuBar&gt;
+    &lt;/top&gt;
+    &lt;center&gt;
+        &lt;TabPane fx:id="tabGroup" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE"
+                 BorderPane.alignment="CENTER"/&gt;
+    &lt;/center&gt;
+&lt;/BorderPane&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This file defines a <code>MenuBar</code> and a tab container (a <code>TabPane</code>) named <em>tabGroup</em>. This tab container is exposed
+to the outside world via a getter method; we&#8217;ll see why it&#8217;s done this way when the second MVC group comes into play.
+The View is also responsible for managing a <code>FileChooser</code> that will be used to select files for reading.</p>
+</div>
+<div class="paragraph">
+<p>We can define a few of the action properties using a resource bundle, from the example the mnemonic and accelerator
+properties. Paste the following into <code>messages.properties</code>.</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-bolt"></i></span> There is no mnemonic support in JavaFX.</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/i18n/messages.properties</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">editor.ContainerController.action.Open.accelerator = Meta+O
+editor.ContainerController.action.Close.accelerator = Meta+W
+editor.ContainerController.action.Save.accelerator = Meta+S
+editor.ContainerController.action.Quit.accelerator = Meta+Q</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We&#8217;re almost done with the <code>container</code> MVC group, what remains to be done is update the <code>ContainerController</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/controllers/editor/ContainerController.java</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package editor;
+
+import griffon.core.artifact.GriffonController;
+import griffon.metadata.ArtifactProviderFor;
+import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonController;
+
+@ArtifactProviderFor(GriffonController.class)
+public class ContainerController extends AbstractGriffonController {
+    private ContainerModel model;
+    private ContainerView view;
+
+    public void open() {
+
+    }
+
+    public void save() {
+
+    }
+
+    public void close() {
+
+    }
+
+    public void quit() {
+        getApplication().shutdown();
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We&#8217;ve got 4 actions (<code>open</code>, <code>save</code>, <code>close</code> and <code>quit</code>) and nothing more for the time being. You can run the application
+once again to verify that the code compiles and runs.</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><a class="image" href="#_tutorial_3_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_3_toc">Top</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tutorial_3_3">3. Generating an Editor MVC group</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can create new artifact files by hand, just by copying existing one. But you can also let Lazybones generate these
+files for you. Lazybones ability to generate additional files well after the project&#8217;s creation is what sets it apart
+from Maven&#8217;s archetype solution. Lazybones has a feature called <em>subtemplates</em> or <em>generators</em>; these are regular
+template files with the added distinction that they have been hidden inside the project&#8217;s sources (actually inside
+<code>.lazybones</code>, local to the project). Unfortunately as of version 0.8 Lazybones does not have a command that can list
+existing subtemplates, however Griffon only exposes one by default, its name is <em>artifact</em>.</p>
+</div>
+<div class="paragraph">
+<p>Armed with this information we can generate new artifacts by invoking the following command</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>$ lazybones generate artifact
+
+The following artifact templates are available
+
+  controller
+  integrationspec
+  integrationtest
+  model
+  service
+  spec
+  test
+  view
+  mvcgroup
+
+Which type of artifact do you want to generate? mvcgroup
+Define value for 'package' [editor]:
+Define value for 'class' name: editor
+Created new artifact griffon-app/models/editor/EditorModel.java
+Created new artifact griffon-app/views/editor/EditorView.java
+Created new artifact griffon-app/controllers/editor/EditorController.java
+Created new artifact src/test/java/editor/EditorControllerTest.java
+Created new artifact src/integration-test/java/editor/EditorIntegrationTest.java
+Do not forget to add the group 'editor' to griffon-app/conf/Config.java</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We select the <code>mvcgroup</code> option. Notice that Lazybones remembered the default package we used when we created the
+application. We select <code>editor</code> as the name of the new MVC group. There are 5 new files generated using the
+default templates. Take special care of the last message; the files were created but this doesn&#8217;t mean the application
+will be able to instantiate the MVC group at runtime. The final piece of the puzzle is letting the application know
+about this new MVC group, this is done by editing <code>Config.java</code></p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/conf/Config.java</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">import griffon.util.AbstractMapResourceBundle;
+
+import javax.annotation.Nonnull;
+import java.util.Map;
+
+import static griffon.util.CollectionUtils.map;
+import static java.util.Arrays.asList;
+
+public class Config extends AbstractMapResourceBundle {
+    @Override
+    protected void initialize(@Nonnull Map&lt;String, Object&gt; entries) {
+        map(entries)
+            .e("application", map()
+                    .e("title", "editor-javafx-java")
+                    .e("startupGroups", asList("container"))
+                    .e("autoShutdown", true)
+            )
+            .e("mvcGroups", map()
+                    .e("container", map()
+                            .e("model", "editor.ContainerModel")
+                            .e("view", "editor.ContainerView")
+                            .e("controller", "editor.ContainerController")
+                    )
+                    .e("editor", map()
+                            .e("model", "editor.EditorModel")
+                            .e("view", "editor.EditorView")
+                            .e("controller", "editor.EditorController")
+                    )
+            );
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Great, we have the basics for this new MVC group ready. Now let&#8217;s make it work.</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><a class="image" href="#_tutorial_3_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_3_toc">Top</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tutorial_3_4">4. Setting up the Editor MVC group</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We&#8217;ll begin by looking at the Model again. This time the model will hold the actual <code>Document</code> that this group will
+edit.</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/models/editor/EditorModel.java</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package editor;
+
+import griffon.core.artifact.GriffonModel;
+import griffon.metadata.ArtifactProviderFor;
+import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonModel;
+
+@ArtifactProviderFor(GriffonModel.class)
+public class EditorModel extends AbstractGriffonModel {
+    private Document document;
+
+    public Document getDocument() {
+        return document;
+    }
+
+    public void setDocument(Document document) {
+        firePropertyChange("document", this.document, this.document = document);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Just a basic observable model with a single <em>document</em> property. Things get interesting once we move to the View,
+as is its responsibility to display the file&#8217;s contents. One thing that must happen at some point is the new tab
+being added to the tab container. We can make this happen at the point where an instance of the <code>editor</code> MVC group
+is created; this requires the <code>EditorView</code> to expose its tab somehow. Or we can keep this behavior local to this
+group and make sure that this View handles adding and removing the tab. This is the reason why we exposed the <em>tabGroup</em>
+field in <code>ContainerView</code>. Let&#8217;s look at the <code>EditorView</code>, shall we?</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-bolt"></i></span> The <code>EditorView</code> relies on FXML to create the nodes.</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/views/editor/EditorView.java</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package editor;
+
+import griffon.core.artifact.GriffonView;
+import griffon.inject.MVCMember;
+import griffon.metadata.ArtifactProviderFor;
+import javafx.fxml.FXML;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TextArea;
+import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView;
+
+import javax.annotation.Nonnull;
+import java.util.Objects;
+
+@ArtifactProviderFor(GriffonView.class)
+public class EditorView extends AbstractJavaFXGriffonView {
+    @MVCMember @Nonnull
+    private EditorModel model;
+    @MVCMember @Nonnull
+    private ContainerView parentView;
+    @MVCMember @Nonnull
+    private String tabName;
+
+    @FXML
+    private TextArea editor;
+
+    private Tab tab;
+
+    @Override
+    public void initUI() {
+        tab = new Tab(tabName);
+        tab.setId(getMvcGroup().getMvcId());
+        tab.setContent(loadFromFXML());
+        parentView.getTabGroup().getTabs().add(tab);
+
+        model.getDocument().addPropertyChangeListener("contents", (e) -&gt; editor.setText((String) e.getNewValue()));
+
+        editor.textProperty().addListener((observable, oldValue, newValue) -&gt;
+            model.getDocument().setDirty(!Objects.equals(editor.getText(), model.getDocument().getContents())));
+    }
+
+    public TextArea getEditor() {
+        return editor;
+    }
+
+    @Override
+    public void mvcGroupDestroy() {
+        runInsideUISync(() -&gt; parentView.getTabGroup().getTabs().remove(tab));
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And the corresponding FXML file for this View</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/resources/editor/editor.fxml</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-attributes"" data-lang="attributes"">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!--
+
+    Copyright 2008-2017 the original author or authors.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+--&gt;
+&lt;?import javafx.scene.control.ScrollPane?&gt;
+&lt;?import javafx.scene.control.TextArea?&gt;
+&lt;ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+            fx:controller="editor.EditorController"&gt;
+    &lt;content&gt;
+        &lt;TextArea prefHeight="406.0" prefWidth="600.0" fx:id="editor"/&gt;
+    &lt;/content&gt;
+&lt;/ScrollPane&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Take special note in the usages of the <em>parentView</em> field. Notice that the type is set to <code>ContainerView</code>,
+this means this View is aware that it&#8217;s not a top level MVC group, that is, there will be another MVC group that
+is responsible for instantiating <code>editor</code>, in this case it is the <code>container</code> MVC group. A parent/child
+relationship is established between the two MVC group instances when this happens. More information about this
+relationship can be found at the <a href="/guide/latest/index.html#_mvc_mvc_group_relationships" target="_blank">guide</a>.</p>
+</div>
+<div class="paragraph">
+<p>Because this View is responsible for attaching the tab when ready it should also be responsible for detaching said tab
+when the group is no longer in use. We&#8217;ll use the <code>mvcGroupDestroy()</code> lifecycle method to achieve this goal. Also,
+the tab component saves the group&#8217;s identifier into a client property. This is the link that the <code>ContainerModel</code> uses
+to switch between active tabs.</p>
+</div>
+<div class="paragraph">
+<p>Last but not least, we update the <code>EditorController</code> to take care of loading the document, saving any changes and
+closing the tab.</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/controllers/editor/EditorController.java</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package editor;
+
+import griffon.core.artifact.GriffonController;
+import griffon.core.controller.ControllerAction;
+import griffon.inject.MVCMember;
+import griffon.metadata.ArtifactProviderFor;
+import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonController;
+
+import javax.annotation.Nonnull;
+import java.io.IOException;
+import java.util.Map;
+
+import static org.apache.commons.io.FileUtils.readFileToString;
+import static org.apache.commons.io.FileUtils.writeStringToFile;
+
+@ArtifactProviderFor(GriffonController.class)
+public class EditorController extends AbstractGriffonController {
+    @MVCMember @Nonnull
+    private EditorModel model;
+    @MVCMember @Nonnull
+    private EditorView view;
+
+    @Override
+    public void mvcGroupInit(@Nonnull Map&lt;String, Object&gt; args) {
+        model.setDocument((Document) args.get("document"));
+        runOutsideUI(() -&gt; {
+            try {
+                final String content = readFileToString(model.getDocument().getFile());
+                runInsideUIAsync(() -&gt; model.getDocument().setContents(content));
+            } catch (IOException e) {
+                getLog().warn("Can't open file", e);
+            }
+        });
+    }
+
+    @ControllerAction
+    public void saveFile() {
+        try {
+            writeStringToFile(model.getDocument().getFile(), view.getEditor().getText());
+            runInsideUIAsync(() -&gt; model.getDocument().setContents(view.getEditor().getText()));
+        } catch (IOException e) {
+            getLog().warn("Can't save file", e);
+        }
+    }
+
+    @ControllerAction
+    public void closeFile() {
+        destroyMVCGroup(getMvcGroup().getMvcId());
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Invoking the <code>closeFile()</code> action triggers the destruction of this MVC group, which in turns calls the
+<code>mvcGroupDestroy()</code> lifecycle method on all MVC instances, such as the View; this will automatically remove the tab
+from the tab container as expected.</p>
+</div>
+<div class="paragraph">
+<p>Don&#8217;t forget to add the following dependency to <code>build.gradle</code>!</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">compile 'commons-io:commons-io:2.5'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="icon"><a class="image" href="#_tutorial_3_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_3_toc">Top</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tutorial_3_5">5. Instantiating the Editor MVC group</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We go back to the <code>ContainerController</code> to add some more behavior to it. Now that we know the <code>EditorView</code> expects a
+<code>ContainerView</code> as parent it makes sense for the <code>ContainerController</code> to instantiate the <code>editor</code> group. We&#8217;ll do
+this in the <code>open</code> action.</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/controllers/editor/ContainerController.java</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">public void open() {
+    File file = view.selectFile();
+    if (file != null) {
+        String mvcIdentifier = file.getName() + "-" + System.currentTimeMillis();
+        createMVC("editor", mvcIdentifier, CollectionUtils.&lt;String, Object&gt;map()
+            .e("document", new Document(file, file.getName()))
+            .e("tabName", file.getName()));
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now the pieces start to fall into their rightful place. Because the <code>editor</code> MVC group takes care of attaching and
+detaching itself the code in the <code>container</code> controller is much simpler, it just needs to create a new instance of
+the <code>editor</code> group and that&#8217;s it!</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><a class="image" href="#_tutorial_3_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_3_toc">Top</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tutorial_3_6">6. Finishing up the main MVC group</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We&#8217;re ready to make the final adjustments to this application, by adding the missing behavior to the
+<code>ContainerController</code>, that is, the code for <code>save</code> and <code>close</code> actions.</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/controllers/editor/ContainerController.java</div>
+<div class="content">
+<pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package editor;
+
+import griffon.core.artifact.GriffonController;
+import griffon.core.controller.ControllerAction;
+import griffon.inject.MVCMember;
+import griffon.metadata.ArtifactProviderFor;
+import griffon.transform.Threading;
+import griffon.util.CollectionUtils;
+import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonController;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.io.File;
+
+import static griffon.util.GriffonNameUtils.isBlank;
+
+@ArtifactProviderFor(GriffonController.class)
+public class ContainerController extends AbstractGriffonController {
+    @MVCMember @Nonnull
+    private ContainerModel model;
+    @MVCMember @Nonnull
+    private ContainerView view;
+
+    @ControllerAction
+    @Threading(Threading.Policy.SKIP)
+    public void open() {
+        File file = view.selectFile();
+        if (file != null) {
+            String mvcIdentifier = file.getName() + "-" + System.currentTimeMillis();
+            createMVC("editor", mvcIdentifier, CollectionUtils.&lt;String, Object&gt;map()
+                .e("document", new Document(file, file.getName()))
+                .e("tabName", file.getName()));
+        }
+    }
+
+    @ControllerAction
+    public void save() {
+        EditorController controller = resolveEditorController();
+        if (controller != null) {
+            controller.saveFile();
+        }
+    }
+
+    @ControllerAction
+    public void close() {
+        EditorController controller = resolveEditorController();
+        if (controller != null) {
+            controller.closeFile();
+        }
+    }
+
+    @ControllerAction
+    public void quit() {
+        getApplication().shutdown();
+    }
+
+    @Nullable
+    private EditorController resolveEditorController() {
+        if (!isBlank(model.getMvcIdentifier())) {
+            return getApplication().getMvcGroupManager()
+                .findController(model.getMvcIdentifier(), EditorController.class);
+        }
+        return null;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here we see another interesting feature of the Griffon runtime. Every instance of an MVC group is tracked by the
+<code>MVCGroupManager</code>, this means we can search for a group as long as we know its id. This is why we store the selected
+<em>mvcIdentifier</em> in <code>ContainerModel</code>. The <code>save</code> and <code>close</code> actions are <em>global</em>, they are defined by the <code>container</code>
+group, but they must act upon a special context, the selected tab handled by an instance of the <code>editor</code> group.
+We accomplish this task by remembering the group id associated with a tab whenever its selected; this id is used to
+find the correct <code>editor</code> group instance and perform actions on it.</p>
+</div>
+<div class="paragraph">
+<p>The full code for this application can be found
+<a href="https://github.com/griffon/griffon/tree/master/samples/editor-javafx-java" target="_blank">here</a>.</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><a class="image" href="#_tutorial_3_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_3_toc">Top</a></p>
+</div>
+</div>
+</div></p>
+
+    <hr />
+
+        </div>
+        <div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.5.1</a></p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

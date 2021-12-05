@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Tutorial 4::JavaFX Views</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/devicons.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+   
+
+
+        <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img style="display: block; float: left; padding: 10px" src="/img/griffon-icon-32x32.png" />
+          <a class="navbar-brand" href="../index.html">Griffon</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../whygriffon.html">Why Griffon</a></li>
+            <li><a href="../news/">News</a></li>
+            <li><a href="../documentation.html">Documentation</a></li>
+            <li><a href="../tutorials/">Tutorials</a></li>
+            <li><a href="../plugins.html">Plugins</a></li>
+            <li><a href="../development.html">Development</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+    
+    <div class="page-header">
+        <h1>Tutorial 4::JavaFX Views</h1>
+    </div>
+
+    <p><div class="sect1"> 
+ <h2 id="_tutorial_4_toc">Agenda</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>This tutorial describes how to create JavaFX views using different techniques:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>JavaFX API.</p> </li> 
+    <li> <p>FXML.</p> </li> 
+    <li> <p>GroovyFX.</p> </li> 
+    <li> <p>GroovyFX and FXML.</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The goal of the application is to build the same MVCGroup using different techniques for each View. Each MVCGroup defines a <code>Tab</code> that the main View will host. The application looks like the following picture</p> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="http://griffon-framework.org/img/javafx-app.png" alt="javafx app"> 
+   </div> 
+   <div class="title">
+    Figure 1. JavaFX Views
+   </div> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p><a href="#_tutorial_4_1">Creating the Application</a></p> </li> 
+    <li> <p><a href="#_tutorial_4_2">Customizing the Application</a></p> </li> 
+    <li> <p><a href="#_tutorial_4_3">Tab1: JavaFX API</a></p> </li> 
+    <li> <p><a href="#_tutorial_4_4">Tab2: FXML</a></p> </li> 
+    <li> <p><a href="#_tutorial_4_5">Tab3: GroovyFX</a></p> </li> 
+    <li> <p><a href="#_tutorial_4_6">Tab4: GroovyFX and FXML</a></p> </li> 
+   </ol> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tutorial_4_1">1. Creating the Application</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>We’ll follow similar steps as explained in <a href="1_getting_started.html" target="_blank" rel="noopener">Tutorial 1::Getting Started</a> to create a brand new Griffon 2 application. Assuming you’ve got SDKMAN, Lazybones and Gradle already installed on your system, execute the following command on a console prompt, paying attention to the selections we’ve made</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ lazybones create griffon-javafx-java app
+Creating project from template griffon-javafx-java (latest) in 'app'
+Define value for 'group' [org.example]:
+Define value for 'artifactId' [app]:
+Define value for 'version' [0.1.0-SNAPSHOT]:
+Define value for 'griffonVersion' [2.15.0]:
+Define value for 'package' [org.example]:
+Define value for 'className' [App]:</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>There should be a new directory named <code>app</code> with the freshly created application inside. At this point you can import the project in your favourite IDE. We’ll continue with Gradle on the command line to keep things simple. Verifying that the application is working should be our next step. Execute the following command</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ gradle run</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>A window should pop up after a few seconds. Quit the application, we’re ready to begin customizing the application.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="icon"><a class="image" href="#_tutorial_4_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_4_toc">Top</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tutorial_4_2">2. Customizing the Application</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Because we’ll be making use of GroovyFX we have to tweak the build file a little bit. Follow these steps to enable compilation of Groovy sources in this application:</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Open <code>build.gradle</code> on an editor.</p> </li> 
+    <li> <p>Locate the <code>griffon</code> configuration block and enable the inclusion of Groovy dependencies, like so</p> </li> 
+   </ol> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    build.gradle
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">griffon {
+    disableDependencyResolution = false
+    includeGroovyDependencies = true
+    version = '2.15.0'
+    toolkit = 'javafx'
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic" start="3"> 
+    <li> <p>Remove <code>compileGroovy.enabled = false</code>.</p> </li> 
+    <li> <p>Add a dependency definition for <code>ikonli-javafx</code> and its FontAwesome icon pack.</p> </li> 
+   </ol> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    build.gradle
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">dependencies {
+    compile 'org.kordamp.ikonli:ikonli-javafx:1.8.0'
+    compile 'org.kordamp.ikonli:ikonli-fontawesome-pack:1.8.0'
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Next, we’ll setup the main MVC group (<code>app</code>). We only need the <em>View</em>, which means we can delete the following files</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>griffon-app/controllers/org/example/AppController.java</p> </li> 
+    <li> <p>griffon-app/models/org/example/AppModel.java</p> </li> 
+    <li> <p>griffon-app/resources/org/example/app.fxml</p> </li> 
+    <li> <p>src/test/java/org/example/AppControllerTest.java</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>With these files gone we have to update the application’s configuration so that the MVCGroup does not refer to them. Open up <code>Config.java</code> and make sure that the configuration of the <code>app</code> group looks like this:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/conf/Config.java
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">.e("app", map()
+    .e("view", "org.example.AppView")
+)</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Finally edit <code>AppView.java</code>; place the following content on it</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/views/org/example/AppView.java
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package org.example;
+
+import griffon.core.artifact.GriffonView;
+import griffon.metadata.ArtifactProviderFor;
+import javafx.scene.Scene;
+import javafx.scene.control.TabPane;
+import javafx.stage.Stage;
+import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView;
+
+import javax.annotation.Nonnull;
+import java.util.Collections;
+import java.util.Map;
+
+@ArtifactProviderFor(GriffonView.class)
+public class AppView extends AbstractJavaFXGriffonView {
+    private TabPane tabPane;
+
+    @Nonnull
+    public TabPane getTabPane() {
+        return tabPane;
+    }
+
+    @Override
+    public void mvcGroupInit(@Nonnull Map&lt;String, Object&gt; args) {
+        createMVCGroup("tab1");
+        createMVCGroup("tab2");
+        createMVCGroup("tab3");
+        createMVCGroup("tab4");
+    }
+
+    @Override
+    public void initUI() {
+        Stage stage = (Stage) getApplication()
+            .createApplicationContainer(Collections.&lt;String, Object&gt;emptyMap());
+        stage.setTitle(getApplication().getConfiguration().getAsString("application.title"));
+        tabPane = new TabPane();
+        Scene scene = new Scene(tabPane);
+        scene.getStylesheets().add("bootstrapfx.css");
+        stage.setScene(scene);
+        stage.sizeToScene();
+        getApplication().getWindowManager().attach("mainWindow", stage);
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The main view creates a <code>TabPane</code> that will hold each one of the tabs. It also creates 4 MVCGroups during its initialization. We’ll setup each one of these groups, but before we forget we’ll setup their configuration in <code>Config.java</code></p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/conf/Config.java
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">.e("tab1", map()
+    .e("model", "org.example.SampleModel")
+    .e("view", "org.example.Tab1View")
+    .e("controller", "org.example.SampleController")
+)
+.e("tab2", map()
+    .e("model", "org.example.SampleModel")
+    .e("view", "org.example.Tab2View")
+    .e("controller", "org.example.SampleController")
+)
+.e("tab3", map()
+    .e("model", "org.example.SampleModel")
+    .e("view", "org.example.Tab3View")
+    .e("controller", "org.example.SampleController")
+)
+.e("tab4", map()
+    .e("model", "org.example.SampleModel")
+    .e("view", "org.example.Tab4View")
+    .e("controller", "org.example.SampleController")
+)</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Notice that every group uses the same model and controller configuration. This is possible because we only need to change the view for each tab; the behavior remains exactly the same. We’ll setup these classes with the first tab.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="icon"><a class="image" href="#_tutorial_4_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_4_toc">Top</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tutorial_4_3">3. Tab1: JavaFX API</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Let’s generate the first MVCGroup by leveraging the Lazybones templates included in the application</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ lazybones generate artifact::mvcgroup
+Define value for 'package' [org.example]:
+Define value for 'class' name: sample
+Created new artifact griffon-app/models/org/example/SampleModel.java
+Created new artifact griffon-app/views/org/example/SampleView.java
+Created new artifact griffon-app/controllers/org/example/SampleController.java
+Created new artifact src/test/java/org/example/SampleControllerTest.java
+Do not forget to add the group 'sample' to griffon-app/conf/Config.java</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Alright, good thing we updated the MVC configurations in <code>Config.java</code> already. The behavior of each tab is to process an input value whenever the "Say Hello" button is clicked. This behavior is identical to the one described at the <a href="/guide/latest/index.html#_sample_javafx" target="_blank" rel="noopener">JavaFX</a> section of the sample applications appendix found at the <a href="/guide/latest/index.html" target="_blank" rel="noopener">Griffon Guide</a>. We’ll reuse the Model, Controller, Service and resources described in that section; so the application should have the following contents</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/models/org/example/SampleModel.java
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package org.example;
+
+import griffon.core.artifact.GriffonModel;
+import griffon.metadata.ArtifactProviderFor;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonModel;
+
+import javax.annotation.Nonnull;
+
+@ArtifactProviderFor(GriffonModel.class)
+public class SampleModel extends AbstractGriffonModel {
+    private StringProperty input;
+    private StringProperty output;
+
+    @Nonnull
+    public final StringProperty inputProperty() {
+        if (input == null) {
+            input = new SimpleStringProperty(this, "input", "");
+        }
+        return input;
+    }
+
+    @Nonnull
+    public String getInput() {
+        return input == null ? null : inputProperty().get();
+    }
+
+    public void setInput(String input) {
+        inputProperty().set(input);
+    }
+
+    @Nonnull
+    public final StringProperty outputProperty() {
+        if (output == null) {
+            output = new SimpleStringProperty(this, "output", "");
+        }
+        return output;
+    }
+
+    @Nonnull
+    public String getOutput() {
+        return output == null ? null : outputProperty().get();
+    }
+
+    public void setOutput(String output) {
+        outputProperty().set(output);
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/controllers/org/example/SampleController.java
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package org.example;
+
+import griffon.core.artifact.GriffonController;
+import griffon.inject.MVCMember;
+import griffon.metadata.ArtifactProviderFor;
+import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonController;
+
+import javax.annotation.Nonnull;
+import javax.inject.Inject;
+
+@ArtifactProviderFor(GriffonController.class)
+public class SampleController extends AbstractGriffonController {
+    private SampleModel model;
+
+    @Inject
+    private SampleService sampleService;
+
+    @MVCMember
+    public void setModel(@Nonnull SampleModel model) {
+        this.model = model;
+    }
+
+    public void sayHello() {
+        model.setOutput(sampleService.sayHello(model.getInput()));
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You can manually create <code>SampleService.java</code> or use Lazybones again</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ lazybones generate artifact::service
+Define value for 'package' [org.example]:
+Define value for 'class' name: sample
+Created new artifact griffon-app/services/org/example/SampleService.java
+Created new artifact src/test/java/org/example/SampleServiceTest.java</code></pre> 
+   </div> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/services/org/example/SampleService.java
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package org.example;
+
+import griffon.core.artifact.GriffonService;
+import griffon.core.i18n.MessageSource;
+import griffon.metadata.ArtifactProviderFor;
+import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonService;
+
+import static griffon.util.GriffonNameUtils.isBlank;
+import static java.util.Arrays.asList;
+
+@ArtifactProviderFor(GriffonService.class)
+public class SampleService extends AbstractGriffonService {
+    public String sayHello(String input) {
+        MessageSource messageSource = getApplication().getMessageSource();
+        if (isBlank(input)) {
+            return messageSource.getMessage("greeting.default");
+        } else {
+            return messageSource.getMessage("greeting.parameterized", asList(input));
+        }
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/i18n/messages.properties
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">name.label = Please enter your name
+greeting.default = Howdy stranger!
+greeting.parameterized = Hello {0}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The final piece is to update the View. We’ll make direct use of the JavaFX API. Of course the code will look a bit verbose however the important thing to remember here is that you can use the JavaFX API at any time, that is, you’re not forced to build the UI using FXML only.</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/views/org/example/Tab1View.java
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package org.example;
+
+import griffon.core.artifact.GriffonView;
+import griffon.inject.MVCMember;
+import griffon.javafx.beans.binding.UIThreadAwareBindings;
+import griffon.javafx.support.JavaFXAction;
+import griffon.javafx.support.JavaFXUtils;
+import griffon.metadata.ArtifactProviderFor;
+import javafx.beans.property.StringProperty;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView;
+import org.kordamp.ikonli.fontawesome.FontAwesome;
+import org.kordamp.ikonli.javafx.FontIcon;
+
+import javax.annotation.Nonnull;
+
+import static javafx.scene.layout.AnchorPane.setLeftAnchor;
+import static javafx.scene.layout.AnchorPane.setTopAnchor;
+
+@ArtifactProviderFor(GriffonView.class)
+public class Tab1View extends AbstractJavaFXGriffonView {
+    @MVCMember @Nonnull private SampleController controller;
+    @MVCMember @Nonnull private SampleModel model;
+    @MVCMember @Nonnull private AppView parentView;
+
+    private StringProperty uiInput;
+    private StringProperty uiOutput;
+
+    @Override
+    public void initUI() {
+        AnchorPane anchorPane = new AnchorPane();
+        anchorPane.setPrefHeight(90.0);
+        anchorPane.setPrefWidth(384.0);
+
+        Label label = new Label(getApplication().getMessageSource().getMessage("name.label"));
+        TextField input = new TextField();
+        input.setPrefWidth(200.0);
+
+        Button button = new Button();
+        button.setPrefWidth(200.0);
+        button.getStyleClass().addAll("btn", "btn-primary");
+        JavaFXUtils.configure(button, (JavaFXAction) actionFor(controller, "sayHello").getToolkitAction());
+
+        Label output = new Label();
+        label.setPrefWidth(360.0);
+
+        uiInput = UIThreadAwareBindings.uiThreadAwareStringProperty(model.inputProperty());
+        uiOutput = UIThreadAwareBindings.uiThreadAwareStringProperty(model.outputProperty());
+        input.textProperty().bindBidirectional(uiInput);
+        output.textProperty().bind(uiOutput);
+
+        anchorPane.getChildren().addAll(label, input, button, output);
+
+        setLeftAnchor(label, 14.0);
+        setTopAnchor(label, 14.0);
+        setLeftAnchor(input, 172.0);
+        setTopAnchor(input, 11.0);
+        setLeftAnchor(button, 172.0);
+        setTopAnchor(button, 45.0);
+        setLeftAnchor(output, 14.0);
+        setTopAnchor(output, 80.0);
+
+        Tab tab = new Tab("Java");
+        tab.setGraphic(new FontIcon(FontAwesome.COFFEE));
+        tab.setClosable(false);
+        tab.setContent(anchorPane);
+        parentView.getTabPane().getTabs().add(tab);
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Of particular note, apart from the standard JavaFX API usage is the configuration of the button’s properties using a <code>JavaFXGriffonAction</code>. Actions define a container for both behavior and visual clues that buttons and other action enabled widgets may use to configure themselves. This view also uses the same trick we saw earlier at the <a href="3_mvcgroups_javafx.html" target="_blank" rel="noopener">Tutorial 3::MVC Groups (JavaFX)</a> tutorial, that is, a reference to the <code>parentView</code> allows the tab to be attached at the right location and time. We’ll use the same mechanism for the other tabs.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>We’re ready to move to the next tab: FXML.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="icon"><a class="image" href="#_tutorial_4_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_4_toc">Top</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tutorial_4_4">4. Tab2: FXML</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>FXML is an XML format used to describe a JavaFX UI declaratively. You may use SceneBuilder or write the file by hand, at the end it doesn’t matter as long as you follow some naming conventions. The first is the name and location of the FXML file. If the view is named <code>org/example/Tab2View.java</code> then the FXML file should be named <code>org/example/tab2.fxml</code>. You may place this file anywhere on your sources as long as it ends in the application’s classpath. We recommend you use the <code>griffon-app/resources</code> directory though. Here’s how the <code>tab2.fxml</code> should look like:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/resources/org/example/tab2.fxml
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!--
+
+    Copyright 2016-2018 the original author or authors.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+--&gt;
+
+&lt;?import griffon.javafx.support.JavaFXUtils?&gt;
+&lt;?import javafx.scene.control.Button?&gt;
+&lt;?import javafx.scene.control.Label?&gt;
+&lt;?import javafx.scene.control.TextField?&gt;
+&lt;?import javafx.scene.layout.AnchorPane?&gt;
+&lt;AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="90.0" prefWidth="384.0"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.Tab2View"&gt;
+    &lt;Label layoutX="14.0" layoutY="14.0" text="%name.label"/&gt;
+    &lt;TextField fx:id="input" layoutX="172.0" layoutY="11.0"
+               prefWidth="200.0"/&gt;
+    &lt;Button layoutX="172.0" layoutY="45.0"
+            mnemonicParsing="false"
+            prefWidth="200.0"
+            styleClass="btn, btn-primary"
+            JavaFXUtils.griffonActionId="sayHello"/&gt;
+    &lt;Label layoutX="14.0" layoutY="80.0" prefWidth="360.0" fx:id="output"/&gt;
+&lt;/AnchorPane&gt;</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>It looks like any other FXML file except that the button’s id follows a naming convention. Notice that the controller attribute is set to <code>org.example.Tab2View</code>. An instance of this type will receive all injections based on fields annotated with <code>@FXML</code>. However the controller (<code>SampleController</code>) will react to actions matching a naming convention, in our case it will be a single action name <code>sayHello</code>. The Griffon runtime is able to match an action to a corresponding UI node by using this naming convention. The <code>Tab2View.java</code> file defines the second half of this view</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/views/org/example/Tab2View.java
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight nowrap"><code class="language-java" data-lang="java">package org.example;
+
+import griffon.core.artifact.GriffonView;
+import griffon.inject.MVCMember;
+import griffon.javafx.beans.binding.UIThreadAwareBindings;
+import griffon.metadata.ArtifactProviderFor;
+import javafx.beans.property.StringProperty;
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TextField;
+import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView;
+import org.kordamp.ikonli.fontawesome.FontAwesome;
+import org.kordamp.ikonli.javafx.FontIcon;
+
+import javax.annotation.Nonnull;
+
+@ArtifactProviderFor(GriffonView.class)
+public class Tab2View extends AbstractJavaFXGriffonView {
+    @MVCMember @Nonnull private SampleController controller;
+    @MVCMember @Nonnull private SampleModel model;
+    @MVCMember @Nonnull private AppView parentView;
+
+    @FXML private TextField input;
+    @FXML private Label output;
+
+    private StringProperty uiInput;
+    private StringProperty uiOutput;
+
+    @Override
+    public void initUI() {
+        Node node = loadFromFXML();
+        uiInput = UIThreadAwareBindings.uiThreadAwareStringProperty(model.inputProperty());
+        uiOutput = UIThreadAwareBindings.uiThreadAwareStringProperty(model.outputProperty());
+        input.textProperty().bindBidirectional(uiInput);
+        output.textProperty().bind(uiOutput);
+        connectActions(node, controller);
+
+        Tab tab = new Tab("FXML");
+        tab.setGraphic(new FontIcon(FontAwesome.COG));
+        tab.setContent(node);
+        tab.setClosable(false);
+
+        parentView.getTabPane().getTabs().add(tab);
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The code is much simpler as we rely on the FXML file to define the UI; this file only needs to be concerned to finish up the bindings and setup the <code>tab</code>, in a similar fashion as it was done with the first tab.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="icon"><a class="image" href="#_tutorial_4_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_4_toc">Top</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tutorial_4_5">5. Tab3: GroovyFX</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>In a few words, <a href="http://groovyfx.org/" target="_blank" rel="noopener">GroovyFX</a> can be seen as a Groovy DSL for writing JavaFX UIs. Instead of XML you use Groovy. This allows you to leverage a real programming language instead of just markup. We can make use of Groovy support in a straight Java application such as this because Java and Groovy can be mixed without any problems, as opposed to other popular JVM languages. This is also the reason why we updated the build file back at <a href="#_tutorial_4_2">step 2</a>. The DSL resembles a lot the now defunct JavaFX Script language.</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/views/org/example/Tab3View.groovy
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight nowrap"><code class="language-groovy" data-lang="groovy">package org.example
+
+import griffon.core.artifact.GriffonView
+import griffon.inject.MVCMember
+import griffon.javafx.beans.binding.UIThreadAwareBindings
+import griffon.metadata.ArtifactProviderFor
+import javafx.beans.property.StringProperty
+import javafx.scene.control.Tab
+import org.kordamp.ikonli.fontawesome.FontAwesome
+import org.kordamp.ikonli.javafx.FontIcon
+
+import javax.annotation.Nonnull
+
+@ArtifactProviderFor(GriffonView)
+class Tab3View {
+    @MVCMember @Nonnull FactoryBuilderSupport builder
+    @MVCMember @Nonnull SampleModel model
+    @MVCMember @Nonnull AppView parentView
+
+    private StringProperty uiInput
+    private StringProperty uiOutput
+
+    void initUI() {
+        uiInput = UIThreadAwareBindings.uiThreadAwareStringProperty(model.inputProperty())
+        uiOutput = UIThreadAwareBindings.uiThreadAwareStringProperty(model.outputProperty())
+
+        builder.with {
+            content = anchorPane {
+                label(leftAnchor: 14, topAnchor: 14,
+                    text: application.messageSource.getMessage('name.label'))
+                textField(leftAnchor: 172, topAnchor: 11, prefWidth: 200,
+                    text: bind(uiInput))
+                button(leftAnchor: 172, topAnchor: 45, prefWidth: 200,
+                    styleClass: ['btn', 'btn-primary'],
+                    sayHelloAction)
+                label(leftAnchor: 14, topAnchor: 80, prefWidth: 200,
+                    text: bind(uiOutput))
+            }
+        }
+
+        Tab tab = new Tab('GroovyFX')
+        tab.graphic = new FontIcon(FontAwesome.FLASH)
+        tab.content = builder.content
+        tab.closable = false
+        parentView.tabPane.tabs.add(tab)
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>GroovyFX provides a builder class that can be used to instantiate nodes using the DSL capabilities delivered by the Groovy syntax. In this particular view, the builder is used to recreate the same layout found in the other tabs. The code looks like a cross between FXML (defining nodes and their layout properties) and the direct JavaFX API (defining bindings right on the spot). The code for setting up the tab is exactly the same, albeit it looks a bit different, actually, more streamlined, due to Groovy’s property access feature.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="icon"><a class="image" href="#_tutorial_4_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_4_toc">Top</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_tutorial_4_6">6. Tab4: GroovyFX and FXML</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>The last tab deals with the use case of reusing existing FXML assets. If you already have an FXML file but you’d also want to use Groovy to setup bindings and do additional work, you may use the <code>fxml()</code> node from GroovyFX to load the FXML file. Then you can further enhance the view by using the GroovyFX DSL. Let’s see the FXL file first</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/resources/org/example/tab4.fxml
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!--
+
+    Copyright 2016-2018 the original author or authors.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+--&gt;
+
+&lt;?import griffon.javafx.support.JavaFXUtils?&gt;
+&lt;?import javafx.scene.control.Button?&gt;
+&lt;?import javafx.scene.control.Label?&gt;
+&lt;?import javafx.scene.control.TextField?&gt;
+&lt;?import javafx.scene.layout.AnchorPane?&gt;
+&lt;AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="90.0" prefWidth="384.0"
+            xmlns:fx="http://javafx.com/fxml"&gt;
+    &lt;Label layoutX="14.0" layoutY="14.0" fx:id="inputLabel"/&gt;
+    &lt;TextField fx:id="input" layoutX="172.0" layoutY="11.0"
+               prefWidth="200.0"/&gt;
+    &lt;Button layoutX="172.0" layoutY="45.0"
+            mnemonicParsing="false"
+            prefWidth="200.0"
+            styleClass="btn, btn-primary"
+            JavaFXUtils.griffonActionId="sayHello"/&gt;
+    &lt;Label layoutX="14.0" layoutY="80.0" prefWidth="360.0" fx:id="output"/&gt;
+&lt;/AnchorPane&gt;</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>This file does not define a controller nor makes use of <code>ResourceBundle</code> resources, the reason being is that the <code>fxml()</code> node is quite spartan at the moment: it does not aware of the Griffon conventions nor does it setup a <code>ResourceBundle</code>, thus i18n resources can not be resolved properly. We’ll rely on the Groovy view to fix these shortcomings.</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    griffon-app/views/org/example/Tab4View.groovy
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight nowrap"><code class="language-groovy" data-lang="groovy">package org.example
+
+import griffon.core.artifact.GriffonView
+import griffon.inject.MVCMember
+import griffon.javafx.beans.binding.UIThreadAwareBindings
+import griffon.metadata.ArtifactProviderFor
+import javafx.beans.property.StringProperty
+import javafx.scene.control.Tab
+import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView
+import org.kordamp.ikonli.fontawesome.FontAwesome
+import org.kordamp.ikonli.javafx.FontIcon
+
+import javax.annotation.Nonnull
+
+@ArtifactProviderFor(GriffonView)
+class Tab4View extends AbstractJavaFXGriffonView {
+    @MVCMember @Nonnull FactoryBuilderSupport builder
+    @MVCMember @Nonnull SampleController controller
+    @MVCMember @Nonnull SampleModel model
+    @MVCMember @Nonnull AppView parentView
+
+    private StringProperty uiInput
+    private StringProperty uiOutput
+
+    void initUI() {
+        uiInput = UIThreadAwareBindings.uiThreadAwareStringProperty(model.inputProperty())
+        uiOutput = UIThreadAwareBindings.uiThreadAwareStringProperty(model.outputProperty())
+
+        builder.with {
+            content = builder.fxml(resource('/org/example/tab4.fxml')) {
+                inputLabel.text = application.messageSource.getMessage('name.label')
+                bean(input, text: bind(uiInput))
+                bean(output, text: bind(uiOutput))
+            }
+        }
+
+        connectActions(builder.content, controller)
+
+        Tab tab = new Tab('Hybrid')
+        tab.graphic = new FontIcon(FontAwesome.ROCKET)
+        tab.content = builder.content
+        tab.closable = false
+        parentView.tabPane.tabs.add(tab)
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Notice that all widgets with a proper <code>id</code> attribute can be accessed directly inside the block associated with the <code>fxml()</code> node. These happen to be the widgets we’re interested in, thus bindings can be set accordingly. Another change seen in <code>Tab4View</code> is that this class extends directly from <code>AbstractJavaFXGriffonView</code>, allowing this view to invoke the <code>connectActions()</code> method. Finally the <code>tab</code> is setup in exactly the same way as we’ve seen before.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>This is the final tab that we need to setup in order for the application to work. You can run the application once more by invoking the following command:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code>$ gradle run</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The full code for this application can be found <a href="https://github.com/griffon/griffon/tree/master/tutorials/javafx-app" target="_blank" rel="noopener">here</a>.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="icon"><a class="image" href="#_tutorial_4_toc"><i class="fa fa-arrow-up"></i></a></span> <a href="#_tutorial_4_toc">Top</a></p> 
+  </div> 
+ </div> 
+</div></p>
+
+    <hr />
+
+        </div>
+        <div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

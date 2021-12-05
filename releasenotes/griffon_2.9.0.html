@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Griffon 2.9.0 Release Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/devicons.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+   
+
+    
+        <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img style="display: block; float: left; padding: 10px" src="/img/griffon-icon-32x32.png" />
+          <a class="navbar-brand" href="../index.html">Griffon</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../whygriffon.html">Why Griffon</a></li>
+            <li><a href="../news/">News</a></li>
+            <li><a href="../documentation.html">Documentation</a></li>
+            <li><a href="../tutorials/">Tutorials</a></li>
+            <li><a href="../plugins.html">Plugins</a></li>
+            <li><a href="../development.html">Development</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+    
+    <div class="page-header">
+        <h1>Griffon 2.9.0 Release Notes</h1>
+    </div>
+
+    <p><em>01 December 2016</em></p>
+
+    <p><div class="sect1"> 
+ <h2 id="griffon_2_9_0_release_notes">Griffon 2.9.0 Release Notes</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="dependencies">Dependencies</h3> 
+   <div class="paragraph"> 
+    <p>The following dependencies have been upgraded</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>org.jetbrains.kotlin:kotlin-stdlib:1.0.5-2</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="runtime">Runtime</h3> 
+   <div class="sect3"> 
+    <h4 id="automatic_i18n_of_action_properties">Automatic I18N of Action Properties</h4> 
+    <div class="paragraph"> 
+     <p>Action properties can now react to changes made to the application’s <code>Locale</code>. Any properties configured via <code>messages.properties</code> will be refreshed when the application’s <code>Locale</code> changes value.</p> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="javafx_support">JavaFX Support</h4> 
+    <div class="paragraph"> 
+     <p><code>Labeled</code>, <code>Tab</code> and <code>MenuItem</code> nodes can react to changes made to the application’s <code>Locale</code> provided you supply enough information to resolve the target message. <code>JavaFXUtils</code> exposes 3 new properties and 1 connect method to make this feature work. You may use these properties with FXML, for example</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;Label JavaFXUtils.i18nKey="key.label"
+       JavaFXUtils.i18nArgs="one, two"
+       JavaFXUtils.i18nDefaultValue="No value supplied"/&gt;</code></pre> 
+     </div> 
+    </div> 
+    <div class="paragraph"> 
+     <p>You must use the connect method on the <code>View</code> class too, like so</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="prettyprint highlight"><code class="language-java" data-lang="java">Node node = loadFromFXML();
+if (node instanceof Parent) {
+    scene.setRoot((Parent) node);
+} else {
+    ((Group) scene.getRoot()).getChildren().addAll(node);
+}
+connectActions(node, controller);
+connectMessageSource(node);</code></pre> 
+     </div> 
+    </div> 
+    <div class="paragraph"> 
+     <p><code>JavaFXAction</code> supports four new properties:</p> 
+    </div> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p><code>style</code>: used to set style on the bound widget.</p> </li> 
+      <li> <p><code>graphic</code>: used to set the graphic node on the bound widget.</p> </li> 
+      <li> <p><code>graphicStyle</code>: used to set style on the graphic node of the bound widget.</p> </li> 
+      <li> <p><code>graphicStyleClass</code>: used to set style classes on the graphic node of the bound widget.</p> </li> 
+     </ul> 
+    </div> 
+    <div class="paragraph"> 
+     <p>You may define a <code>&amp;</code> at the beginning of the value of either <code>style</code> or <code>graphicStyle</code> properties, this instructs the runtime to append the style definition instead of overwriting it.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>New <code>CollectionBindings</code> class provides binding factories on <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code></p> 
+    </div> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Join source observable collection to <code>StringBinding</code>.</p> </li> 
+      <li> <p>Calculate <code>min</code>, <code>max</code>, <code>average</code>, and <code>sum</code> on source observable collection.</p> </li> 
+     </ul> 
+    </div> 
+    <div class="paragraph"> 
+     <p>New <code>FilteringBindings</code> class provides filtering capabilities on <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code></p> 
+    </div> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Filter <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> and find first match, creating a <code>ObjectBinding</code>.</p> </li> 
+      <li> <p>Filter <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> then map and find first match to X; where X may be a wrapper type, String or a type <code>R</code>.</p> </li> 
+      <li> <p>Map elements of <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> to X then filter and find first match; where X may be a wrapper type, String or a type <code>R</code>.</p> </li> 
+     </ul> 
+    </div> 
+    <div class="paragraph"> 
+     <p>New <code>ReducingBindings</code> class provides reduce capabilities on <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code></p> 
+    </div> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Reduce <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> to <code>ObjectBinding</code>.</p> </li> 
+      <li> <p>Reduce <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> then map to X; where X may be a wrapper type, String or a type <code>R</code>.</p> </li> 
+      <li> <p>Map elements of <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> to X then reduce; where X may be a wrapper type, String or a type <code>R</code>.</p> </li> 
+     </ul> 
+    </div> 
+    <div class="paragraph"> 
+     <p>New <code>MappingBindings</code> class provides lots of useful binding and property factories</p> 
+    </div> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Convert <code>ObservableValue&lt;X&gt;</code> to is corresponding <code>XBinding</code>.</p> </li> 
+      <li> <p>Convert <code>ObservableXValue</code> to <code>ObjectBinding&lt;X&gt;</code>.</p> </li> 
+      <li> <p>Create bindings that update their value and notify listeners inside the UI thread.</p> </li> 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="buildtime">Buildtime</h3> 
+   <div class="sect3"> 
+    <h4 id="gradle_wrapper">Gradle Wrapper</h4> 
+    <div class="paragraph"> 
+     <p>Gradle wrapper version on all Lazybones templates has been bumped to <code>3.2</code>.</p> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="compatibility">Compatibility</h3> 
+   <div class="paragraph"> 
+    <p>Full binary compatibility report between Griffon 2.9.0 and 2.8.0 can be found <a href="../reports/2.9.0/compatibility-report.html">here</a>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>A list of fixed issues can be found at the <a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.9.0+is%3Aclosed">2.9.0 milestone</a> page.</p> 
+   </div> 
+  </div> 
+ </div> 
+</div></p>
+
+    <hr />
+    
+        </div>
+        <div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

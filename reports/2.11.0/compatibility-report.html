@@ -1,0 +1,2065 @@
+<!DOCTYPE html><html>
+  <head>
+    <title>Binary Compatibility Report - griffon-2.11.0</title>
+    <style>
+                        body{margin:0;padding:0;font-family:sans-serif;font-size:12pt;}
+                        body,a,a:visited{color:#303030;}
+                        #content{padding-left:50px;padding-right:50px;padding-top:30px;padding-bottom:30px;}
+                        #content h1{font-size:160%;margin-bottom:10px;}
+                        #footer{margin-top:100px;font-size:80%;white-space:nowrap;}
+                        #footer,#footer a{color:#a0a0a0;}
+                        ul{margin-left:0;}
+                        h1,h2,h3{white-space:nowrap;}
+                        h2{font-size:120%;}
+                        div.selected{display:block;}
+                        div.deselected{display:none;}
+                        #maintable{width:100%;border-collapse:collapse;}
+                        #maintable th,#maintable td{border-bottom:solid #d0d0d0 1px;}
+                        #maintable td{vertical-align:top}
+                        th{text-align:left;white-space:nowrap;padding-left:2em;}
+                        th:first-child{padding-left:0;}
+                        td{padding-left:2em;padding-top:5px;padding-bottom:5px;}
+                        td:first-child{padding-left:0;width:30%}
+                        td.numeric,th.numeric{text-align:right;}
+                        span.code{display:inline-block;margin-top:0em;margin-bottom:1em;}
+                        span.code pre{font-size:11pt;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px;margin:0;background-color:#f7f7f7;border:solid 1px #d0d0d0;min-width:700px;width:auto !important;width:700px;}
+                        ul{margin:0px;padding:0px;}
+                        .warning,.warning a{color:#fbcc45;}
+                        .error,.error a{color:#b60808;}
+                        .info, .info a{color:#3879d9}
+                        #summary {margin-top: 30px;margin-bottom: 40px;border: solid 2px #d0d0d0;width:400px}
+                        #summary table{border:none;}
+                        #summary td{vertical-align:top;width:110px;padding-top:15px;padding-bottom:15px;text-align:center;}
+                        #summary td p{margin:0;}
+                       </style>
+  </head>
+  <body>
+    <div id='content'>
+      <h1>Binary Compatibility Report - griffon-2.11.0</h1>
+      <div id='summary'>
+        <table>
+          <tr>
+            <td>
+              <p class='error'>ERROR</p>
+              <div>98</div>
+            </td>
+            <td>
+              <p class='warning'>WARNING</p>
+              <div>0</div>
+            </td>
+            <td>
+              <p class='info'>INFO</p>
+              <div>264</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <table id='maintable'>
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Results</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>griffon.core.Configuration</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.lang.Object getConverted(java.lang.String, java.lang.Class, java.lang.String)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.lang.Object getConverted(java.lang.String, java.lang.Class, java.lang.String, java.lang.Object)' has been added to an interface
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.GriffonApplication</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public griffon.core.configuration.ConfigurationManager getConfigurationManager()' has been added to an interface
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.configuration.ConfigurationManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.configuration.ConfigurationManager added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.configuration.Configured</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.configuration.Configured added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.controller.Action</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public griffon.core.controller.ActionMetadata getActionMetadata()' has been added to an interface
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.controller.ActionFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.controller.ActionFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.controller.ActionHandler</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public void after(griffon.core.controller.ActionExecutionStatus, griffon.core.controller.Action, java.lang.Object[])' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void after(griffon.core.controller.ActionExecutionStatus, griffon.core.controller.Action, java.lang.Object[])' has been changed to java.lang.Object
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.controller.ActionMetadata</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.controller.ActionMetadata added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.controller.ActionMetadataFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.controller.ActionMetadataFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.controller.ActionParameter</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.controller.ActionParameter added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.controller.ControllerAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.controller.ControllerAction added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.mvc.MVCHandler</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.util.List createMVC(java.lang.Class)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.util.List createMVC(java.util.Map, java.lang.Class)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.util.List createMVC(java.lang.Class, java.util.Map)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.util.List createMVC(java.lang.Class, java.lang.String)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.util.List createMVC(java.util.Map, java.lang.Class, java.lang.String)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public java.util.List createMVC(java.lang.Class, java.lang.String, java.util.Map)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.lang.String)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.util.Map, java.lang.Class)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.util.Map)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.util.Map, java.lang.Class, java.lang.String)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.lang.String, java.util.Map)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void withMVC(java.lang.Class, griffon.core.mvc.MVCFunction)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void withMVC(java.lang.Class, java.lang.String, griffon.core.mvc.MVCFunction)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void withMVC(java.lang.Class, java.lang.String, java.util.Map, griffon.core.mvc.MVCFunction)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void withMVC(java.util.Map, java.lang.Class, java.lang.String, griffon.core.mvc.MVCFunction)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void withMVC(java.lang.Class, java.util.Map, griffon.core.mvc.MVCFunction)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void withMVC(java.util.Map, java.lang.Class, griffon.core.mvc.MVCFunction)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void withMVCGroup(java.lang.Class, griffon.core.mvc.TypedMVCGroupFunction)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void withMVCGroup(java.lang.Class, java.lang.String, griffon.core.mvc.TypedMVCGroupFunction)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void withMVCGroup(java.lang.Class, java.lang.String, java.util.Map, griffon.core.mvc.TypedMVCGroupFunction)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void withMVCGroup(java.util.Map, java.lang.Class, java.lang.String, griffon.core.mvc.TypedMVCGroupFunction)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void withMVCGroup(java.lang.Class, java.util.Map, griffon.core.mvc.TypedMVCGroupFunction)' has been added to an interface
+                </li>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void withMVCGroup(java.util.Map, java.lang.Class, griffon.core.mvc.TypedMVCGroupFunction)' has been added to an interface
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.mvc.TypedMVCGroup</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.mvc.TypedMVCGroup added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.mvc.TypedMVCGroupFunction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.core.mvc.TypedMVCGroupFunction added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.core.threading.ThreadingHandler</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7012): </span>Method 'public void runOutsideUIAsync(java.lang.Runnable)' has been added to an interface
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.AbstractJavaFXGriffonApplication</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.configuration.ConfigurationManager getConfigurationManager()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.BooleanPropertyDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.BooleanPropertyDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.ChangeListenerDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.ChangeListenerDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.DoublePropertyDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.DoublePropertyDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.FloatPropertyDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.FloatPropertyDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.IntegerPropertyDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.IntegerPropertyDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.InvalidationListenerDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.InvalidationListenerDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.ListChangeListenerDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.ListChangeListenerDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.ListPropertyDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.ListPropertyDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.LongPropertyDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.LongPropertyDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.MapChangeListenerDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.MapChangeListenerDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.MapPropertyDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.MapPropertyDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.MappingBindings</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.BooleanBinding mapAsBoolean(javafx.beans.value.ObservableValue, java.util.function.Function)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.BooleanBinding mapAsBoolean(javafx.beans.value.ObservableValue, javafx.beans.value.ObservableValue)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.DoubleBinding mapAsDouble(javafx.beans.value.ObservableValue, java.util.function.Function)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.DoubleBinding mapAsDouble(javafx.beans.value.ObservableValue, javafx.beans.value.ObservableValue)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.FloatBinding mapAsFloat(javafx.beans.value.ObservableValue, java.util.function.Function)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.FloatBinding mapAsFloat(javafx.beans.value.ObservableValue, javafx.beans.value.ObservableValue)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.IntegerBinding mapAsInteger(javafx.beans.value.ObservableValue, java.util.function.Function)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.IntegerBinding mapAsInteger(javafx.beans.value.ObservableValue, javafx.beans.value.ObservableValue)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.LongBinding mapAsLong(javafx.beans.value.ObservableValue, java.util.function.Function)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.LongBinding mapAsLong(javafx.beans.value.ObservableValue, javafx.beans.value.ObservableValue)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.ObjectBinding mapAsObject(javafx.beans.value.ObservableValue, java.util.function.Function)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.ObjectBinding mapAsObject(javafx.beans.value.ObservableValue, javafx.beans.value.ObservableValue)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.StringBinding mapAsString(javafx.beans.value.ObservableValue, java.util.function.Function)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.binding.StringBinding mapAsString(javafx.beans.value.ObservableValue, javafx.beans.value.ObservableValue)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.MatchingBindings</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.MatchingBindings added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.ObjectPropertyDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.ObjectPropertyDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.ObservableNumberValueDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.ObservableNumberValueDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.ObservableValueDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.ObservableValueDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.PropertyDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.PropertyDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.SetChangeListenerDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.SetChangeListenerDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.SetPropertyDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.SetPropertyDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.StringPropertyDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.beans.binding.StringPropertyDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.beans.binding.UIThreadAwareBindings</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareChangeListener(javafx.beans.value.ObservableValue, javafx.beans.value.ChangeListener)' has been changed to javafx.beans.value.ChangeListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareChangeListener(javafx.beans.value.ObservableValue, java.util.function.Consumer)' has been changed to javafx.beans.value.ChangeListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareChangeListener(javafx.beans.value.ObservableValue, java.lang.Runnable)' has been changed to javafx.beans.value.ChangeListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareInvalidationListener(javafx.beans.Observable, javafx.beans.InvalidationListener)' has been changed to javafx.beans.InvalidationListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareInvalidationListener(javafx.beans.Observable, java.util.function.Consumer)' has been changed to javafx.beans.InvalidationListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareInvalidationListener(javafx.beans.Observable, java.lang.Runnable)' has been changed to javafx.beans.InvalidationListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareListChangeListener(javafx.collections.ObservableList, javafx.collections.ListChangeListener)' has been changed to javafx.collections.ListChangeListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareListChangeListener(javafx.collections.ObservableList, java.util.function.Consumer)' has been changed to javafx.collections.ListChangeListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareListChangeListener(javafx.collections.ObservableList, java.lang.Runnable)' has been changed to javafx.collections.ListChangeListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareMapChangeListener(javafx.collections.ObservableMap, javafx.collections.MapChangeListener)' has been changed to javafx.collections.MapChangeListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareMapChangeListener(javafx.collections.ObservableMap, java.util.function.Consumer)' has been changed to javafx.collections.MapChangeListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareMapChangeListener(javafx.collections.ObservableMap, java.lang.Runnable)' has been changed to javafx.collections.MapChangeListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareSetChangeListener(javafx.collections.ObservableSet, javafx.collections.SetChangeListener)' has been changed to javafx.collections.SetChangeListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareSetChangeListener(javafx.collections.ObservableSet, java.util.function.Consumer)' has been changed to javafx.collections.SetChangeListener
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void uiThreadAwareSetChangeListener(javafx.collections.ObservableSet, java.lang.Runnable)' has been changed to javafx.collections.SetChangeListener
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public javafx.beans.value.ChangeListener uiThreadAwareBind(javafx.beans.property.Property, javafx.beans.value.ObservableValue)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.collections.ElementObservableList</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public ElementObservableList(griffon.javafx.collections.ElementObservableList$ObservableValueExtractor)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public ElementObservableList(javafx.collections.ObservableList, griffon.javafx.collections.ElementObservableList$ObservableValueExtractor)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.collections.ElementObservableList$ObservableValueContainer</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.collections.ElementObservableList$ObservableValueContainer added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.collections.ElementObservableList$ObservableValueExtractor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.collections.ElementObservableList$ObservableValueExtractor added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.collections.ElementObservableList$PropertyContainer</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(8001): </span>Class griffon.javafx.collections.ElementObservableList$PropertyContainer removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.collections.transformation.TransformationMap</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.collections.transformation.TransformationMap added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.collections.transformation.TransformationSet</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.collections.transformation.TransformationSet added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.scene.control.DefaultTableFormat</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.scene.control.DefaultTableFormat added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.scene.control.DefaultTableFormat$Column</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.scene.control.DefaultTableFormat$Column added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.scene.control.DefaultTableViewModel</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.scene.control.DefaultTableViewModel added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.scene.control.TableCellFactories</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.scene.control.TableCellFactories added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.scene.control.TableCellFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.scene.control.TableCellFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.scene.control.TableViewFormat</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.scene.control.TableViewFormat added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.scene.control.TableViewModel</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.scene.control.TableViewModel added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.scene.layout.IndexedCardPane</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.scene.layout.IndexedCardPane added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.scene.layout.NamedCardPane</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.scene.layout.NamedCardPane added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.support.JavaFXUtils</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nArgs(javafx.scene.chart.Axis)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nArgs(javafx.scene.control.TableColumn)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nDefaultValue(javafx.scene.chart.Axis)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nDefaultValue(javafx.scene.control.TableColumn)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nKey(javafx.scene.chart.Axis)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String getI18nKey(javafx.scene.control.TableColumn)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nArgs(javafx.scene.chart.Axis, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nArgs(javafx.scene.control.TableColumn, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nDefaultValue(javafx.scene.chart.Axis, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nDefaultValue(javafx.scene.control.TableColumn, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nKey(javafx.scene.control.Labeled, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nKey(javafx.scene.chart.Axis, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void setI18nKey(javafx.scene.control.TableColumn, java.lang.String)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.util.StringConverterAdapter</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.util.StringConverterAdapter added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.javafx.util.ToStringOnlyStringConverter</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.javafx.util.ToStringOnlyStringConverter added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.swing.AbstractGriffonApplet</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.configuration.ConfigurationManager getConfigurationManager()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.transform.Threading$Policy</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added public field OUTSIDE_UITHREAD_ASYNC
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.util.AnnotationUtils</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.annotation.Annotation findAnnotation(java.lang.Class, java.lang.Class, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.annotation.Annotation findAnnotation(java.lang.reflect.Method, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.annotation.Annotation findAnnotation(java.lang.reflect.Method, java.lang.Class, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.annotation.Annotation findAnnotation(java.lang.annotation.Annotation[], java.lang.Class, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isAnnotatedWith(java.lang.reflect.Method, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isAnnotatedWith(java.lang.reflect.Method, java.lang.Class, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isAnnotatedWith(java.lang.annotation.Annotation, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public boolean isAnnotatedWith(java.lang.annotation.Annotation, java.lang.Class, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String nameFor(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String nameFor(java.lang.Class, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String nameFor(java.lang.Object, boolean)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.lang.String nameFor(java.lang.reflect.Field, boolean)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.util.MapReader</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.util.MapReader added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.util.MapReader$Provider</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.util.MapReader$Provider added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>griffon.util.ResourceBundleLoader</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class griffon.util.ResourceBundleLoader added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.compile.core.MVCAwareConstants</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added public field MVC
+                </li>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added public field TYPED_MVC_GROUP
+                </li>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added public field TYPED_MVC_GROUP_FUNCTION_TYPE
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.compile.core.ThreadingAwareConstants</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added public field METHOD_RUN_OUTSIDE_UI_ASYNC
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.AbstractConfiguration</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(8001): </span>Class org.codehaus.griffon.runtime.core.AbstractConfiguration removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.AbstractGriffonApplication</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.configuration.ConfigurationManager getConfigurationManager()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.AbstractLifecycleHandler</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void runOutsideUIAsync(java.lang.Runnable)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.ConfigurationDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(8001): </span>Class org.codehaus.griffon.runtime.core.ConfigurationDecorator removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.ConfigurationDecoratorFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(8001): </span>Class org.codehaus.griffon.runtime.core.ConfigurationDecoratorFactory removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.DefaultApplicationConfigurer</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void initializeConfigurationManager()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.DefaultConfiguration</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(8001): </span>Class org.codehaus.griffon.runtime.core.DefaultConfiguration removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.DefaultConfigurationDecoratorFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(8001): </span>Class org.codehaus.griffon.runtime.core.DefaultConfigurationDecoratorFactory removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.DelegatingMutableConfiguration</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(8001): </span>Class org.codehaus.griffon.runtime.core.DelegatingMutableConfiguration removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.MutableConfigurationDecoratorFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(8001): </span>Class org.codehaus.griffon.runtime.core.MutableConfigurationDecoratorFactory removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.ResourceBundleConfiguration</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(8001): </span>Class org.codehaus.griffon.runtime.core.ResourceBundleConfiguration removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.ResourceBundleConfigurationProvider</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(8001): </span>Class org.codehaus.griffon.runtime.core.ResourceBundleConfigurationProvider removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.artifact.AbstractGriffonArtifact</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.util.Map, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.util.Map, java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.lang.String, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.util.Map, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.util.Map, java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.lang.String, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void runOutsideUIAsync(java.lang.Runnable)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.lang.String, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.lang.String, java.util.Map, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.util.Map, java.lang.Class, java.lang.String, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.util.Map, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.util.Map, java.lang.Class, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.lang.String, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.lang.String, java.util.Map, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.util.Map, java.lang.Class, java.lang.String, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.util.Map, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.util.Map, java.lang.Class, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.artifact.AbstractGriffonMvcArtifact</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.util.Map, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.util.Map, java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.lang.String, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.util.Map, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.util.Map, java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.lang.String, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void destroyMVCGroup(java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.lang.String, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.lang.String, java.util.Map, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.util.Map, java.lang.Class, java.lang.String, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.util.Map, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.util.Map, java.lang.Class, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.lang.String, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.lang.String, java.util.Map, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.util.Map, java.lang.Class, java.lang.String, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.util.Map, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.util.Map, java.lang.Class, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.AbstractConfiguration</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.AbstractConfiguration added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.AbstractConfigurationManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.AbstractConfigurationManager added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.AbstractMapConfiguration</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.AbstractMapConfiguration added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.ConfigurationDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.ConfigurationDecorator added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.ConfigurationDecoratorFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.ConfigurationDecoratorFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.ConfigurationDescriptor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.ConfigurationDescriptor added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.DefaultConfiguration</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.DefaultConfiguration added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.DefaultConfigurationDecoratorFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.DefaultConfigurationDecoratorFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.DefaultConfigurationManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.DefaultConfigurationManager added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.DelegatingMutableConfiguration</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.DelegatingMutableConfiguration added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.FieldConfigurationDescriptor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.FieldConfigurationDescriptor added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.FieldInjectionPoint</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.FieldInjectionPoint added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.InjectionPoint</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.InjectionPoint added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.MethodConfigurationDescriptor</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.MethodConfigurationDescriptor added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.MethodInjectionPoint</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.MethodInjectionPoint added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.MutableConfigurationDecoratorFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.MutableConfigurationDecoratorFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.ResourceBundleConfiguration</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.ResourceBundleConfiguration added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.configuration.ResourceBundleConfigurationProvider</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.configuration.ResourceBundleConfigurationProvider added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.controller.AbstractAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7005): </span>Parameter 3 of 'public AbstractAction(griffon.core.controller.ActionManager, griffon.core.artifact.GriffonController, java.lang.String)' has changed its type to griffon.core.controller.ActionMetadata
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.controller.ActionMetadata getActionMetadata()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.controller.AbstractActionHandler</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public void after(griffon.core.controller.ActionExecutionStatus, griffon.core.controller.Action, java.lang.Object[])' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'public void after(griffon.core.controller.ActionExecutionStatus, griffon.core.controller.Action, java.lang.Object[])' has been changed to java.lang.Object
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.controller.AbstractActionManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public AbstractActionManager(griffon.core.GriffonApplication)' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'protected griffon.core.controller.Action createAndConfigureAction(griffon.core.artifact.GriffonController, java.lang.String)' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'protected griffon.core.controller.Action createControllerAction(griffon.core.artifact.GriffonController, java.lang.String)' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'protected void doInvokeAction(griffon.core.artifact.GriffonController, java.lang.String, java.lang.Object[])' has been changed to java.lang.Object
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private boolean isThreadingDisabled(java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private griffon.transform.Threading$Policy resolveThreadingPolicy(griffon.core.artifact.GriffonController, java.lang.String)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private griffon.transform.Threading$Policy resolveThreadingPolicy(griffon.core.artifact.GriffonController)' has been increased from private to protected
+                </li>
+                <li>
+                  <span class='info'>INFO(7010): </span>Accessibility of method 'private griffon.transform.Threading$Policy resolveThreadingPolicy()' has been increased from private to protected
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.controller.ActionDecorator</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.controller.ActionMetadata getActionMetadata()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.controller.DefaultAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7005): </span>Parameter 4 of 'public DefaultAction(griffon.core.threading.UIThreadManager, griffon.core.controller.ActionManager, griffon.core.artifact.GriffonController, java.lang.String)' has changed its type to griffon.core.controller.ActionMetadata
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.controller.DefaultActionFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.controller.DefaultActionFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.controller.DefaultActionManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'protected griffon.core.controller.Action createControllerAction(griffon.core.artifact.GriffonController, java.lang.String)' has been removed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public DefaultActionManager(griffon.core.GriffonApplication)' the number of arguments has changed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.controller.DefaultActionMetadata</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.controller.DefaultActionMetadata added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.controller.DefaultActionMetadataFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.controller.DefaultActionMetadataFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.controller.DefaultActionParameter</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.controller.DefaultActionParameter added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.AbstractMVCGroup</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.util.Map, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.util.Map, java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.lang.String, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.util.Map, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.util.Map, java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.lang.String, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.util.Map, java.lang.Class, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.util.Map, java.lang.Class, java.lang.String, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.util.Map, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.lang.String, java.util.Map, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.lang.String, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.util.Map, java.lang.Class, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.util.Map, java.lang.Class, java.lang.String, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.util.Map, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.lang.String, java.util.Map, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.lang.String, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.AbstractMVCGroupManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.util.Map, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.util.Map, java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.lang.String, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.util.Map, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.util.Map, java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.lang.String, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected java.lang.String nameOf(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected griffon.core.mvc.TypedMVCGroup typedMvcGroup(java.lang.Class, griffon.core.mvc.MVCGroup)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.lang.String, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.lang.String, java.util.Map, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.util.Map, java.lang.Class, java.lang.String, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.util.Map, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.util.Map, java.lang.Class, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.lang.String, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.lang.String, java.util.Map, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.util.Map, java.lang.Class, java.lang.String, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.util.Map, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.util.Map, java.lang.Class, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.AbstractMVCHandler</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.util.Map, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.util.Map, java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public java.util.List createMVC(java.lang.Class, java.lang.String, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.util.Map, java.lang.Class)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.util.Map, java.lang.Class, java.lang.String)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public griffon.core.mvc.TypedMVCGroup createMVCGroup(java.lang.Class, java.lang.String, java.util.Map)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.lang.String, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.lang.String, java.util.Map, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.util.Map, java.lang.Class, java.lang.String, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.lang.Class, java.util.Map, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVC(java.util.Map, java.lang.Class, griffon.core.mvc.MVCFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.lang.String, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.lang.String, java.util.Map, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.util.Map, java.lang.Class, java.lang.String, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.lang.Class, java.util.Map, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void withMVCGroup(java.util.Map, java.lang.Class, griffon.core.mvc.TypedMVCGroupFunction)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.AbstractTypedMVCGroup</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.mvc.AbstractTypedMVCGroup added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.mvc.DelegatingMVCGroup</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.core.mvc.DelegatingMVCGroup added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.threading.AbstractThreadingHandler</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void runOutsideUIAsync(java.lang.Runnable)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.core.threading.AbstractUIThreadManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'public void runOutsideUIAsync(java.lang.Runnable)' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.javafx.controller.JavaFXActionFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.javafx.controller.JavaFXActionFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.javafx.controller.JavaFXActionManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'protected griffon.core.controller.Action createControllerAction(griffon.core.artifact.GriffonController, java.lang.String)' has been removed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public JavaFXActionManager(griffon.core.GriffonApplication)' the number of arguments has changed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.javafx.controller.JavaFXGriffonControllerAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7005): </span>Parameter 4 of 'public JavaFXGriffonControllerAction(griffon.core.threading.UIThreadManager, griffon.core.controller.ActionManager, griffon.core.artifact.GriffonController, java.lang.String)' has changed its type to griffon.core.controller.ActionMetadata
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.lanterna.controller.LanternaActionFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.lanterna.controller.LanternaActionFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.lanterna.controller.LanternaActionManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'protected griffon.core.controller.Action createControllerAction(griffon.core.artifact.GriffonController, java.lang.String)' has been removed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public LanternaActionManager(griffon.core.GriffonApplication)' the number of arguments has changed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.lanterna.controller.LanternaGriffonControllerAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7005): </span>Parameter 4 of 'public LanternaGriffonControllerAction(griffon.core.threading.UIThreadManager, griffon.core.controller.ActionManager, griffon.core.artifact.GriffonController, java.lang.String)' has changed its type to griffon.core.controller.ActionMetadata
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.pivot.controller.PivotActionFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.pivot.controller.PivotActionFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.pivot.controller.PivotActionManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'protected griffon.core.controller.Action createControllerAction(griffon.core.artifact.GriffonController, java.lang.String)' has been removed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public PivotActionManager(griffon.core.GriffonApplication)' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7006): </span>Return type of method 'protected void doInvokeAction(griffon.core.artifact.GriffonController, java.lang.String, java.lang.Object[])' has been changed to java.lang.Object
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.pivot.controller.PivotGriffonControllerAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7005): </span>Parameter 4 of 'public PivotGriffonControllerAction(griffon.core.threading.UIThreadManager, griffon.core.controller.ActionManager, griffon.core.artifact.GriffonController, java.lang.String)' has changed its type to griffon.core.controller.ActionMetadata
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.swing.controller.SwingActionFactory</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.swing.controller.SwingActionFactory added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.swing.controller.SwingActionManager</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'protected griffon.core.controller.Action createControllerAction(griffon.core.artifact.GriffonController, java.lang.String)' has been removed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public SwingActionManager(griffon.core.GriffonApplication)' the number of arguments has changed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.swing.controller.SwingGriffonControllerAction</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(7005): </span>Parameter 4 of 'public SwingGriffonControllerAction(griffon.core.threading.UIThreadManager, griffon.core.controller.ActionManager, griffon.core.artifact.GriffonController, java.lang.String)' has changed its type to griffon.core.controller.ActionMetadata
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.util.AbstractCompositeResourceBundleBuilder</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(6001): </span>Removed field resourceHandler
+                </li>
+                <li>
+                  <span class='error'>ERROR(6011): </span>Field ERROR_FILENAME_BLANK has been removed, but it was previously a constant
+                </li>
+                <li>
+                  <span class='error'>ERROR(6011): </span>Field ERROR_RESOURCE_HANDLER_NULL has been removed, but it was previously a constant
+                </li>
+                <li>
+                  <span class='error'>ERROR(6011): </span>Field ERROR_SUFFIX_BLANK has been removed, but it was previously a constant
+                </li>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'protected java.net.URL getResourceAsURL(java.lang.String, java.lang.String)' has been removed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'protected griffon.core.resources.ResourceHandler getResourceHandler()' has been removed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'protected java.util.List getResources(java.lang.String, java.lang.String)' has been removed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public AbstractCompositeResourceBundleBuilder(griffon.core.resources.ResourceHandler)' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7013): </span>Abstract method 'protected void initialize()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.util.AbstractResourceBundleLoader</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.util.AbstractResourceBundleLoader added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.util.ClassResourceBundleLoader</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.util.ClassResourceBundleLoader added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.util.DefaultCompositeResourceBundleBuilder</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='error'>ERROR(6001): </span>Removed field instantiator
+                </li>
+                <li>
+                  <span class='error'>ERROR(6001): </span>Removed field propertiesReader
+                </li>
+                <li>
+                  <span class='error'>ERROR(6001): </span>Removed field resourceBundleReader
+                </li>
+                <li>
+                  <span class='error'>ERROR(6011): </span>Field CLASS_SUFFIX has been removed, but it was previously a constant
+                </li>
+                <li>
+                  <span class='error'>ERROR(6011): </span>Field PROPERTIES_SUFFIX has been removed, but it was previously a constant
+                </li>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'protected java.util.Collection loadBundleFromClass(java.lang.String)' has been removed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'protected java.util.Collection loadBundleFromProperties(java.lang.String)' has been removed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'protected java.lang.Class loadClass(java.lang.String)' has been removed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7002): </span>Method 'protected java.util.ResourceBundle newInstance(java.lang.Class)' has been removed
+                </li>
+                <li>
+                  <span class='error'>ERROR(7004): </span>In method 'public DefaultCompositeResourceBundleBuilder(griffon.util.Instantiator, griffon.core.resources.ResourceHandler, griffon.util.PropertiesReader, griffon.util.ResourceBundleReader)' the number of arguments has changed
+                </li>
+                <li>
+                  <span class='info'>INFO(6000): </span>Added protected field ERROR_INJECTOR_NULL
+                </li>
+                <li>
+                  <span class='info'>INFO(7011): </span>Method 'protected void initialize()' has been added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.util.PropertiesResourceBundleLoader</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.util.PropertiesResourceBundleLoader added
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>org.codehaus.griffon.runtime.util.XmlResourceBundleLoader</td>
+            <td>
+              <ul>
+                <li>
+                  <span class='info'>INFO(8000): </span>Class org.codehaus.griffon.runtime.util.XmlResourceBundleLoader added
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

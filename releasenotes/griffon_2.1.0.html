@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Griffon 2.1.0 Release Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/devicons.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+   
+
+    
+        <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img style="display: block; float: left; padding: 10px" src="/img/griffon-icon-32x32.png" />
+          <a class="navbar-brand" href="../index.html">Griffon</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../whygriffon.html">Why Griffon</a></li>
+            <li><a href="../news/">News</a></li>
+            <li><a href="../documentation.html">Documentation</a></li>
+            <li><a href="../tutorials/">Tutorials</a></li>
+            <li><a href="../plugins.html">Plugins</a></li>
+            <li><a href="../development.html">Development</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+    
+    <div class="page-header">
+        <h1>Griffon 2.1.0 Release Notes</h1>
+    </div>
+
+    <p><em>08 December 2014</em></p>
+
+    <p><div class="sect1"> 
+ <h2 id="griffon_2_1_0_release_notes">Griffon 2.1.0 Release Notes</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="dependencies">Dependencies</h3> 
+   <div class="paragraph"> 
+    <p>The following dependencies have been upgraded</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>junit:junit:4.12</p> </li> 
+     <li> <p>org.codehaus.groovy:groovy-all:2.3.8</p> </li> 
+     <li> <p>com.jayway.awaitility:awaitility:1.6.3</p> </li> 
+     <li> <p>com.jayway.awaitility:awaitility-groovy:1.6.3</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="runtime">Runtime</h3> 
+   <div class="sect3"> 
+    <h4 id="mvc">MVC</h4> 
+    <div class="paragraph"> 
+     <p>In previous versions instances of <code><a href="/guide/2.1.0/api/griffon/core/mvc/MVCGroup.html" target="_blank" rel="noopener">MVCGroup</a></code> would let you create other <code><a href="/guide/2.1.0/api/griffon/core/mvc/MVCGroup.html" target="_blank" rel="noopener">MVCGroup</a></code> instances, with no direct relationship between the two unless explicitly stated (via an additional argument Map). This is no longer the case.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Child groups may now have a direct relationship with the parent group that created them. The <code>parentGroup</code> property will be set to the correct <code><a href="/guide/2.1.0/api/griffon/core/mvc/MVCGroup.html" target="_blank" rel="noopener">MVCGroup</a></code> instance in every group member that defines it. Fine grained parent properties matching each member (such as <code>parentController</code>, <code>parentModel</code> and <code>parentView</code>) will also be set automatically. There are 2 sample applications that demonstrate this new feature in action</p> 
+    </div> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p><a href="https://github.com/griffon/griffon/tree/master/samples/editor-swing-groovy" target="_blank" rel="noopener">editor-swing-groovy</a></p> </li> 
+      <li> <p><a href="https://github.com/griffon/griffon/tree/master/samples/editor-swing-java" target="_blank" rel="noopener">editor-swing-java</a></p> </li> 
+     </ul> 
+    </div> 
+    <div class="paragraph"> 
+     <p><code><a href="/guide/2.1.0/api/griffon/core/mvc/MVCGroupManager.html" target="_blank" rel="noopener">MVCGroupManager</a></code> added getter/finder methods for Controllers, Models and Views. Finder methods may return a null value if the matching artifact was not found. Getter methods on the other hand will throw a <code><a href="/guide/2.1.0/api/griffon/exceptions/ArtifactNotFoundException.html" target="_blank" rel="noopener">ArtifactNotFoundException</a></code> if the artifact could not be found.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>The <code><a href="/guide/2.1.0/api/griffon/core/mvc/MVCHandler.html" target="_blank" rel="noopener">MVCHandler</a></code> interface has been altered to better handle MVCGroups. Methods that sport <code>MVCGroup</code> in their name work with instances (<code>createMVCGroup</code> and <code>withMCGroup</code>) of <code><a href="/guide/2.1.0/api/griffon/core/mvc/MVCGroup.html" target="_blank" rel="noopener">MVCGroup</a></code>, either they take such type as argument or return instances of it. In contrast, methods that only have <code>MVC</code> on their names (<code>createMVC</code> and <code>withMC</code>) work with individual MVC members, such as Controller, Model and View. The following table summarizes the changes</p> 
+    </div> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 25%;"> 
+      <col style="width: 25%;"> 
+      <col style="width: 25%;"> 
+      <col style="width: 25%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Old Name</th> 
+       <th class="tableblock halign-left valign-top">New Name</th> 
+       <th class="tableblock halign-left valign-top">Return Type</th> 
+       <th class="tableblock halign-left valign-top">Args</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">buildMVCGroup</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">createMVCGroup</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">MVCGroup</p></td> 
+       <td class="tableblock halign-left valign-top"></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">createMVCGroup</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">createMVC</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td> 
+       <td class="tableblock halign-left valign-top"></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">withMVCGroup</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">withMVCGroup</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">void</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="/guide/2.1.0/api/griffon/core/mvc/MVCGroupFunction.html" target="_blank" rel="noopener">MVCGroupFunction</a></code></p></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">withMVCGroup</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">withMVC</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">void</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="/guide/2.1.0/api/griffon/core/mvc/MVCFunction.html" target="_blank" rel="noopener">MVCFunction</a></code></p></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <div class="paragraph"> 
+     <p>Finally, base artifacts such as Services can no longer create new MVCGroups by themselves, as this capability has been removed from the base <code><a href="/guide/2.1.0/api/griffon/core/artifact/GriffonArtifact.html" target="_blank" rel="noopener">GriffonArtifact</a></code> interface.</p> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="actions">Actions</h4> 
+    <div class="paragraph"> 
+     <p>The <code><a href="/guide/2.1.0/api/griffon/core/controller/ActionHandler.html" target="_blank" rel="noopener">ActionHandler</a></code> interface supersedes <code><a href="/guide/2.1.0/api/griffon/core/controller/ActionInterceptor.html" target="_blank" rel="noopener">ActionInterceptor</a></code> interface, as it delivers a much better abstraction for configuring, handling and updating actions an their properties. <code><a href="/guide/2.1.0/api/griffon/core/controller/ActionManager.html" target="_blank" rel="noopener">ActionManager</a></code> also gained the capability to update an action or a set of actions.</p> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="addons">Addons</h4> 
+    <div class="paragraph"> 
+     <p><code><a href="/guide/2.1.0/api/griffon/core/addon/GriffonAddon.html" target="_blank" rel="noopener">GriffonAddon</a></code>s now have the capability of supplying startup groups. These groups are initialized during the <code>STARTUP</code> phase, right after the startup groups defined by the application.</p> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="buildtime">Buildtime</h3> 
+   <div class="sect3"> 
+    <h4 id="types_metadata">Types Metadata</h4> 
+    <div class="paragraph"> 
+     <p>The <code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/ServiceLoader.html" target="_blank" rel="noopener">java.util.ServiceLoader</a></code> class allows you to load instances of a particular type as long as it conforms to the following rules</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>the type implements a well known interface.</p> </li> 
+      <li> <p>the type is a concrete class.</p> </li> 
+      <li> <p>the type is a public, non-static class.</p> </li> 
+      <li> <p>the type provides a no-args constructor.</p> </li> 
+     </ol> 
+    </div> 
+    <div class="paragraph"> 
+     <p>However sometimes you’d need to load types in a similar fashion without being forced by the last 3 rules, that is, you may want to load a type that is an interface or that provides a constructor with one or more arguments. If you ever encounter this scenario then annotate the classes/interfaces with <code><a href="/guide/2.1.0/api/griffon/metadata/TypeProviderFor.html" target="_blank" rel="noopener">@TypeProviderFor</a></code> and load them using <code><a href="/guide/2.1.0/api/griffon/util/ServiceLoaderUtils.html" target="_blank" rel="noopener">ServiceLoaderUtils</a></code>. For example the <code>griffon-mybatis-plugin</code> loads instances of <code><a href="http://griffon-plugins.github.io/griffon-mybatis-plugin/api/griffon/plugins/mybatis/MybatisMapper.html" target="_blank" rel="noopener">MybatisMapper</a></code> using this mechanism.</p> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="compatibility">Compatibility</h3> 
+   <div class="paragraph"> 
+    <p>Full binary compatibility report between Griffon 2.1.0 and 2.0.0 can be found <a href="../reports/2.1.0/compatibility-report.html">here</a>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>A list of fixed issues can be found at the <a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.1.0+is%3Aclosed">2.1.0 milestone</a> page.</p> 
+   </div> 
+  </div> 
+ </div> 
+</div></p>
+
+    <hr />
+    
+        </div>
+        <div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

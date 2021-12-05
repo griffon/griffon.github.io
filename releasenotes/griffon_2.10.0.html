@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Griffon 2.10.0 Release Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/devicons.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+   
+
+    
+        <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img style="display: block; float: left; padding: 10px" src="/img/griffon-icon-32x32.png" />
+          <a class="navbar-brand" href="../index.html">Griffon</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../whygriffon.html">Why Griffon</a></li>
+            <li><a href="../news/">News</a></li>
+            <li><a href="../documentation.html">Documentation</a></li>
+            <li><a href="../tutorials/">Tutorials</a></li>
+            <li><a href="../plugins.html">Plugins</a></li>
+            <li><a href="../development.html">Development</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+    
+    <div class="page-header">
+        <h1>Griffon 2.10.0 Release Notes</h1>
+    </div>
+
+    <p><em>02 March 2017</em></p>
+
+    <p><div class="sect2"> 
+ <h3 id="dependencies">Dependencies</h3> 
+ <div class="paragraph"> 
+  <p>The following dependencies have been upgraded</p> 
+ </div> 
+ <div class="ulist"> 
+  <ul> 
+   <li> <p>org.slf4j:slf4j-simple:1.7.24</p> </li> 
+   <li> <p>org.slf4j:slf4j-log4j:1.7.24</p> </li> 
+   <li> <p>org.jetbrains.kotlin:kotlin-stdlib:1.1.0</p> </li> 
+   <li> <p>org.testfx:testfx-core:4.0.5-alpha</p> </li> 
+   <li> <p>org.codehaus.groovy:groovy-all:2.4.9</p> </li> 
+  </ul> 
+ </div> 
+</div> 
+<div class="sect2"> 
+ <h3 id="runtime">Runtime</h3> 
+ <div class="sect3"> 
+  <h4 id="module_evictions">Module Evictions</h4> 
+  <div class="paragraph"> 
+   <p>The current module system allows multiple modules to supply type bindings. Given binding equivalences a module may override bindings supplied by other modules, but you can’t avoid the original bindings from being added in the first case. Now it’s possible for a module to evict another one, effectively barring the evicted module from contributing its bindings. Let’s say there’s a module named "foo" defined as follows</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">import griffon.core.injection.Module;
+import griffon.inject.DependsOn;
+import org.codehaus.griffon.runtime.core.injection.AbstractModule;
+import org.kordamp.jipsy.ServiceProviderFor;
+
+import javax.inject.Named;
+
+@Named("foo")
+@ServiceProviderFor(Module.class)
+public class FooModule extends AbstractModule {
+    @Override
+    protected void doConfigure() {
+        // binding definitions
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You may evict this module by defining another module annotated with <code>@Evicts</code>, such as</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">import griffon.core.injection.Module;
+import griffon.inject.DependsOn;
+import griffon.inject.Evicts;
+import org.codehaus.griffon.runtime.core.injection.AbstractModule;
+import org.kordamp.jipsy.ServiceProviderFor;
+
+import javax.inject.Named;
+
+@Named("foo")
+@Evicts("foo")
+@ServiceProviderFor(Module.class)
+public class FooEvictorModule extends AbstractModule {
+    @Override
+    protected void doConfigure() {
+        // binding definitions
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The evicting module (<code>FooEvictorModule</code>) has to have the same name as the evicted module (<code>FooModule</code>) hence why both modules are annotated with <code>@Named("foo")</code>.</p> 
+  </div> 
+ </div> 
+ <div class="sect3"> 
+  <h4 id="enhanced_properties_and_resourcebundle_support">Enhanced Properties and ResourceBundle Support</h4> 
+  <div class="paragraph"> 
+   <p>It’s now possible to define conditional blocks in properties files and class based resource bundles, similarly as it’s done in Groovy scripts. For example the <code>datasource</code> plugin lets you define datasource configuration that may be environment sensible. In the Groovy version of the configuration you’d write the following</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    DataSource.groovy
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">dataSource.driverClassName = 'org.h2.Driver'
+environments {
+    development {
+        dataSource.url = 'jdbc:h2:mem:@application.name@-dev'
+    }
+    test {
+        dataSource.url = 'jdbc:h2:mem:@application.name@-test'
+    }
+    production {
+        dataSource.url = 'jdbc:h2:file:/opt/@application.name@/data/db'
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You can rewrite this configuration file using just properties files in the this way</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    DataSource.properties
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">dataSource.driverClassName = org.h2.Driver
+environments.development.dataSource.url = jdbc:h2:mem:@application.name@-dev
+environments.test.dataSource.url = jdbc:h2:mem:@application.name@-test
+environments.production.dataSource.url = jdbc:h2:file:/opt/@application.name@/data/db</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Here’s the class based ResourceBundle approach</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+    DataSource.java
+   </div> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">import java.util.Map;
+
+import griffon.util.AbstractMapResourceBundle;
+
+import static griffon.util.CollectionUtils.map;
+
+public class DataSource extends AbstractMapResourceBundle {
+    @Override
+    protected void initialize(Map&lt;String, Object&gt; entries) {
+        map(entries)
+            .e("dataSource", map()
+                .e("driverClassName", "org.h2.Driver")
+            )
+            .e("environments", map()
+                .e("development", map()
+                    .e("dataSource", map()
+                        .e("url", "jdbc:h2:mem:sample-dev")
+                    )
+                )
+                .e("test", map()
+                    .e("dataSource", map()
+                        .e("url", "jdbc:h2:mem:sample-test")
+                    )
+                )
+                .e("production", map()
+                    .e("dataSource", map()
+                        .e("url", "jdbc:h2:file:/opt/:sample/data/db")
+                    )
+                )
+            );
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+ </div> 
+ <div class="sect3"> 
+  <h4 id="javafx_support">JavaFX Support</h4> 
+  <div class="paragraph"> 
+   <p>All of the binding and property support classes added in <code>2.9.0</code> have been relocated form package <code>griffon.javafx.support</code> to <code>griffon.javafx.beans.binding</code> and <code>griffon.javafx.beans.property</code> in order to mirror the same package structure found in the standard JavaFX APIs. All collection classes have been moved from package <code>griffon.javafx.support</code> to <code>griffon.javafx.collections</code> for the same reason.</p> 
+  </div> 
+ </div> 
+ <div class="sect3"> 
+  <h4 id="elementobservablelist">ElementObservableList</h4> 
+  <div class="paragraph"> 
+   <p>New <code>ElementObservableList</code> can listen to updates on elements and trigger an update within itself. This enables widgets such as <code>ListView</code> and <code>TableView</code> to redraw data as soon as an element update is posted. Here’s a concrete example, say you have an observable bean defined as follows:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class ObservablePerson implements ElementObservableList.PropertyContainer {
+    private final IntegerProperty id = new SimpleIntegerProperty(this, "id");
+    private final StringProperty name = new SimpleStringProperty(this, "name");
+    private final StringProperty lastname = new SimpleStringProperty(this, "lastname");
+
+    public ObservablePerson(int id, String name, String lastname) {
+        setId(id);
+        setName(name);
+        setLastname(lastname);
+    }
+
+    public IntegerProperty idProperty() {
+        return id;
+    }
+
+    public StringProperty nameProperty() {
+        return name;
+    }
+
+    public StringProperty lastnameProperty() {
+        return lastname;
+    }
+
+    // getters &amp; setters
+
+    @Override
+    public Property&lt;?&gt;[] properties() {
+        return new Property&lt;?&gt;[]{
+            idProperty(),
+            nameProperty(),
+            lastnameProperty()
+        };
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Notice that the bean class must implement <code>ElementObservableList.PropertyContainer</code>, which defines a single method that helps <code>ElementObservableList</code> figure out what properties should be used to determine a change within the bean. Setting up a <code>ListView</code> backed by an <code>ElementObservableList</code> is as easy as</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">listView.setItems(new ElementObservableList&lt;&gt;());</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Now, whenever an element of type <code>ObservablePerson</code> is added and any of its properties is modified then the <code>ListView</code> will react too.</p> 
+  </div> 
+ </div> 
+ <div class="sect3"> 
+  <h4 id="resetable_properties">Resetable Properties</h4> 
+  <div class="paragraph"> 
+   <p>There’s a new set of JavaFX properties that can be used to keep track of value changes, and when necessary reset the property’s value to a base one.</p> 
+  </div> 
+ </div> 
+ <div class="sect3"> 
+  <h4 id="action_matching_strategy">Action Matching Strategy</h4> 
+  <div class="paragraph"> 
+   <p>Griffon 2 defines a naming convention to match widgets defined in FXML with their corresponding action. Griffon 2.8.0 introduced another way to match actions that enables multiple widgets to be matched to the same action. Griffon 2.10.0 adds the possibility to override this startegy and apply your own. Simply define an implementation of <code>griffon.javafx.support.ActionMatcher</code> and bound it to the application (or addon) module. Here’s an example of a custom strategy that uses <code>"_action"</code> as suffix instead of the conventional <code>"ActionTarget"</code>.</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">import griffon.javafx.support.ActionMatcher;
+import griffon.javafx.support.JavaFXAction;
+import javafx.scene.Node;
+import javafx.scene.control.MenuItem;
+
+import javax.annotation.Nonnull;
+import java.util.Collection;
+
+import static griffon.javafx.support.JavaFXUtils.configureControl;
+import static griffon.javafx.support.JavaFXUtils.findElement;
+import static griffon.javafx.support.JavaFXUtils.findElements;
+import static griffon.javafx.support.JavaFXUtils.getGriffonActionId;
+
+public class MyActionMatcher implements ActionMatcher {
+    @Override
+    public void match(final @Nonnull Object node, final @Nonnull String actionName, @Nonnull JavaFXAction action) {
+        Collection&lt;Object&gt; controls = findElements(node, arg -&gt; {
+            if (arg instanceof Node) {
+                return actionName.equals(getGriffonActionId((Node) arg));
+            } else if (arg instanceof MenuItem) {
+                return actionName.equals(getGriffonActionId((MenuItem) arg));
+            }
+            return false;
+        });
+
+        for (Object control : controls) {
+            configureControl(control, action);
+        }
+
+        Object control = findElement(node, actionName + "_action");
+        if (control != null &amp;&amp; !controls.contains(control)) {
+            configureControl(control, action);
+        }
+    }
+}</code></pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect2"> 
+ <h3 id="buildtime">Buildtime</h3> 
+ <div class="sect3"> 
+  <h4 id="gradle_griffon_plugin">Gradle Griffon Plugin</h4> 
+  <div class="paragraph"> 
+   <p>There are two new properties found in this plugin:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><code>generateProjectStructure</code>: whether to create the standard project layout (<code>griffon-app</code> directory and subdirectories) or not. Default value is set to <code>true</code>.</p> </li> 
+    <li> <p><code>applicationProject</code>: automatically includes the <code>application</code> plugin and other features for building an application distribution. Default value is set to <code>true</code>. Turn it off in projects that require Griffon support but do not define or require an application launcher.</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect2"> 
+ <h3 id="compatibility">Compatibility</h3> 
+ <div class="paragraph"> 
+  <p>Full binary compatibility report between Griffon 2.10.0 and 2.9.1 can be found <a href="../reports/2.10.0/compatibility-report.html">here</a>.</p> 
+ </div> 
+ <div class="paragraph"> 
+  <p>A list of fixed issues can be found at the <a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.10.0+is%3Aclosed">2.10.0 milestone</a> page.</p> 
+ </div> 
+</div></p>
+
+    <hr />
+    
+        </div>
+        <div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>
