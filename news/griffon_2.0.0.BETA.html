@@ -65,63 +65,88 @@
 
     <p><em>08 June 2014</em></p>
 
-    <p><div class="sect1"> 
- <h2 id="griffon_2_0_0_beta_released">Griffon 2.0.0.BETA Released</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>The Griffon team is happy to announce the release of Griffon 2.0.0.BETA, hot on the heels of <a href="http://gr8conf.eu">Gr8conf EU</a>!</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>This release marks an important milestone in the framework’s history as it lets go of the last remaining legacy bits inherit from the Grails codebase (the build system) while embracing the latest tools available in the Groovy Ecosystem.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The griffon command line tool is no more. Long live Gradle! From now on, every Griffon project is a valid Gradle project. There’s no longer a need for custom IDE plugins as Gradle is well supported by all IDEs. An often brought subject, that of dependency resolution, is now rendered moot as Gradle is much better at handling this particular topic than the griffon command ever was.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The following list summarizes the changes brought by this release</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>the new JDK baseline is JDK7.</p> </li> 
-    <li> <p>the Griffon 2.0 API is JDK8 friendly, which means you may use lambda expressions. where a functional interface is expected.</p> </li> 
-    <li> <p>Groovy support has been moved to its own plugin, thus enabling developers to write. applications with just Java, drastically reducing the deployment size of an application.</p> </li> 
-    <li> <p>JSR 330 is used in core, enabling better module reusability.</p> </li> 
-    <li> <p>the runtime API is mostly binary compatible though classes have been moved to other packages.</p> </li> 
-    <li> <p>archetype support is now provided by <a href="https://github.com/pledbrook/lazybones">Lazybones</a>.</p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The latest version of the Griffon Guide is available at <a href="http://griffon.github.io/griffon/guide/index.html" class="bare">http://griffon.github.io/griffon/guide/index.html</a> New binaries are posted at <a href="https://bintray.com/griffon">Griffon’s Bintray repository</a>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The Griffon Guide includes a section about migration</p> 
-  </div> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>http://griffon.github.io/griffon/guide/index.html#_appendix_migration</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Please take special note about migrating existing Griffon projects from 1.X to 2.X: all plugins from the 1.X series do not work with Griffon 2.X. Update versions of popular plugins will begin to appear in the coming days. Keep an eye on</p> 
-  </div> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>https://bintray.com/griffon/griffon-plugins</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Despite this, we look forward to your feedback. Please report any problems you find to the Griffon User list, or better yet file a bug at <a href="https://github.com/griffon/griffon/issues" class="bare">https://github.com/griffon/griffon/issues</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Remember you can also contact the team on Twitter: <a href="http://twitter.com/theaviary">@theaviary</a>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Many thanks to all who contributed to this release!</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p> — The Griffon Team</p> 
-  </div> 
- </div> 
+    <p><div class="sect1">
+<h2 id="griffon_2_0_0_beta_released">Griffon 2.0.0.BETA Released</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Griffon team is happy to announce the release of Griffon 2.0.0.BETA, hot on
+the heels of <a href="https://gr8conf.eu">Gr8conf EU</a>!</p>
+</div>
+<div class="paragraph">
+<p>This release marks an important milestone in the framework&#8217;s history as it lets go
+of the last remaining legacy bits inherit from the Grails codebase (the build system)
+while embracing the latest tools available in the Groovy Ecosystem.</p>
+</div>
+<div class="paragraph">
+<p>The griffon command line tool is no more. Long live Gradle! From now on, every Griffon
+project is a valid Gradle project. There&#8217;s no longer a need for custom IDE plugins as
+Gradle is well supported by all IDEs. An often brought subject, that of dependency
+resolution, is now rendered moot as Gradle is much better at handling this particular
+topic than the griffon command ever was.</p>
+</div>
+<div class="paragraph">
+<p>The following list summarizes the changes brought by this release</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the new JDK baseline is JDK7.</p>
+</li>
+<li>
+<p>the Griffon 2.0 API is JDK8 friendly, which means you may use lambda expressions.
+where a functional interface is expected.</p>
+</li>
+<li>
+<p>Groovy support has been moved to its own plugin, thus enabling developers to write.
+applications with just Java, drastically reducing the deployment size of an application.</p>
+</li>
+<li>
+<p>JSR 330 is used in core, enabling better module reusability.</p>
+</li>
+<li>
+<p>the runtime API is mostly binary compatible though classes have been moved to other packages.</p>
+</li>
+<li>
+<p>archetype support is now provided by <a href="https://github.com/pledbrook/lazybones">Lazybones</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The latest version of the Griffon Guide is available at <a href="https://griffon.github.io/griffon/guide/index.html" class="bare">https://griffon.github.io/griffon/guide/index.html</a>
+New binaries are posted at <a href="https://bintray.com/griffon">Griffon&#8217;s Bintray repository</a>.</p>
+</div>
+<div class="paragraph">
+<p>The Griffon Guide includes a section about migration</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>https://griffon.github.io/griffon/guide/index.html#_appendix_migration</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Please take special note about migrating existing Griffon projects from 1.X to 2.X: all
+plugins from the 1.X series do not work with Griffon 2.X. Update versions of popular plugins
+will begin to appear in the coming days. Keep an eye on</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>https://bintray.com/griffon/griffon-plugins</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Despite this, we look forward to your feedback. Please report any problems you find to
+the Griffon User list, or better yet file a bug at <a href="https://github.com/griffon/griffon/issues" class="bare">https://github.com/griffon/griffon/issues</a></p>
+</div>
+<div class="paragraph">
+<p>Remember you can also contact the team on Twitter: <a href="https://twitter.com/theaviary">@theaviary</a>.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to all who contributed to this release!</p>
+</div>
+<div class="paragraph">
+<p>&#8201;&#8212;&#8201;The Griffon Team</p>
+</div>
+</div>
 </div></p>
 
     <hr />
@@ -132,7 +157,7 @@
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+        <p class="muted credit">&copy; 2008 - 2021 The Griffon Team | Mixed with <a href="https://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="https://jbake.org">JBake v2.6.5</a></p>
       </div>
     </div>
 

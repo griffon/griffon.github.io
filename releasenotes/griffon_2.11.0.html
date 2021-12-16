@@ -65,37 +65,51 @@
 
     <p><em>01 June 2017</em></p>
 
-    <p><div class="sect2"> 
- <h3 id="dependencies">Dependencies</h3> 
- <div class="paragraph"> 
-  <p>The following dependencies have been upgraded</p> 
- </div> 
- <div class="ulist"> 
-  <ul> 
-   <li> <p>com.google.code.findbugs:jsr305:3.0.2</p> </li> 
-   <li> <p>org.slf4j:slf4j-simple:1.7.25</p> </li> 
-   <li> <p>org.slf4j:slf4j-log4j:1.7.25</p> </li> 
-   <li> <p>com.google.guava:guava:22.0</p> </li> 
-   <li> <p>org.awaitility:awaitility:3.0.0</p> </li> 
-   <li> <p>org.codehaus.groovy:groovy-all:2.4.11</p> </li> 
-   <li> <p>org.jetbrains.kotlin:kotlin-stdlib:1.1.2-4</p> </li> 
-   <li> <p>com.googlecode.lanterna:lanterna:2.7.9</p> </li> 
-  </ul> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="runtime">Runtime</h3> 
- <div class="sect3"> 
-  <h4 id="xml_configuration">XML Configuration</h4> 
-  <div class="paragraph"> 
-   <p>XML has been added as part of the supported formats. You may write any configuration file using XML, for example</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    griffon-app/resources/DataSource.xml
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+    <p><div class="sect2">
+<h3 id="dependencies">Dependencies</h3>
+<div class="paragraph">
+<p>The following dependencies have been upgraded</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>com.google.code.findbugs:jsr305:3.0.2</p>
+</li>
+<li>
+<p>org.slf4j:slf4j-simple:1.7.25</p>
+</li>
+<li>
+<p>org.slf4j:slf4j-log4j:1.7.25</p>
+</li>
+<li>
+<p>com.google.guava:guava:22.0</p>
+</li>
+<li>
+<p>org.awaitility:awaitility:3.0.0</p>
+</li>
+<li>
+<p>org.codehaus.groovy:groovy-all:2.4.11</p>
+</li>
+<li>
+<p>org.jetbrains.kotlin:kotlin-stdlib:1.1.2-4</p>
+</li>
+<li>
+<p>com.googlecode.lanterna:lanterna:2.7.9</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="runtime">Runtime</h3>
+<div class="sect3">
+<h4 id="xml_configuration">XML Configuration</h4>
+<div class="paragraph">
+<p>XML has been added as part of the supported formats. You may write any configuration file using XML, for example</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/resources/DataSource.xml</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="xml">&lt;?xml version="1.0"?&gt;
 &lt;configuration&gt;
     &lt;dataSource&gt;
         &lt;driverClassName&gt;org.h2.Driver&lt;/driverClassName&gt;
@@ -117,21 +131,20 @@
             &lt;/dataSource&gt;
         &lt;/production&gt;
     &lt;/environments&gt;
-&lt;/configuration&gt;</code></pre> 
-   </div> 
-  </div> 
- </div> 
- <div class="sect3"> 
-  <h4 id="configuration_value_injection">Configuration Value Injection</h4> 
-  <div class="paragraph"> 
-   <p>Configuration values may be injected into managed beans. Simply annotate a field or a setter with <code>@Configured</code>. Take for example the following configuration</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    griffon-app/conf/sample/swing/groovy/Config.groovy
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">application {
+&lt;/configuration&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="configuration_value_injection">Configuration Value Injection</h4>
+<div class="paragraph">
+<p>Configuration values may be injected into managed beans. Simply annotate a field or a setter with <code>@Configured</code>.
+Take for example the following configuration</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/conf/sample/swing/groovy/Config.groovy</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="groovy">application {
     title = 'JavaFX + Groovy'
     startupGroups = ['sample']
     autoShutdown = true
@@ -147,18 +160,16 @@ mvcGroups {
         view       = 'sample.javafx.groovy.SampleView'
         controller = 'sample.javafx.groovy.SampleController'
     }
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Any of those configuration values may be set on a managed bean, such as the <code>SampleModel</code> class</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    griffon-app/models/sample/javafx/groovy/SampleModel.groovy
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">package sample.javafx.groovy
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Any of those configuration values may be set on a managed bean, such as the <code>SampleModel</code> class</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/models/sample/javafx/groovy/SampleModel.groovy</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="groovy">package sample.javafx.groovy
 
 import griffon.core.artifact.GriffonModel
 import griffon.metadata.ArtifactProviderFor
@@ -184,24 +195,24 @@ class SampleModel {
 
     @Configured(value = 'props.undefined', defaultValue = 'undefined')
     String undefined
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Values will be injected before <code>@PostConstruct</code> is triggered on the managed bean. Type conversion will be carried out using property editors.</p> 
-  </div> 
- </div> 
- <div class="sect3"> 
-  <h4 id="typed_mvcgroup_support">Typed MVCGroup support</h4> 
-  <div class="paragraph"> 
-   <p>It’s now possible to define typed MVC groups. This feature assumes the MVC group has the required <code>Model</code>, <code>View</code>, and <code>Controller</code> members; it won’t work for groups that define less than these 3 members. For example</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    src/main/java/org/example/FooMVCGroup.java
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.example;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Values will be injected before <code>@PostConstruct</code> is triggered on the managed bean. Type conversion will be carried out
+using property editors.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="typed_mvcgroup_support">Typed MVCGroup support</h4>
+<div class="paragraph">
+<p>It&#8217;s now possible to define typed MVC groups. This feature assumes the MVC group has the required <code>Model</code>, <code>View</code>, and
+<code>Controller</code> members; it won&#8217;t work for groups that define less than these 3 members. For example</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/java/org/example/FooMVCGroup.java</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">package org.example;
 
 import javax.inject.Named;
 import griffon.core.mvc.MVCGroup;
@@ -212,51 +223,56 @@ public class FooMVCGroup extends AbstractTypedMVCGroup&lt;FooModel, FooView, Foo
     public FooMVCGroup(MVCGroup delegate) {
         super(delegate);
     }
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Instances of this group can be created as follows</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">FooMVCGroup fooGroup1 = createMVCGroup(FooMVCGroup.class);
-FooMVCGroup fooGroup2 = createMVCGroup(FooMVCGroup.class, "foo2");</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>You may refer to the exact types of each MVC member using a typed MVC group, for example</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">FooMVCGroup fooGroup = createMVCGroup(FooMVCGroup.class);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Instances of this group can be created as follows</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">FooMVCGroup fooGroup1 = createMVCGroup(FooMVCGroup.class);
+FooMVCGroup fooGroup2 = createMVCGroup(FooMVCGroup.class, "foo2");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You may refer to the exact types of each MVC member using a typed MVC group, for example</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">FooMVCGroup fooGroup = createMVCGroup(FooMVCGroup.class);
 fooGroup.model().setSomeProperty("value"); // returned model type is FooModel
 
 // the following won't even compile
 MVCGroup mvcGroup = createMVCGroup("foo");
-mvcGroup.getModel().setSomeProperty("value"); // returned model type is GriffonModel !!</code></pre> 
-   </div> 
-  </div> 
- </div> 
- <div class="sect3"> 
-  <h4 id="javafx_support">JavaFX Support</h4> 
-  <div class="paragraph"> 
-   <p>Two new widgets are now available: <code>IndexedCardPane</code> and <code>NamedCardPane</code>. They provide similar capabilities as the ones found in <code>java.awt.CardLayout</code>. The first widget stores its children using an indexed <code>List</code> while the second widget uses "keys" instead of indexes.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>New <code>MatchingBindings</code> class provides matching capabilities on <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code></p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Apply <code>allMatch</code>, <code>anyMatch</code>, and <code>noneMatch</code> predicates.</p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>You can now create <code>TableColumns</code> and fill out a <code>TableView</code> with the brand new <code>TableViewFormat</code> and <code>TableViewModel</code> classes as shown by:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">TableViewFormat&lt;Measurement&gt; tableFormat = new DefaultTableFormat&lt;&gt;(
+mvcGroup.getModel().setSomeProperty("value"); // returned model type is GriffonModel !!</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="javafx_support">JavaFX Support</h4>
+<div class="paragraph">
+<p>Two new widgets are now available: <code>IndexedCardPane</code> and <code>NamedCardPane</code>. They provide similar capabilities as the ones
+found in <code>java.awt.CardLayout</code>. The first widget stores its children using an indexed <code>List</code> while the second widget
+uses "keys" instead of indexes.</p>
+</div>
+<div class="paragraph">
+<p>New <code>MatchingBindings</code> class provides matching capabilities on <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Apply <code>allMatch</code>, <code>anyMatch</code>, and <code>noneMatch</code> predicates.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can now create <code>TableColumns</code> and fill out a <code>TableView</code> with the brand new <code>TableViewFormat</code> and <code>TableViewModel</code>
+classes as shown by:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">TableViewFormat&lt;Measurement&gt; tableFormat = new DefaultTableFormat&lt;&gt;(
     new DefaultTableFormat.Column("name", 0.2d),
     new DefaultTableFormat.Column("amount", 0.1d),
     new DefaultTableFormat.Column("timestamp")
@@ -264,31 +280,35 @@ mvcGroup.getModel().setSomeProperty("value"); // returned model type is GriffonM
 ObservableList&lt;Measurement&gt; measurements = uiThreadAwareObservableList(model.getMeasurements());
 TableViewModel&lt;Measurement&gt; tableModel = new DefaultTableViewModel&lt;&gt;(measurements, tableFormat);
 tableModel.attachTo(measurementsTableView);
-measurementsTableView.setEditable(false);</code></pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="buildtime">Buildtime</h3> 
- <div class="sect3"> 
-  <h4 id="gradle_wrapper">Gradle Wrapper</h4> 
-  <div class="paragraph"> 
-   <p>Gradle wrapper version on all Lazybones templates has been bumped to <code>3.5</code>.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="compatibility">Compatibility</h3> 
- <div class="paragraph"> 
-  <p>Implementation classes of <code>Configuration</code> were moved to the <code>org.codehaus.griffon.runtime.core.configuration</code> package. Plugins that rely on reading custom configuration files (such as persistence plugins like <code>datasource</code> et al) must be updated to their latest versions.</p> 
- </div> 
- <div class="paragraph"> 
-  <p>Full binary compatibility report between Griffon 2.11.0 and 2.10.0 can be found <a href="../reports/2.11.0/compatibility-report.html">here</a>.</p> 
- </div> 
- <div class="paragraph"> 
-  <p>A list of fixed issues can be found at the <a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.11.0+is%3Aclosed">2.11.0 milestone</a> page.</p> 
- </div> 
+measurementsTableView.setEditable(false);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="buildtime">Buildtime</h3>
+<div class="sect3">
+<h4 id="gradle_wrapper">Gradle Wrapper</h4>
+<div class="paragraph">
+<p>Gradle wrapper version on all Lazybones templates has been bumped to <code>3.5</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="compatibility">Compatibility</h3>
+<div class="paragraph">
+<p>Implementation classes of <code>Configuration</code> were moved to the <code>org.codehaus.griffon.runtime.core.configuration</code> package.
+Plugins that rely on reading custom configuration files (such as persistence plugins like <code>datasource</code> et al) must be
+updated to their latest versions.</p>
+</div>
+<div class="paragraph">
+<p>Full binary compatibility report between Griffon 2.11.0 and 2.10.0 can be found
+<a href="../reports/2.11.0/compatibility-report.html">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>A list of fixed issues can be found at the
+<a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.11.0+is%3Aclosed">2.11.0 milestone</a> page.</p>
+</div>
 </div></p>
 
     <hr />
@@ -299,7 +319,7 @@ measurementsTableView.setEditable(false);</code></pre>
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+        <p class="muted credit">&copy; 2008 - 2021 The Griffon Team | Mixed with <a href="https://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="https://jbake.org">JBake v2.6.5</a></p>
       </div>
     </div>
 

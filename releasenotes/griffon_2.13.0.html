@@ -65,42 +65,45 @@
 
     <p><em>01 December 2017</em></p>
 
-    <p><div class="sect2"> 
- <h3 id="dependencies">Dependencies</h3> 
- <div class="paragraph"> 
-  <p>The following dependencies have been upgraded</p> 
- </div> 
- <div class="ulist"> 
-  <ul> 
-   <li> <p>org.codehaus.groovy:groovy-all:2.4.13</p> </li> 
-   <li> <p>org.jetbrains.kotlin:kotlin-stdlib:1.2.0</p> </li> 
-  </ul> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="runtime">Runtime</h3> 
- <div class="sect3"> 
-  <h4 id="custom_propertyeditor_support_for_configured_and_mvcmember">Custom PropertyEditor support for @Configured and @MVCMember</h4> 
-  <div class="paragraph"> 
-   <p>There may be times when a value coming from a <code>Configuration</code> instance or set as an MVC argument is not of the desired type. Normally the value would be converted using the predefined set of `PropertyEditor``s`available to the application, however you can’t specify the format if needed. Now it’s possible to do so, for example say there’s a configuration key with the following value</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    griffon-app/resources/Config.properties
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">numbers = 1, 2, 3</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>And a <code>Controller</code> class defined as follows</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    griffon-app/coontrollers/org/example/SampleController.java
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.example;
+    <p><div class="sect2">
+<h3 id="dependencies">Dependencies</h3>
+<div class="paragraph">
+<p>The following dependencies have been upgraded</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>org.codehaus.groovy:groovy-all:2.4.13</p>
+</li>
+<li>
+<p>org.jetbrains.kotlin:kotlin-stdlib:1.2.0</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="runtime">Runtime</h3>
+<div class="sect3">
+<h4 id="custom_propertyeditor_support_for_configured_and_mvcmember">Custom PropertyEditor support for @Configured and @MVCMember</h4>
+<div class="paragraph">
+<p>There may be times when a value coming from a <code>Configuration</code> instance or set as an MVC argument is not of the desired
+type. Normally the value would be converted using the predefined set of `PropertyEditor``s`available to the application,
+however you can&#8217;t specify the format if needed. Now it&#8217;s possible to do so, for example say there&#8217;s a configuration key
+with the following value</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/resources/Config.properties</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">numbers = 1, 2, 3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And a <code>Controller</code> class defined as follows</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/coontrollers/org/example/SampleController.java</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">package org.example;
 
 import griffon.core.artifact.GriffonController;
 import griffon.core.configuration.Configured;
@@ -115,18 +118,17 @@ public class BarController extends AbstractGriffonController {
     private List&lt;String&gt; numbers;
 
     ...
-}</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Running the application results in an error because the runtime can convert a <code>java.lang.String</code> value into a <code>java.util.List</code> one. Ammending the code with the following settings will make it work</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    griffon-app/coontrollers/org/example/SampleController.java
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.example;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Running the application results in an error because the runtime can convert a <code>java.lang.String</code> value into a
+<code>java.util.List</code> one. Ammending the code with the following settings will make it work</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/coontrollers/org/example/SampleController.java</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">package org.example;
 
 import griffon.core.artifact.GriffonController;
 import griffon.core.configuration.Configured;
@@ -165,70 +167,79 @@ public class BarController extends AbstractGriffonController {
             }
         }
     }
-}</code></pre> 
-   </div> 
-  </div> 
- </div> 
- <div class="sect3"> 
-  <h4 id="contextual_injection_support_for_non_griffon_artifacts">@Contextual injection support for non-griffon artifacts</h4> 
-  <div class="paragraph"> 
-   <p>On previous versions you could define a <code>@Contextual</code> injection on a <code>Model</code>, <code>View</code>, or <code>Controller</code> MVC member. It’s now possible to do the same for non-griffon artifacts with the restriction that said injections will only take place when an instance is requested to the Injector after the <code>Initialize</code> phase has ended. Also, contextaul injections made in this way will occur before any method annotated with <code>@PostConstruct</code> is invoked. Contextual values will be supplied by the application’s global context.</p> 
-  </div> 
- </div> 
- <div class="sect3"> 
-  <h4 id="javafx_observablestream">JavaFX: ObservableStream</h4> 
-  <div class="paragraph"> 
-   <p>Griffon 2.9.0 introduced a new set of Binding producers (<code>FilteringBindings</code>, <code>MappingBindings</code>, <code>ReducingBindings</code> which produce single value Bindings out of observable collections by applying specific Stream operations. The new <code>ObservableStream</code> type lets you combine any number of stream operations using an observable collection as source.</p> 
-  </div> 
- </div> 
- <div class="sect3"> 
-  <h4 id="javafx_groovy_kotlin_extensions">JavaFX: Groovy &amp; Kotlin Extensions</h4> 
-  <div class="paragraph"> 
-   <p>All static binding extensions can be used directly on target types via language extensions on Groovy and Kotlin. The following Java snippet</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">StringProperty property = new SimpleStringProperty();
-StringProperty uiProperty = UIThreadAwareBindings.uiThreadAwareStringProperty(property);</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Can be rewritten in Groovy as</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">StringProperty property = new SimpleStringProperty()
-StringProperty uiProperty = property.uiThreadAware()</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Or in Kotlin as</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-kotlin" data-lang="kotlin">val property = SimpleStringProperty()
-val uiProperty = property.uiThreadAware()</code></pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="buildtime">Buildtime</h3> 
- <div class="sect3"> 
-  <h4 id="gradle_wrapper">Gradle Wrapper</h4> 
-  <div class="paragraph"> 
-   <p>Gradle wrapper version on all Lazybones templates has been bumped to <code>4.3.1</code>.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="compatibility">Compatibility</h3> 
- <div class="paragraph"> 
-  <p>Full binary compatibility report between Griffon 2.13.0 and 2.12.0 can be found <a href="../reports/2.13.0/compatibility-report.html">here</a>.</p> 
- </div> 
- <div class="paragraph"> 
-  <p>A list of fixed issues can be found at the <a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.13.0+is%3Aclosed">2.13.0 milestone</a> page.</p> 
- </div> 
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="contextual_injection_support_for_non_griffon_artifacts">@Contextual injection support for non-griffon artifacts</h4>
+<div class="paragraph">
+<p>On previous versions you could define a <code>@Contextual</code> injection on a <code>Model</code>, <code>View</code>, or <code>Controller</code> MVC member. It&#8217;s
+now possible to do the same for non-griffon artifacts with the restriction that said injections will only take place
+when an instance is requested to the Injector after the <code>Initialize</code> phase has ended. Also, contextaul injections made
+in this way will occur before any method annotated with <code>@PostConstruct</code> is invoked. Contextual values will be supplied
+by the application&#8217;s global context.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="javafx_observablestream">JavaFX: ObservableStream</h4>
+<div class="paragraph">
+<p>Griffon 2.9.0 introduced a new set of Binding producers (<code>FilteringBindings</code>, <code>MappingBindings</code>, <code>ReducingBindings</code> which
+produce single value Bindings out of observable collections by applying specific Stream operations. The new <code>ObservableStream</code>
+type lets you combine any number of stream operations using an observable collection as source.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="javafx_groovy_kotlin_extensions">JavaFX: Groovy &amp; Kotlin Extensions</h4>
+<div class="paragraph">
+<p>All static binding extensions can be used directly on target types via language extensions on Groovy and Kotlin. The following
+Java snippet</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">StringProperty property = new SimpleStringProperty();
+StringProperty uiProperty = UIThreadAwareBindings.uiThreadAwareStringProperty(property);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Can be rewritten in Groovy as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="groovy">StringProperty property = new SimpleStringProperty()
+StringProperty uiProperty = property.uiThreadAware()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or in Kotlin as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="kotlin">val property = SimpleStringProperty()
+val uiProperty = property.uiThreadAware()</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="buildtime">Buildtime</h3>
+<div class="sect3">
+<h4 id="gradle_wrapper">Gradle Wrapper</h4>
+<div class="paragraph">
+<p>Gradle wrapper version on all Lazybones templates has been bumped to <code>4.3.1</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="compatibility">Compatibility</h3>
+<div class="paragraph">
+<p>Full binary compatibility report between Griffon 2.13.0 and 2.12.0 can be found
+<a href="../reports/2.13.0/compatibility-report.html">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>A list of fixed issues can be found at the
+<a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.13.0+is%3Aclosed">2.13.0 milestone</a> page.</p>
+</div>
 </div></p>
 
     <hr />
@@ -239,7 +250,7 @@ val uiProperty = property.uiThreadAware()</code></pre>
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+        <p class="muted credit">&copy; 2008 - 2021 The Griffon Team | Mixed with <a href="https://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="https://jbake.org">JBake v2.6.5</a></p>
       </div>
     </div>
 

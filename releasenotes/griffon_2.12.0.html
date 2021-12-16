@@ -65,42 +65,55 @@
 
     <p><em>01 September 2017</em></p>
 
-    <p><div class="sect2"> 
- <h3 id="dependencies">Dependencies</h3> 
- <div class="paragraph"> 
-  <p>The following dependencies have been upgraded</p> 
- </div> 
- <div class="ulist"> 
-  <ul> 
-   <li> <p>org.codehaus.groovy:groovy-all:2.4.12</p> </li> 
-   <li> <p>com.google.guava:guava:23.0</p> </li> 
-   <li> <p>org.jetbrains.kotlin:kotlin-stdlib:1.1.4-2</p> </li> 
-   <li> <p>org.apache.pivot:pivot-charts:2.0.5</p> </li> 
-   <li> <p>org.apache.pivot:pivot-core:2.0.5</p> </li> 
-   <li> <p>org.apache.pivot:pivot-wtk:2.0.5</p> </li> 
-   <li> <p>org.apache.pivot:pivot-wtk-terra:2.0.5</p> </li> 
-  </ul> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="runtime">Runtime</h3> 
- <div class="sect3"> 
-  <h4 id="javafx_metacomponent_support">JavaFX MetaComponent Support</h4> 
-  <div class="paragraph"> 
-   <p>You can now use MVCGroups as components inside an FXML file. Let’s assume there’s an mvcGroup named <code>form</code> with a matching <code>FormView</code>. This view defines the following content in <code>form.fxml</code></p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    griffon-app/resources/com/acme/form.fxml
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    <p><div class="sect2">
+<h3 id="dependencies">Dependencies</h3>
+<div class="paragraph">
+<p>The following dependencies have been upgraded</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>org.codehaus.groovy:groovy-all:2.4.12</p>
+</li>
+<li>
+<p>com.google.guava:guava:23.0</p>
+</li>
+<li>
+<p>org.jetbrains.kotlin:kotlin-stdlib:1.1.4-2</p>
+</li>
+<li>
+<p>org.apache.pivot:pivot-charts:2.0.5</p>
+</li>
+<li>
+<p>org.apache.pivot:pivot-core:2.0.5</p>
+</li>
+<li>
+<p>org.apache.pivot:pivot-wtk:2.0.5</p>
+</li>
+<li>
+<p>org.apache.pivot:pivot-wtk-terra:2.0.5</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="runtime">Runtime</h3>
+<div class="sect3">
+<h4 id="javafx_metacomponent_support">JavaFX MetaComponent Support</h4>
+<div class="paragraph">
+<p>You can now use MVCGroups as components inside an FXML file. Let&#8217;s assume there&#8217;s an mvcGroup named <code>form</code> with a matching
+<code>FormView</code>. This view defines the following content in <code>form.fxml</code></p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/resources/com/acme/form.fxml</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 
 &lt;?import javafx.scene.layout.VBox?&gt;
 &lt;?import griffon.javafx.support.MetaComponent?&gt;
 &lt;?import griffon.javafx.support.MetaComponent.MvcArg?&gt;
 
-&lt;VBox xmlns:fx="http://javafx.com/fxml"
+&lt;VBox xmlns:fx="https://javafx.com/fxml"
       fx:controller="com/acme/ContainerView"&gt;
     &lt;MetaComponent mvcType="formItem"&gt;
         &lt;MetaComponent.MvcArg name="key" value="name"/&gt;
@@ -108,18 +121,17 @@
     &lt;MetaComponent mvcType="formItem"&gt;
         &lt;MetaComponent.MvcArg name="propertyKey" value="lastname"/&gt;
     &lt;/MetaComponent&gt;
-&lt;/VBox&gt;</code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The <code>formItem</code> MVC group defines a Label, a TextField, and handles validation for its input. <code>FormView</code> must identify the root node that can be added to its parent view; the convention is to use the group’s id plus <code>"-rootNode"</code>, for example</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-    griffon-app/com/acme/FormItemView.java
-   </div> 
-   <div class="content"> 
-    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">package org.example;
+&lt;/VBox&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>formItem</code> MVC group defines a Label, a TextField, and handles validation for its input. <code>FormView</code> must identify the root
+node that can be added to its parent view; the convention is to use the group&#8217;s id plus <code>"-rootNode"</code>, for example</p>
+</div>
+<div class="listingblock">
+<div class="title">griffon-app/com/acme/FormItemView.java</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">package org.example;
 
 import griffon.core.artifact.GriffonView;
 import griffon.inject.MVCMember;
@@ -151,90 +163,100 @@ public class FormItemView extends AbstractJavaFXGriffonView {
         connectMessageSource(content);
         getMvcGroup().getContext().put(getMvcGroup().getMvcId() + "-rootNode", content);
     }
-}</code></pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="buildtime">Buildtime</h3> 
- <div class="sect3"> 
-  <h4 id="gradle_wrapper">Gradle Wrapper</h4> 
-  <div class="paragraph"> 
-   <p>Gradle wrapper version on all Lazybones templates has been bumped to <code>4.1</code>.</p> 
-  </div> 
- </div> 
- <div class="sect3"> 
-  <h4 id="maven_wrapper">Maven Wrapper</h4> 
-  <div class="paragraph"> 
-   <p>The <a href="https://github.com/takari/maven-wrapper">mvnw</a> wrapper files have been added to all Lazybones templates.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="compatibility">Compatibility</h3> 
- <div class="sect3"> 
-  <h4 id="resources">Resources</h4> 
-  <div class="paragraph"> 
-   <p>Resource tokens have been migrated from <code>@token@</code> to <code>${token}</code>. This affects all resources found in the following directories:</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><code>src/main/resources</code></p> </li> 
-    <li> <p><code>griffon-app/resources</code></p> </li> 
-    <li> <p><code>griffon-app/i18n</code></p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Take note that key values may not use <code>.</code> as a separator, use <code>_</code> instead. The following keys are now available to projects created by the Lazybones templates or those that rely on the <code>gradle-griffon</code> plugin.</p> 
-  </div> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col style="width: 50%;"> 
-    <col style="width: 50%;"> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Old Format</th> 
-     <th class="tableblock halign-left valign-top">New Format</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">application.name</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">application_name</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">application.version</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">application_version</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">build.date</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">build_date</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">build.time</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">build_time</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">build.revision</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">build_revision</p></td> 
-    </tr> 
-   </tbody> 
-  </table> 
- </div> 
- <div class="sect3"> 
-  <h4 id="javafx_gradle_plugin">JavaFX Gradle Plugin</h4> 
-  <div class="paragraph"> 
-   <p>All JavaFX project templates (Lazybones) now rely on <a href="https://github.com/FibreFoX/javafx-gradle-plugin">FibreFoX/javafx-gradle-plugin</a> as it provides more features and it’s updated more constantly than the previous plugin choice.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Full binary compatibility report between Griffon 2.12.0 and 2.11.0 can be found <a href="../reports/2.12.0/compatibility-report.html">here</a>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>A list of fixed issues can be found at the <a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.12.0+is%3Aclosed">2.12.0 milestone</a> page.</p> 
-  </div> 
- </div> 
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="buildtime">Buildtime</h3>
+<div class="sect3">
+<h4 id="gradle_wrapper">Gradle Wrapper</h4>
+<div class="paragraph">
+<p>Gradle wrapper version on all Lazybones templates has been bumped to <code>4.1</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="maven_wrapper">Maven Wrapper</h4>
+<div class="paragraph">
+<p>The <a href="https://github.com/takari/maven-wrapper">mvnw</a> wrapper files have been added to all Lazybones templates.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="compatibility">Compatibility</h3>
+<div class="sect3">
+<h4 id="resources">Resources</h4>
+<div class="paragraph">
+<p>Resource tokens have been migrated from <code>@token@</code> to <code>${token}</code>. This affects all resources found in the following directories:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>src/main/resources</code></p>
+</li>
+<li>
+<p><code>griffon-app/resources</code></p>
+</li>
+<li>
+<p><code>griffon-app/i18n</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Take note that key values may not use <code>.</code> as a separator, use <code>_</code> instead. The following keys are now available to projects
+created by the Lazybones templates or those that rely on the <code>gradle-griffon</code> plugin.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Old Format</th>
+<th class="tableblock halign-left valign-top">New Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application.name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application_name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application.version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application_version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">build.date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">build_date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">build.time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">build_time</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">build.revision</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">build_revision</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="javafx_gradle_plugin">JavaFX Gradle Plugin</h4>
+<div class="paragraph">
+<p>All JavaFX project templates (Lazybones) now rely on <a href="https://github.com/FibreFoX/javafx-gradle-plugin">FibreFoX/javafx-gradle-plugin</a>
+as it provides more features and it&#8217;s updated more constantly than the previous plugin choice.</p>
+</div>
+<div class="paragraph">
+<p>Full binary compatibility report between Griffon 2.12.0 and 2.11.0 can be found
+<a href="../reports/2.12.0/compatibility-report.html">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>A list of fixed issues can be found at the
+<a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.12.0+is%3Aclosed">2.12.0 milestone</a> page.</p>
+</div>
+</div>
 </div></p>
 
     <hr />
@@ -245,7 +267,7 @@ public class FormItemView extends AbstractJavaFXGriffonView {
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+        <p class="muted credit">&copy; 2008 - 2021 The Griffon Team | Mixed with <a href="https://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="https://jbake.org">JBake v2.6.5</a></p>
       </div>
     </div>
 

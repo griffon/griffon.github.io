@@ -65,32 +65,40 @@
 
     <p><em>29 September 2016</em></p>
 
-    <p><div class="sect1"> 
- <h2 id="griffon_2_8_0_release_notes">Griffon 2.8.0 Release Notes</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="dependencies">Dependencies</h3> 
-   <div class="paragraph"> 
-    <p>The following dependencies have been upgraded</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>org.awaitility:awaitility:2.0.0</p> </li> 
-     <li> <p>org.awaitility:awaitility-groovy:2.0.0</p> </li> 
-     <li> <p>org.jetbrains.kotlin:kotlin-stdlib:1.0.4</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="runtime">Runtime</h3> 
-   <div class="sect3"> 
-    <h4 id="identify_mvc_members_and_arguments">Identify MVC Members and Arguments</h4> 
-    <div class="paragraph"> 
-     <p>Starting with this release you may annotate MVC members and arguments with <code>@griffon.inject.MVCMember</code>. This annotation servers as a hint to the Griffon runtime when paired with <code>@javax.annotation.Nonnull</code>. In this way the runtime can validate if all MVC members and MVC arguments have been supplied. You may annotate the field or the property setter, like so</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="prettyprint highlight"><code class="language-java" data-lang="java">import griffon.core.artifact.GriffonController;
+    <p><div class="sect1">
+<h2 id="griffon_2_8_0_release_notes">Griffon 2.8.0 Release Notes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="dependencies">Dependencies</h3>
+<div class="paragraph">
+<p>The following dependencies have been upgraded</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>org.awaitility:awaitility:2.0.0</p>
+</li>
+<li>
+<p>org.awaitility:awaitility-groovy:2.0.0</p>
+</li>
+<li>
+<p>org.jetbrains.kotlin:kotlin-stdlib:1.0.4</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="runtime">Runtime</h3>
+<div class="sect3">
+<h4 id="identify_mvc_members_and_arguments">Identify MVC Members and Arguments</h4>
+<div class="paragraph">
+<p>Starting with this release you may annotate MVC members and arguments with <code>@griffon.inject.MVCMember</code>. This annotation
+servers as a hint to the Griffon runtime when paired with <code>@javax.annotation.Nonnull</code>. In this way the runtime can validate
+if all MVC members and MVC arguments have been supplied. You may annotate the field or the property setter, like so</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">import griffon.core.artifact.GriffonController;
 import griffon.inject.MVCMember;
 import griffon.metadata.ArtifactProviderFor;
 import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonController;
@@ -107,31 +115,34 @@ public class SampleController extends AbstractGriffonController {
     public void setModel(@Nonnull SampleModel model) {
         this.model = model;
     }
-}</code></pre> 
-     </div> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="finding_multiple_elements_in_the_node_graph">Finding Multiple Elements in the Node Graph</h4> 
-    <div class="paragraph"> 
-     <p>You can now search for multiple elements inside the Node Graph (including those that are not subtypes of <code>javafx.scene.Node</code> such as <code>Tab</code> and <code>MenutItem</code>) using a <code>predicate</code>, for example, finding all nodes that have a custom property named <code>tag</code> with value <code>tag1</code></p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">JavaFXUtils.findElements(container) { e -&gt;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="finding_multiple_elements_in_the_node_graph">Finding Multiple Elements in the Node Graph</h4>
+<div class="paragraph">
+<p>You can now search for multiple elements inside the Node Graph (including those that are not subtypes of <code>javafx.scene.Node</code>
+such as <code>Tab</code> and <code>MenutItem</code>) using a <code>predicate</code>, for example, finding all nodes that have a custom property named <code>tag</code> with
+value <code>tag1</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="groovy">JavaFXUtils.findElements(container) { e -&gt;
     e.properties.tag == 'tag1'
-}</code></pre> 
-     </div> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="multiple_action_targets_in_fxml">Multiple Action Targets in FXML</h4> 
-    <div class="paragraph"> 
-     <p>It’s now possible to target multiple elements for a particular aciton using FXML. Instead of using an <code>fx:id</code> entry that follows the naming convetion <code>&lt;action&gt;ActionTarget</code> simply use a static synthetic property: <code>JavaFXUtils.griffonActionId</code>. For example</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;?import griffon.javafx.support.JavaFXUtils?&gt;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="multiple_action_targets_in_fxml">Multiple Action Targets in FXML</h4>
+<div class="paragraph">
+<p>It&#8217;s now possible to target multiple elements for a particular aciton using FXML. Instead of using an <code>fx:id</code> entry that follows
+the naming convetion <code>&lt;action&gt;ActionTarget</code> simply use a static synthetic property: <code>JavaFXUtils.griffonActionId</code>. For example</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="xml">&lt;?import griffon.javafx.support.JavaFXUtils?&gt;
 ...
 &lt;VBox&gt;
     &lt;MenuBar&gt;
@@ -146,33 +157,37 @@ public class SampleController extends AbstractGriffonController {
         &lt;Button JavaFXUtils.griffonActionId="copy"/&gt;
         &lt;Button JavaFXUtils.griffonActionId="paste"/&gt;
     &lt;/ToolBar&gt;
-&lt;/VBox&gt;</code></pre> 
-     </div> 
-    </div> 
-    <div class="paragraph"> 
-     <p>The previous code assumes the corresponding controller has defined the following actions: <code>cut</code>, <code>copy</code>, and <code>paste</code>.</p> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="buildtime">Buildtime</h3> 
-   <div class="sect3"> 
-    <h4 id="gradle_version">Gradle Version</h4> 
-    <div class="paragraph"> 
-     <p>All project templates have been upgraded to use Gradle 3.1 but usage of Gradle 3.0 is still possible. Be advised that usage of Gradle 2.x may bring some incompatibilities, as some tasks have been renamed or removed, such as the <code>installApp</code> that was renamed to <code>installDist</code>.</p> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="compatibility">Compatibility</h3> 
-   <div class="paragraph"> 
-    <p>Full binary compatibility report between Griffon 2.8.0 and 2.7.0 can be found <a href="../reports/2.8.0/compatibility-report.html">here</a>.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>A list of fixed issues can be found at the <a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.8.0+is%3Aclosed">2.8.0 milestone</a> page.</p> 
-   </div> 
-  </div> 
- </div> 
+&lt;/VBox&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The previous code assumes the corresponding controller has defined the following actions: <code>cut</code>, <code>copy</code>, and <code>paste</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="buildtime">Buildtime</h3>
+<div class="sect3">
+<h4 id="gradle_version">Gradle Version</h4>
+<div class="paragraph">
+<p>All project templates have been upgraded to use Gradle 3.1 but usage of Gradle 3.0 is still possible.
+Be advised that usage of Gradle 2.x may bring some incompatibilities, as some tasks have been renamed or removed,
+such as the <code>installApp</code> that was renamed to <code>installDist</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="compatibility">Compatibility</h3>
+<div class="paragraph">
+<p>Full binary compatibility report between Griffon 2.8.0 and 2.7.0 can be found
+<a href="../reports/2.8.0/compatibility-report.html">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>A list of fixed issues can be found at the
+<a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.8.0+is%3Aclosed">2.8.0 milestone</a> page.</p>
+</div>
+</div>
+</div>
 </div></p>
 
     <hr />
@@ -183,7 +198,7 @@ public class SampleController extends AbstractGriffonController {
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+        <p class="muted credit">&copy; 2008 - 2021 The Griffon Team | Mixed with <a href="https://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="https://jbake.org">JBake v2.6.5</a></p>
       </div>
     </div>
 

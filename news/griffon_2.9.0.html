@@ -65,79 +65,128 @@
 
     <p><em>01 December 2016</em></p>
 
-    <p><div class="sect1"> 
- <h2 id="griffon_2_9_0_released">Griffon 2.9.0 Released</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>The Griffon team is happy to announce the release of Griffon 2.9.0!</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The following list summarizes the changes brought by this release:</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Action properties can react to application <code>Locale</code> changes.</p> </li> 
-    <li> <p><code>Labeled</code>, <code>Tab</code> and <code>MenuItem</code> nodes can react to application <code>Locale</code> changes.</p> </li> 
-    <li> <p><code>JavaFXAction</code> has the following updates:</p> 
-     <div class="ulist"> 
-      <ul> 
-       <li> <p><code>style</code>: used to set style on the bound widget.</p> </li> 
-       <li> <p><code>graphic</code>: used to set the graphic node on the bound widget.</p> </li> 
-       <li> <p><code>graphicStyle</code>: used to set style on the graphic node of the bound widget.</p> </li> 
-       <li> <p><code>graphicStyleClass</code>: used to set style classes on the graphic node of the bound widget.</p> </li> 
-      </ul> 
-     </div> </li> 
-    <li> <p>Added an UI Thread proxy <code>ObservableSet</code>; all of its updates will be triggered inside the UI thread.</p> </li> 
-    <li> <p>Added an UI Thread proxy <code>ObservableMap</code>; all of its updates will be triggered inside the UI thread.</p> </li> 
-    <li> <p>New <code>CollectionBindings</code> class provides binding factories on <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code></p> 
-     <div class="ulist"> 
-      <ul> 
-       <li> <p>Join source observable collection to <code>StringBinding</code>.</p> </li> 
-       <li> <p>Calculate <code>min</code>, <code>max</code>, <code>average</code>, and <code>sum</code> on source observable collection.</p> </li> 
-      </ul> 
-     </div> </li> 
-    <li> <p>New <code>FilteringBindings</code> class provides filtering capabilities on <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code></p> 
-     <div class="ulist"> 
-      <ul> 
-       <li> <p>Filter <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> and find first match, creating a <code>ObjectBinding</code>.</p> </li> 
-       <li> <p>Filter <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> then map and find first match to X; where X may be a wrapper type, String or a type <code>R</code>.</p> </li> 
-       <li> <p>Map elements of <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> to X then filter and find first match; where X may be a wrapper type, String or a type <code>R</code>.</p> </li> 
-      </ul> 
-     </div> </li> 
-    <li> <p>New <code>ReducingBindings</code> class provides reduce capabilities on <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code></p> 
-     <div class="ulist"> 
-      <ul> 
-       <li> <p>Reduce <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> to <code>ObjectBinding</code>.</p> </li> 
-       <li> <p>Reduce <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> then map to X; where X may be a wrapper type, String or a type <code>R</code>.</p> </li> 
-       <li> <p>Map elements of <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> to X then reduce; where X may be a wrapper type, String or a type <code>R</code>.</p> </li> 
-      </ul> 
-     </div> </li> 
-    <li> <p>New <code>MappingBindings</code> class provides lots of useful binding and property factories</p> 
-     <div class="ulist"> 
-      <ul> 
-       <li> <p>Convert <code>ObservableValue&lt;X&gt;</code> to is corresponding <code>XBinding</code>.</p> </li> 
-       <li> <p>Convert <code>ObservableXValue</code> to <code>ObjectBinding&lt;X&gt;</code>.</p> </li> 
-       <li> <p>Create bindings that update their value and notify listeners inside the UI thread.</p> </li> 
-      </ul> 
-     </div> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>A more detailed description of the changes and compatibility issues can be found at the <a href="/releasenotes/griffon_2.9.0.html" target="_blank" rel="noopener">release notes</a>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>We look forward to your feedback. Please report any problems you find to the Griffon User list, or better yet, file a bug at <a href="http://github.com/griffon/griffon/issues" class="bare">http://github.com/griffon/griffon/issues</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Remember you can also contact the team on Twitter: <a href="http://twitter.com/theaviary">@theaviary</a>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Many thanks to all who contributed to this release!</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The Griffon Team</p> 
-  </div> 
- </div> 
+    <p><div class="sect1">
+<h2 id="griffon_2_9_0_released">Griffon 2.9.0 Released</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Griffon team is happy to announce the release of Griffon 2.9.0!</p>
+</div>
+<div class="paragraph">
+<p>The following list summarizes the changes brought by this release:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Action properties can react to application <code>Locale</code> changes.</p>
+</li>
+<li>
+<p><code>Labeled</code>, <code>Tab</code> and <code>MenuItem</code> nodes can react to application <code>Locale</code> changes.</p>
+</li>
+<li>
+<p><code>JavaFXAction</code> has the following updates:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>style</code>: used to set style on the bound widget.</p>
+</li>
+<li>
+<p><code>graphic</code>: used to set the graphic node on the bound widget.</p>
+</li>
+<li>
+<p><code>graphicStyle</code>: used to set style on the graphic node of the bound widget.</p>
+</li>
+<li>
+<p><code>graphicStyleClass</code>: used to set style classes on the graphic node of the bound widget.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Added an UI Thread proxy <code>ObservableSet</code>; all of its updates will be triggered inside the UI thread.</p>
+</li>
+<li>
+<p>Added an UI Thread proxy <code>ObservableMap</code>; all of its updates will be triggered inside the UI thread.</p>
+</li>
+<li>
+<p>New <code>CollectionBindings</code> class provides binding factories on <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Join source observable collection to <code>StringBinding</code>.</p>
+</li>
+<li>
+<p>Calculate <code>min</code>, <code>max</code>, <code>average</code>, and <code>sum</code> on source observable collection.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>New <code>FilteringBindings</code> class provides filtering capabilities on <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Filter <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> and find first match, creating a <code>ObjectBinding</code>.</p>
+</li>
+<li>
+<p>Filter <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> then map and find first match to X; where X may be a wrapper type, String or a type <code>R</code>.</p>
+</li>
+<li>
+<p>Map elements of <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> to X then filter and find first match; where X may be a wrapper type, String or a type <code>R</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>New <code>ReducingBindings</code> class provides reduce capabilities on <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reduce <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> to <code>ObjectBinding</code>.</p>
+</li>
+<li>
+<p>Reduce <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> then map to X; where X may be a wrapper type, String or a type <code>R</code>.</p>
+</li>
+<li>
+<p>Map elements of <code>ObservableList</code>/<code>ObservableSet</code>/<code>ObservableMap</code> to X then reduce; where X may be a wrapper type, String or a type <code>R</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>New <code>MappingBindings</code> class provides lots of useful binding and property factories</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Convert <code>ObservableValue&lt;X&gt;</code> to is corresponding <code>XBinding</code>.</p>
+</li>
+<li>
+<p>Convert <code>ObservableXValue</code> to <code>ObjectBinding&lt;X&gt;</code>.</p>
+</li>
+<li>
+<p>Create bindings that update their value and notify listeners inside the UI thread.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A more detailed description of the changes and compatibility issues can be found at the <a href="/releasenotes/griffon_2.9.0.html" target="_blank" rel="noopener">release notes</a>.</p>
+</div>
+<div class="paragraph">
+<p>We look forward to your feedback. Please report any problems you find to the Griffon User list,
+or better yet, file a bug at <a href="https://github.com/griffon/griffon/issues" class="bare">https://github.com/griffon/griffon/issues</a></p>
+</div>
+<div class="paragraph">
+<p>Remember you can also contact the team on Twitter: <a href="https://twitter.com/theaviary">@theaviary</a>.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to all who contributed to this release!</p>
+</div>
+<div class="paragraph">
+<p>The Griffon Team</p>
+</div>
+</div>
 </div></p>
 
     <hr />
@@ -148,7 +197,7 @@
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+        <p class="muted credit">&copy; 2008 - 2021 The Griffon Team | Mixed with <a href="https://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="https://jbake.org">JBake v2.6.5</a></p>
       </div>
     </div>
 

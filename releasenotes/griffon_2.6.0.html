@@ -65,79 +65,104 @@
 
     <p><em>04 March 2016</em></p>
 
-    <p><div class="sect1"> 
- <h2 id="griffon_2_6_0_release_notes">Griffon 2.6.0 Release Notes</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="dependencies">Dependencies</h3> 
-   <div class="paragraph"> 
-    <p>The following dependencies have been upgraded</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>org.codehaus.groovy:groovy-all:2.4.6</p> </li> 
-     <li> <p>org.slf4j:slf4j-simple:1.7.18</p> </li> 
-     <li> <p>org.slf4j:slf4j-log4j:1.7.18</p> </li> 
-     <li> <p>org.testfx:testfx-core:4.0.2-alpha</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="runtime">Runtime</h3> 
-   <div class="sect3"> 
-    <h4 id="lifecycle_updates">Lifecycle Updates</h4> 
-    <div class="paragraph"> 
-     <p><code>@PostConstruct</code> and <code>@PreDestroy</code> are guaranteed to be invoked when an artifact is created/destroyed. Previously the runtime would invoke <code>@PostConstruct</code> on a service during shutdown if the service was never used at all. Destroying an MVC group guarantees that methods annotated with <code>@PreDestroy</code> are invoked.</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="eventrouter">EventRouter</h4> 
-    <div class="paragraph"> 
-     <p>It’s now possible to query an <code>EventRouter</code> for its set of listeners. <code>EventRouter</code> instances also use a well defined pattern to name the threads they may use internally.</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="contextual">@Contextual</h4> 
-    <div class="paragraph"> 
-     <p>Fields annotated with <code>@Contextual</code> now benefit from the following statregy to locate a matching key in the context:</p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Use the field’s name.</p> </li> 
-      <li> <p>If not found then use the value of <code>@Named</code> if the file is annotated with it.</p> </li> 
-      <li> <p>If not found then use the fully qualified field type.</p> </li> 
-     </ol> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="javafx_ui_thread_ready_observablelist">JavaFX UI Thread Ready ObservableList</h4> 
-    <div class="paragraph"> 
-     <p><code>JavaFXUtils</code> can be used to create an <code>ObservableList</code> wrapper that guarantees all updates will be pushed inside the JavaFX UI thread. This allows models and controllers more freedom to change values without concerning themselves too much with the needs of the view. You will typically define an <code>ObservableList</code> property on the model, update its values inside a controller action (by default running outisde the UI thread). The view only needs to wrap the model property and pass it to the widget that will consume it, for example</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="prettyprint highlight"><code class="language-java" data-lang="java">ObservableList threadReadyList = JavaFXUtils.createJavaFXThreadProxyList(model.getItems());
-listView.setItems(threadReadyList);</code></pre> 
-     </div> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="javafx_action_properties">JavaFX Action Properties</h4> 
-    <div class="paragraph"> 
-     <p>All properties beloging to <code>JavaFXAction</code> will pushe their updates inside the UI thread. This makes it for an easier development experience when programmatically updating those properties inside a controller action, as there’s no longer a need to wrap update calls with Thread specific blocks (such as <code>runInsideUIAsync</code> for example).</p> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="testing">Testing</h3> 
-   <div class="sect3"> 
-    <h4 id="testmodule_providers">TestModule Providers</h4> 
-    <div class="paragraph"> 
-     <p>Test cases may annotated any method with either <code>@TestModules</code> or <code>@TestModuleOverrides</code> to supply a list of <code>Module</code> instances used as the set of all available modules (the first annotation) or to override a subset of all modules (the latter). These annotations superceed the need to follow a naming convention, such as</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="prettyprint highlight"><code class="language-java" data-lang="java">public class SomeTest {
+    <p><div class="sect1">
+<h2 id="griffon_2_6_0_release_notes">Griffon 2.6.0 Release Notes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="dependencies">Dependencies</h3>
+<div class="paragraph">
+<p>The following dependencies have been upgraded</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>org.codehaus.groovy:groovy-all:2.4.6</p>
+</li>
+<li>
+<p>org.slf4j:slf4j-simple:1.7.18</p>
+</li>
+<li>
+<p>org.slf4j:slf4j-log4j:1.7.18</p>
+</li>
+<li>
+<p>org.testfx:testfx-core:4.0.2-alpha</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="runtime">Runtime</h3>
+<div class="sect3">
+<h4 id="lifecycle_updates">Lifecycle Updates</h4>
+<div class="paragraph">
+<p><code>@PostConstruct</code> and <code>@PreDestroy</code> are guaranteed to be invoked when an artifact is created/destroyed. Previously the runtime
+would invoke <code>@PostConstruct</code> on a service during shutdown if the service was never used at all. Destroying an MVC group
+guarantees that methods annotated with <code>@PreDestroy</code> are invoked.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="eventrouter">EventRouter</h4>
+<div class="paragraph">
+<p>It&#8217;s now possible to query an <code>EventRouter</code> for its set of listeners. <code>EventRouter</code> instances also use a well defined pattern
+to name the threads they may use internally.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="contextual">@Contextual</h4>
+<div class="paragraph">
+<p>Fields annotated with <code>@Contextual</code> now benefit from the following statregy to locate a matching key in the context:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Use the field&#8217;s name.</p>
+</li>
+<li>
+<p>If not found then use the value of <code>@Named</code> if the file is annotated with it.</p>
+</li>
+<li>
+<p>If not found then use the fully qualified field type.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="javafx_ui_thread_ready_observablelist">JavaFX UI Thread Ready ObservableList</h4>
+<div class="paragraph">
+<p><code>JavaFXUtils</code> can be used to create an <code>ObservableList</code> wrapper that guarantees all updates will be pushed inside the
+JavaFX UI thread. This allows models and controllers more freedom to change values without concerning themselves too much
+with the needs of the view. You will typically define an <code>ObservableList</code> property on the model, update its values inside
+a controller action (by default running outisde the UI thread). The view only needs to wrap the model property and pass it
+to the widget that will consume it, for example</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">ObservableList threadReadyList = JavaFXUtils.createJavaFXThreadProxyList(model.getItems());
+listView.setItems(threadReadyList);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="javafx_action_properties">JavaFX Action Properties</h4>
+<div class="paragraph">
+<p>All properties beloging to <code>JavaFXAction</code> will pushe their updates inside the UI thread. This makes it for an easier
+development experience when programmatically updating those properties inside a controller action, as there&#8217;s no longer
+a need to wrap update calls with Thread specific blocks (such as <code>runInsideUIAsync</code> for example).</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testing">Testing</h3>
+<div class="sect3">
+<h4 id="testmodule_providers">TestModule Providers</h4>
+<div class="paragraph">
+<p>Test cases may annotated any method with either <code>@TestModules</code> or <code>@TestModuleOverrides</code> to supply a list of <code>Module</code>
+instances used as the set of all available modules (the first annotation) or to override a subset of all modules (the latter).
+These annotations superceed the need to follow a naming convention, such as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">public class SomeTest {
     @Rule
     public final GriffonUnitRule griffon = new GriffonUnitRule();
 
@@ -145,36 +170,42 @@ listView.setItems(threadReadyList);</code></pre>
     public List&lt;Module&gt; modulesToOverride() {
         return asList(new TestModule() { ... });
     }
-}</code></pre> 
-     </div> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="functional_javafx_tests">Functional JavaFX Tests</h4> 
-    <div class="paragraph"> 
-     <p>There are a handful of updates in this area. First, all methods may be executed in alphaetical order, carrying over their state from method to method. If one of them fails then all other methods will be marked as skipped. This is the same behavior found in Spock using the <code>@Stepwise</code> annotation. You must apply the <code>FunctionalJavaFXRunner</code> runner to the test case to enable this feature.</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p><code>GriffonTestFXClassRule</code> can inject members on the running testcase. You will typically invoke this feature in a method annotated with <code>@Before</code> (JUnit) or in the <code>setup()</code> method (Spock).</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="testfx_updates">TestFX Updates</h4> 
-    <div class="paragraph"> 
-     <p>Both <code>GriffonTestFXClassRule</code> and <code>GriffonTestFXRule</code> now have the capability to locate a <code>Window</code> instance. There’s also a brand new <code>WindowMatcher</code> that can be used to assert the showing and focused state of a <code>Window</code>.</p> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="buildtime">Buildtime</h3> 
-   <div class="sect3"> 
-    <h4 id="additional_key_values_in_application_properties">Additional Key/Values in application.properties</h4> 
-    <div class="paragraph"> 
-     <p>The <code>griffon</code> configuration block has a new property that can be used to define additional key/value pairs that may be replaced in <code>application.properties</code>; for example</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">griffon {
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="functional_javafx_tests">Functional JavaFX Tests</h4>
+<div class="paragraph">
+<p>There are a handful of updates in this area. First, all methods may be executed in alphaetical order, carrying over their
+state from method to method. If one of them fails then all other methods will be marked as skipped. This is the same behavior
+found in Spock using the <code>@Stepwise</code> annotation. You must apply the <code>FunctionalJavaFXRunner</code> runner to the test case to enable
+this feature.</p>
+</div>
+<div class="paragraph">
+<p><code>GriffonTestFXClassRule</code> can inject members on the running testcase. You will typically invoke this feature in a method
+annotated with <code>@Before</code> (JUnit) or in the <code>setup()</code> method (Spock).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="testfx_updates">TestFX Updates</h4>
+<div class="paragraph">
+<p>Both <code>GriffonTestFXClassRule</code> and <code>GriffonTestFXRule</code> now have the capability to locate a <code>Window</code> instance. There&#8217;s also
+a brand new <code>WindowMatcher</code> that can be used to assert the showing and focused state of a <code>Window</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="buildtime">Buildtime</h3>
+<div class="sect3">
+<h4 id="additional_keyvalues_in_application_properties">Additional Key/Values in application.properties</h4>
+<div class="paragraph">
+<p>The <code>griffon</code> configuration block has a new property that can be used to define additional key/value pairs that may be
+replaced in <code>application.properties</code>; for example</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="groovy">griffon {
     disableDependencyResolution = false
     includeGroovyDependencies = false
     version = '2.6.0'
@@ -185,34 +216,36 @@ listView.setItems(threadReadyList);</code></pre>
         'build.revision' : versioning.info.commit,
         'my.property.key': 'my-value'
     ]
-}</code></pre> 
-     </div> 
-    </div> 
-    <div class="paragraph"> 
-     <p>The <code>application.properties</code> must define matching replacement tokens, such as</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="prettyprint highlight"><code class="language-java" data-lang="java">application.name=@application.name@
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>application.properties</code> must define matching replacement tokens, such as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">application.name=@application.name@
 application.version=@application.version@
 build.date=@build.date@
 build.time=@build.time@
 build.revision=@build.revision@
-my.property.key=@my.property.key@</code></pre> 
-     </div> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="compatibility">Compatibility</h3> 
-   <div class="paragraph"> 
-    <p>Full binary compatibility report between Griffon 2.6.0 and 2.5.0 can be found <a href="../reports/2.6.0/compatibility-report.html">here</a>.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>A list of fixed issues can be found at the <a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.6.0+is%3Aclosed">2.6.0 milestone</a> page.</p> 
-   </div> 
-  </div> 
- </div> 
+my.property.key=@my.property.key@</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="compatibility">Compatibility</h3>
+<div class="paragraph">
+<p>Full binary compatibility report between Griffon 2.6.0 and 2.5.0 can be found
+<a href="../reports/2.6.0/compatibility-report.html">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>A list of fixed issues can be found at the
+<a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.6.0+is%3Aclosed">2.6.0 milestone</a> page.</p>
+</div>
+</div>
+</div>
 </div></p>
 
     <hr />
@@ -223,7 +256,7 @@ my.property.key=@my.property.key@</code></pre>
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+        <p class="muted credit">&copy; 2008 - 2021 The Griffon Team | Mixed with <a href="https://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="https://jbake.org">JBake v2.6.5</a></p>
       </div>
     </div>
 

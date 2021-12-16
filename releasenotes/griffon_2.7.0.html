@@ -65,59 +65,78 @@
 
     <p><em>20 June 2016</em></p>
 
-    <p><div class="sect1"> 
- <h2 id="griffon_2_7_0_release_notes">Griffon 2.7.0 Release Notes</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="dependencies">Dependencies</h3> 
-   <div class="paragraph"> 
-    <p>The following dependencies have been upgraded</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>org.codehaus.groovy:groovy-all:2.4.7</p> </li> 
-     <li> <p>com.google.inject:guice:4.1.0</p> </li> 
-     <li> <p>org.slf4j:slf4j-simple:1.7.21</p> </li> 
-     <li> <p>org.slf4j:slf4j-log4j:1.7.21</p> </li> 
-     <li> <p>org.groovyfx:groovyfx:8.0.0</p> </li> 
-     <li> <p>org.testfx:testfx-core:4.0.4-alpha</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="runtime">Runtime</h3> 
-   <div class="sect3"> 
-    <h4 id="metacomponent_factories">MetaComponent Factories</h4> 
-    <div class="paragraph"> 
-     <p>In the last major version of Griffon (1.x) it’s was possible to create and inject an <code>MVCGroup</code> instance inside a Groovy View as if it were just another builder node. This feature is known as <code>metaComponent</code>. Sadly this support was not working properly until Griffon 2.7.0 fixed the problem. Now you can use <code>metaComponent</code> as expected.</p> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="buildtime">Buildtime</h3> 
-   <div class="sect3"> 
-    <h4 id="gradle_2_12_support">Gradle 2.12+ Support</h4> 
-    <div class="paragraph"> 
-     <p>Previous versions of the <code>griffon-gradle</code> plugin did not work with Gradle 2.12 or newer due to some changes introduced in that particular version of Gradle on how dependencies can be managed. Griffon 2.7.0 fixes this problem, now the plugin can be used with the latest Gradle versions.</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="kotlin_project_template">Kotlin Project Template</h4> 
-    <div class="paragraph"> 
-     <p>There’s a new lazybones project template that targets JavaFX and <a href="http://kotlinlang.org/">Kotlin</a> as main language. The name of this template is <code>griffon-javafx-kotlin</code>.</p> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="compatibility">Compatibility</h3> 
-   <div class="paragraph"> 
-    <p>Full binary compatibility report between Griffon 2.7.0 and 2.6.0 can be found <a href="../reports/2.7.0/compatibility-report.html">here</a>.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>A list of fixed issues can be found at the <a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.7.0+is%3Aclosed">2.7.0 milestone</a> page.</p> 
-   </div> 
-  </div> 
- </div> 
+    <p><div class="sect1">
+<h2 id="griffon_2_7_0_release_notes">Griffon 2.7.0 Release Notes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="dependencies">Dependencies</h3>
+<div class="paragraph">
+<p>The following dependencies have been upgraded</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>org.codehaus.groovy:groovy-all:2.4.7</p>
+</li>
+<li>
+<p>com.google.inject:guice:4.1.0</p>
+</li>
+<li>
+<p>org.slf4j:slf4j-simple:1.7.21</p>
+</li>
+<li>
+<p>org.slf4j:slf4j-log4j:1.7.21</p>
+</li>
+<li>
+<p>org.groovyfx:groovyfx:8.0.0</p>
+</li>
+<li>
+<p>org.testfx:testfx-core:4.0.4-alpha</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="runtime">Runtime</h3>
+<div class="sect3">
+<h4 id="metacomponent_factories">MetaComponent Factories</h4>
+<div class="paragraph">
+<p>In the last major version of Griffon (1.x) it&#8217;s was possible to create and inject an <code>MVCGroup</code> instance inside a Groovy
+View as if it were just another builder node. This feature is known as <code>metaComponent</code>. Sadly this support was not working
+properly until Griffon 2.7.0 fixed the problem. Now you can use <code>metaComponent</code> as expected.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="buildtime">Buildtime</h3>
+<div class="sect3">
+<h4 id="gradle_2_12_support">Gradle 2.12+ Support</h4>
+<div class="paragraph">
+<p>Previous versions of the <code>griffon-gradle</code> plugin did not work with Gradle 2.12 or newer due to some changes introduced in
+that particular version of Gradle on how dependencies can be managed. Griffon 2.7.0 fixes this problem, now the plugin can
+be used with the latest Gradle versions.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="kotlin_project_template">Kotlin Project Template</h4>
+<div class="paragraph">
+<p>There&#8217;s a new lazybones project template that targets JavaFX and <a href="https://kotlinlang.org/">Kotlin</a> as main language. The
+name of this template is <code>griffon-javafx-kotlin</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="compatibility">Compatibility</h3>
+<div class="paragraph">
+<p>Full binary compatibility report between Griffon 2.7.0 and 2.6.0 can be found
+<a href="../reports/2.7.0/compatibility-report.html">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>A list of fixed issues can be found at the
+<a href="https://github.com/griffon/griffon/issues?q=milestone%3A2.7.0+is%3Aclosed">2.7.0 milestone</a> page.</p>
+</div>
+</div>
+</div>
 </div></p>
 
     <hr />
@@ -128,7 +147,7 @@
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2008 - 2017 The Griffon Team | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+        <p class="muted credit">&copy; 2008 - 2021 The Griffon Team | Mixed with <a href="https://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="https://jbake.org">JBake v2.6.5</a></p>
       </div>
     </div>
 
