@@ -15,7 +15,7 @@
 <h1>The Griffon Guide</h1>
 <div class="details">
 <span id="author" class="author">Andres Almiray</span><br>
-<span id="revnumber">version 2.16.0-SNAPSHOT</span>
+<span id="revnumber">version 2.16.0</span>
 <br><span id="revremark">The Desktop/Embedded application framework for the JVM</span>
 </div>
 <div id="toc" class="toc2">
@@ -641,7 +641,7 @@ main UI toolkit, Groovy as main language, and Gradle as build tool:</p>
 <pre class="CodeRay highlight"><code>$ mvn archetype:generate \
       -DarchetypeGroupId=org.codehaus.griffon.maven \
       -DarchetypeArtifactId=griffon-swing-groovy-archetype \
-      -DarchetypeVersion=2.16.0-SNAPSHOT \
+      -DarchetypeVersion=2.16.0 \
       -DgroupId=org.example \
       -DartifactId=console\
       -Dversion=1.0.0-SNAPSHOT \
@@ -656,7 +656,7 @@ main UI toolkit, Groovy as main language, and Gradle as build tool:</p>
 <pre class="CodeRay highlight"><code>$ mvn archetype:generate \
       -DarchetypeGroupId=org.codehaus.griffon.maven \
       -DarchetypeArtifactId=griffon-swing-groovy-archetype \
-      -DarchetypeVersion=2.16.0-SNAPSHOT \
+      -DarchetypeVersion=2.16.0 \
       -DgroupId=org.example \
       -DartifactId=console\
       -Dversion=1.0.0-SNAPSHOT</code></pre>
@@ -851,7 +851,7 @@ buildscript {
     }
 
     dependencies {
-        classpath <span class="string"><span class="delimiter">'</span><span class="content">org.codehaus.griffon:gradle-griffon-plugin:2.16.0-SNAPSHOT</span><span class="delimiter">'</span></span>
+        classpath <span class="string"><span class="delimiter">'</span><span class="content">org.codehaus.griffon:gradle-griffon-plugin:2.16.0</span><span class="delimiter">'</span></span>
         classpath <span class="string"><span class="delimiter">'</span><span class="content">gradle.plugin.com.hierynomus.gradle.plugins:license-gradle-plugin:0.15.0</span><span class="delimiter">'</span></span>
         classpath <span class="string"><span class="delimiter">'</span><span class="content">com.github.ben-manes:gradle-versions-plugin:0.39.0</span><span class="delimiter">'</span></span>
         classpath <span class="string"><span class="delimiter">'</span><span class="content">gradle.plugin.net.nemerosa:versioning:2.15.1</span><span class="delimiter">'</span></span>
@@ -872,7 +872,7 @@ ext {
 griffon {
     disableDependencyResolution = <span class="predefined-constant">false</span>
     includeGroovyDependencies = <span class="predefined-constant">true</span>
-    version = <span class="string"><span class="delimiter">'</span><span class="content">2.16.0-SNAPSHOT</span><span class="delimiter">'</span></span>
+    version = <span class="string"><span class="delimiter">'</span><span class="content">2.16.0</span><span class="delimiter">'</span></span>
     toolkit = <span class="string"><span class="delimiter">'</span><span class="content">javafx</span><span class="delimiter">'</span></span>
     applicationProperties = [
         <span class="string"><span class="delimiter">'</span><span class="content">build_date</span><span class="delimiter">'</span></span>    : buildDate,
@@ -2438,7 +2438,7 @@ for the <code>griffon</code> section in the Gradle build file to change these va
 <pre class="CodeRay highlight nowrap"><code data-lang="groovy">griffon {
     disableDependencyResolution = <span class="predefined-constant">false</span>
     includeGroovyDependencies = <span class="predefined-constant">false</span>
-    version = <span class="string"><span class="delimiter">'</span><span class="content">2.16.0-SNAPSHOT</span><span class="delimiter">'</span></span>
+    version = <span class="string"><span class="delimiter">'</span><span class="content">2.16.0</span><span class="delimiter">'</span></span>
     toolkit = <span class="string"><span class="delimiter">'</span><span class="content">javafx</span><span class="delimiter">'</span></span>
     applicationProperties = [                     <i class="conum" data-value="1"></i><b>(1)</b>
         <span class="string"><span class="delimiter">'</span><span class="content">build_date</span><span class="delimiter">'</span></span>    : buildDate,
@@ -3373,8 +3373,8 @@ modules are annotated with <code>@Named("foo")</code>.</p>
 <div class="sect3">
 <h4 id="_overview_guice_injector"><a class="anchor" href="#_overview_guice_injector"></a>3.5.6. The Guice Injector</h4>
 <div class="paragraph">
-<p>The dependency <code>griffon-guice-2.16.0-SNAPSHOT</code> uses <a href="https://github.com/google/guice" target="_blank" rel="noopener">Google Guice</a> to implement the JSR-330 API
-that <code>griffon-core-2.16.0-SNAPSHOT</code> requires. As an additional feature, this dependency can automatically
+<p>The dependency <code>griffon-guice-2.16.0</code> uses <a href="https://github.com/google/guice" target="_blank" rel="noopener">Google Guice</a> to implement the JSR-330 API
+that <code>griffon-core-2.16.0</code> requires. As an additional feature, this dependency can automatically
 load Guice modules during startup. The only requirement is a metadata file that defines the module class
 that should be loaded.</p>
 </div>
@@ -4801,7 +4801,7 @@ Both transformations are functionally equivalent and can be used interchangeably
  discussed in a <a href="#_models_binding_swing_groovy">previous section</a>. However there are some slight differences.</p>
 </div>
 <div class="paragraph">
-<p>The <code>griffon-javafx-groovy-2.16.0-SNAPSHOT.jar</code> delivers a new AST Transformation: <a href="#_models_fxobservable_transformation">@FXObservable</a>,
+<p>The <code>griffon-javafx-groovy-2.16.0.jar</code> delivers a new AST Transformation: <a href="#_models_fxobservable_transformation">@FXObservable</a>,
 which by all means and purposes is functionally equivalent to GroovyFX&#8217;s <code>@FXBindable</code> annotation. However <code>@FXObservable</code>
 delivers better integration with the Griffon runtime, for example hooking into <code><a href="api/griffon/core/threading/ThreadingManager.html" target="_blank" rel="noopener">ThreadingManager</a></code> instead of calling
 into <code>Platform.runLater</code>.</p>
@@ -7735,14 +7735,14 @@ treated as the root.</p>
 <h3 id="_views_swing"><a class="anchor" href="#_views_swing"></a>8.3. Swing Specific</h3>
 <div class="paragraph">
 <p>Refer to the <a href="#_builder_nodes_swing">list of nodes</a> which become available when
-the <code>griffon-swing-groovy-2.16.0-SNAPSHOT.jar</code> is added as a dependency.</p>
+the <code>griffon-swing-groovy-2.16.0.jar</code> is added as a dependency.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_views_javafx"><a class="anchor" href="#_views_javafx"></a>8.4. JavaFX Specific</h3>
 <div class="paragraph">
 <p>Refer to the <a href="#_builder_nodes_javafx">list of nodes</a> which become available when
-the <code>griffon-javafx-groovy-2.16.0-SNAPSHOT.jar</code> is added as a dependency.</p>
+the <code>griffon-javafx-groovy-2.16.0.jar</code> is added as a dependency.</p>
 </div>
 <div class="sect3">
 <h4 id="_i18n_support"><a class="anchor" href="#_i18n_support"></a>8.4.1. I18n Support</h4>
@@ -8230,7 +8230,7 @@ of lanterna is that it&#8217;s not dependent on any native library, but runs 100
 </div>
 <div class="paragraph">
 <p>Refer to the <a href="#_builder_nodes_lanterna">list of nodes</a> which become available when
-the <code>griffon-lanterna-groovy-2.16.0-SNAPSHOT.jar</code> is added as a dependency.</p>
+the <code>griffon-lanterna-groovy-2.16.0.jar</code> is added as a dependency.</p>
 </div>
 </div>
 <div class="sect2">
@@ -8266,7 +8266,7 @@ arguments as the method.</p>
 </div>
 <div class="paragraph">
 <p>Refer to the <a href="#_builder_nodes_pivot">list of nodes</a> which become available when
-the <code>griffon-pivot-groovy-2.16.0-SNAPSHOT.jar</code> is added as a dependency.</p>
+the <code>griffon-pivot-groovy-2.16.0.jar</code> is added as a dependency.</p>
 </div>
 </div>
 </div>
@@ -11314,7 +11314,7 @@ For those classes that required dependency injection you have the following opti
 </div>
 <h4 id="_guiceberry" class="discrete">GuiceBerry</h4>
 <div class="paragraph">
-<p>If the project relies on <code>griffon-guice-2.16.0-SNAPSHOT</code> for injecting dependencies at runtime then you may use <a href="https://github.com/zorzella/guiceberry" target="_blank" rel="noopener">GuiceBerry</a>
+<p>If the project relies on <code>griffon-guice-2.16.0</code> for injecting dependencies at runtime then you may use <a href="https://github.com/zorzella/guiceberry" target="_blank" rel="noopener">GuiceBerry</a>
 when writing tests. GuiceBerry can resolve Guice modules and perform injection on the test class itself.</p>
 </div>
 <div class="listingblock">
@@ -13290,7 +13290,7 @@ project. This configuration follows the standard Griffon project layout.</p>
     }
 
     dependencies {
-        classpath 'org.codehaus.griffon:gradle-griffon-plugin:2.16.0-SNAPSHOT'
+        classpath 'org.codehaus.griffon:gradle-griffon-plugin:2.16.0'
     }
 }
 
@@ -13332,7 +13332,7 @@ apply plugin: 'org.codehaus.griffon.griffon'</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>org.codehaus.griffon:griffon-core:2.16.0-SNAPSHOT</p>
+<p>org.codehaus.griffon:griffon-core:2.16.0</p>
 </li>
 </ul>
 </div>
@@ -13342,7 +13342,7 @@ apply plugin: 'org.codehaus.griffon.griffon'</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>org.codehaus.griffon:griffon-core-compile:2.16.0-SNAPSHOT</p>
+<p>org.codehaus.griffon:griffon-core-compile:2.16.0</p>
 </li>
 </ul>
 </div>
@@ -13352,7 +13352,7 @@ apply plugin: 'org.codehaus.griffon.griffon'</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>org.codehaus.griffon:griffon-core-test:2.16.0-SNAPSHOT</p>
+<p>org.codehaus.griffon:griffon-core-test:2.16.0</p>
 </li>
 </ul>
 </div>
@@ -13362,7 +13362,7 @@ apply plugin: 'org.codehaus.griffon.griffon'</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>org.codehaus.griffon:griffon-core-compile:2.16.0-SNAPSHOT</p>
+<p>org.codehaus.griffon:griffon-core-compile:2.16.0</p>
 </li>
 </ul>
 </div>
@@ -13380,7 +13380,7 @@ the following dependencies are added:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>org.codehaus.griffon:griffon-&lt;toolkit&gt;:2.16.0-SNAPSHOT</p>
+<p>org.codehaus.griffon:griffon-&lt;toolkit&gt;:2.16.0</p>
 </li>
 </ul>
 </div>
@@ -13397,7 +13397,7 @@ the following dependencies are added:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>org.codehaus.griffon:griffon-groovy:2.16.0-SNAPSHOT</p>
+<p>org.codehaus.griffon:griffon-groovy:2.16.0</p>
 </li>
 </ul>
 </div>
@@ -13407,7 +13407,7 @@ the following dependencies are added:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>org.codehaus.griffon:griffon-&lt;toolkit&gt;-groovy:2.16.0-SNAPSHOT</p>
+<p>org.codehaus.griffon:griffon-&lt;toolkit&gt;-groovy:2.16.0</p>
 </li>
 </ul>
 </div>
@@ -13417,7 +13417,7 @@ the following dependencies are added:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>org.codehaus.griffon:griffon-groovy-compile:2.16.0-SNAPSHOT</p>
+<p>org.codehaus.griffon:griffon-groovy-compile:2.16.0</p>
 </li>
 </ul>
 </div>
@@ -13427,7 +13427,7 @@ the following dependencies are added:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>org.codehaus.griffon:griffon-groovy-compile:2.16.0-SNAPSHOT</p>
+<p>org.codehaus.griffon:griffon-groovy-compile:2.16.0</p>
 </li>
 </ul>
 </div>
@@ -13531,7 +13531,7 @@ described in the next section.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.16.0-SNAPSHOT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.16.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The Griffon version to use for Griffon core dependencies.</p></td>
 </tr>
 <tr>
@@ -13575,7 +13575,7 @@ generation of a plugin BOM file and more.</p>
     }
 
     dependencies {
-        classpath 'org.codehaus.griffon:gradle-griffon-build-plugin:2.16.0-SNAPSHOT'
+        classpath 'org.codehaus.griffon:gradle-griffon-build-plugin:2.16.0'
     }
 }
 
@@ -14337,7 +14337,7 @@ a suitable Slf4j binding of your choice.</p>
 <div class="paragraph">
 <p>The <code>Builder.groovy</code> is no longer required. Its functions are now handled by
 <code><a href="api/griffon/util/BuilderCustomizer.html" target="_blank" rel="noopener">BuilderCustomizer</a></code> classes bound in a <code><a href="api/griffon/core/injection/Module.html" target="_blank" rel="noopener">Module</a></code>. You must add
-<code>griffon-groovy-2.16.0-SNAPSHOT.jar</code> as a compile dependency in order to use
+<code>griffon-groovy-2.16.0.jar</code> as a compile dependency in order to use
 <code>BuilderCustomizers</code>. Here&#8217;s an example for adding a <a href="http://miglayout.com">Miglayout</a>
 customization:</p>
 </div>
@@ -15342,7 +15342,7 @@ bind(PivotWindowDisplayHandler.class)
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following list summarizes all AST transformations available to Groovy-based
-projects when the <code>griffon-groovy-compile-2.16.0-SNAPSHOT.jar</code> dependency is
+projects when the <code>griffon-groovy-compile-2.16.0.jar</code> dependency is
 added to a project:</p>
 </div>
 <div class="ulist">
@@ -20055,7 +20055,7 @@ dependencies:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 2.16.0-SNAPSHOT<br>
+Version 2.16.0<br>
 Last updated 2019-12-02 11:07:52 +0100
 </div>
 </div>
